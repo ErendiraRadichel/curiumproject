@@ -1,0 +1,89 @@
+﻿@page
+@model APIHotProducts.Pages.Targets.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        <select name="SearchMaterial" asp-for="TargetProduct" asp-items="Model.Products">
+            <option value="">All</option>
+        </select>
+        <div class="d-flex">
+            Search By Code: <input asp-for="SearchString" class="form-control me-sm-2" type="text" />
+            <input class="btn btn-secondary my-2 my-sm-0" type="submit" value="Filter" />
+        </div>
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.ProductSort">
+                @Html.DisplayNameFor(model => model.Target[0].Product)
+                </a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CodeSort">
+                @Html.DisplayNameFor(model => model.Target[0].Code)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Target[0].LotNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Target[0].TargetType)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                @Html.DisplayNameFor(model => model.Target[0].Date)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Target[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Target[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Target) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TargetType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
