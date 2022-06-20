@@ -32,37 +32,24 @@ namespace APIHotProducts.Pages.Targets
 
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
-        public SelectList Products { get; set; }
-        public SelectList ProductsList { get; set; }
-        [BindProperty(SupportsGet = true)]
-        public string Product { get; set; }
-        public string TargetProduct { get; set; }
 
-        public async Task OnGetAsync(string sortOrder, string searchString, string searchProduct)
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
             ProductSort = String.IsNullOrEmpty(sortOrder) ? "product_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
             CodeSort = String.IsNullOrEmpty(sortOrder) ? "code_desc" : "";
 
             searchString = SearchString;
-            TargetProduct = searchProduct;
 
             // Use LINQ to get list of materials.
-            IQueryable<string> productQuery = from m in _context.Target
-                                               orderby m.Product
-                                               select m.Product;
 
             IQueryable<Target> targetIQ = from s in _context.Target
                                               select s;
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                targetIQ = targetIQ.Where(s => s.Code.Contains(SearchString));
+                targetIQ = targetIQ.Where(s => s.WCode.Contains(SearchString));
                 //targetIQ = targetIQ.Where(s => s.TargetType.Contains(SearchString));
-            }
-            if (!string.IsNullOrEmpty(searchProduct))
-            {
-                targetIQ = targetIQ.Where(x => x.Product == TargetProduct);
             }
             switch (sortOrder) 
             {
@@ -70,10 +57,10 @@ namespace APIHotProducts.Pages.Targets
                     targetIQ = targetIQ.OrderByDescending(s => s.Product);
                     break;
                 case "Date":
-                    targetIQ = targetIQ.OrderBy(s => s.Date);
+                    targetIQ = targetIQ.OrderBy(s => s.CreationDate);
                     break;
                 case "code_desc":
-                    targetIQ = targetIQ.OrderByDescending(s => s.Code);
+                    targetIQ = targetIQ.OrderByDescending(s => s.WCode);
                     break;
                 default:
                     targetIQ = targetIQ.OrderBy(s => s.Product);
@@ -84,18 +71,13 @@ namespace APIHotProducts.Pages.Targets
                            select m;
             if (!string.IsNullOrEmpty(searchString))
             {
-                products = products.Where(s => s.Code.Contains(searchString));
-               //products = products.Where(s => s.TargetType!.Contains(searchString));
-            }
-            if (!string.IsNullOrEmpty(Product))
-            {
-                products = products.Where(x => x.Product == Product);
+                products = products.Where(s => s.WCode.Contains(searchString) || s.CCode.Contains(searchString) || s.C1Code.Contains(searchString) || s.BCode.Contains(searchString) || s.C2Code.Contains(searchString));
+                //products = products.Where(s => s.TargetType!.Contains(searchString));
             }
             if (_context.Target != null)
             {
                 Target = await _context.Target.ToListAsync();
             }
-            Products = new SelectList(await productQuery.Distinct().ToListAsync());
 
             //Target = await products.ToListAsync();
             Target = await targetIQ.AsNoTracking().ToListAsync();

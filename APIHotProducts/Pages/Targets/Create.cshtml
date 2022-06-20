@@ -15,42 +15,129 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Target.Product" class="control-label"></label>
-                <input asp-for="Target.Product" class="form-control" id="product"/>
-                <span asp-validation-for="Target.Product" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Target.Code" class="control-label"></label>
-                <input asp-for="Target.Code" class="form-control" />
-                <span asp-validation-for="Target.Code" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="Target.LotNum" class="control-label"></label>
-                <input asp-for="Target.LotNum" class="form-control" />
-                <span asp-validation-for="Target.LotNum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Target.TargetType" class="control-label"></label>
-                <input asp-for="Target.TargetType" class="form-control" />
-                <span asp-validation-for="Target.TargetType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Target.Date" class="control-label"></label>
-                <input asp-for="Target.Date" class="form-control" />
-                <span asp-validation-for="Target.Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Target.Description" class="control-label"></label>
-                <input asp-for="Target.Description" class="form-control" id="description"/>
-                <span asp-validation-for="Target.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group" style=" margin: 10px !important">
-                <label asp-for="Target.Status" class="control-label"></label>
-                <select asp-for="Target.Status" class="form-control">
-                    <option value="Warehouse">Warehouse</option>
-                    <option value="Cyclotron Spares">Cyclotron Spares</option>
+                <select asp-for="Target.Product" class="form-control" id="product">
+                    <option value="Ga-67">Ga-67</option>
+                    <option value="In-111">In-111</option>
+                    <option value="Pb-201">Pb-201</option>
+                    <option value="Ge-68">Ge-68</option>
+                    <option value="Cu-64">Cu-64</option>
+                    <option value="N/A">N/A</option>
                 </select>
             </div>
-            <hr>
+            @* Warehouse Data Fields *@
+            <div class="form-group">
+                <label asp-for="Target.CreationDate" class="control-label"></label>
+                <input asp-for="Target.CreationDate" class="form-control" />
+                <span asp-validation-for="Target.CreationDate" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Target.WName" class="control-label"></label>
+                <input asp-for="Target.WName" class="form-control" />
+                <span asp-validation-for="Target.WName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Target.WStatus" class="control-label"></label>
+                <input asp-for="Target.WStatus" class="form-control" value="Warehouse" readonly/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Target.WCode" class="control-label"></label>
+                <input asp-for="Target.WCode" class="form-control" />
+                <span asp-validation-for="Target.WCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Target.WLotNum" class="control-label"></label>
+                <input asp-for="Target.WLotNum" class="form-control" />
+                <span asp-validation-for="Target.WLotNum" class="text-danger"></span>
+            </div>
+            <hr />
+            @* Cyclotron Spares Data Fields *@
+            <div class="d-none">
+                <div class="form-group">
+                    <label asp-for="Target.CName" class="control-label"></label>
+                    <input asp-for="Target.CName" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.CName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.CStatus" class="control-label"></label>
+                    <input asp-for="Target.CStatus" class="form-control" value="N/A"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.CCode" class="control-label"></label>
+                    <input asp-for="Target.CCode" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.CCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.CLotNum" class="control-label"></label>
+                    <input asp-for="Target.CLotNum" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.CLotNum" class="text-danger"></span>
+                </div>
+            </div>
+            @* Chemistry Lab 1 Data Fields *@
+            <div class="d-none">
+                <div class="form-group">
+                    <label asp-for="Target.C1Name" class="control-label"></label>
+                    <input asp-for="Target.C1Name" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.C1Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.C1Status" class="control-label"></label>
+                    <input asp-for="Target.C1Status" class="form-control" value="N/A"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.C1Code" class="control-label"></label>
+                    <input asp-for="Target.C1Code" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.C1Code" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.C1LotNum" class="control-label"></label>
+                    <input asp-for="Target.C1LotNum" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.C1LotNum" class="text-danger"></span>
+                </div>
+            </div>
+             @* Cyclotron Bombarding Data Fields *@
+            <div class="d-none">
+                <div class="form-group">
+                    <label asp-for="Target.BName" class="control-label"></label>
+                    <input asp-for="Target.BName" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.BName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.BStatus" class="control-label"></label>
+                    <input asp-for="Target.BStatus" class="form-control" value="N/A"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.BCode" class="control-label"></label>
+                    <input asp-for="Target.BCode" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.BCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.BLotNum" class="control-label"></label>
+                    <input asp-for="Target.BLotNum" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.BLotNum" class="text-danger"></span>
+                </div>
+            </div>
+             @* Chemistry Lab 2 Data Fields *@
+             <div class="d-none">
+                <div class="form-group">
+                    <label asp-for="Target.C2Name" class="control-label"></label>
+                    <input asp-for="Target.C2Name" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.C2Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.C2Status" class="control-label"></label>
+                    <input asp-for="Target.C2Status" class="form-control" value="N/A"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.C2Code" class="control-label"></label>
+                    <input asp-for="Target.C2Code" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.C2Code" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Target.C2LotNum" class="control-label"></label>
+                    <input asp-for="Target.C2LotNum" class="form-control" value="N/A"/>
+                    <span asp-validation-for="Target.C2LotNum" class="text-danger"></span>
+                </div>
+             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
