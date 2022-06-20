@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erendira.radichel\\source\\repos\\APIHotProducts\\APIHotProducts.csproj": {}
+    "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\APIHotProducts\\APIHotProducts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erendira.radichel\\source\\repos\\APIHotProducts\\APIHotProducts.csproj": {
+    "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\APIHotProducts\\APIHotProducts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erendira.radichel\\source\\repos\\APIHotProducts\\APIHotProducts.csproj",
+        "projectUniqueName": "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\APIHotProducts\\APIHotProducts.csproj",
         "projectName": "APIHotProducts",
-        "projectPath": "C:\\Users\\erendira.radichel\\source\\repos\\APIHotProducts\\APIHotProducts.csproj",
+        "projectPath": "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\APIHotProducts\\APIHotProducts.csproj",
         "packagesPath": "C:\\Users\\erendira.radichel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erendira.radichel\\source\\repos\\APIHotProducts\\obj\\",
+        "outputPath": "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\APIHotProducts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

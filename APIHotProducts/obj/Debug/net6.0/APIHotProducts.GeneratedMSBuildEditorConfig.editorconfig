@@ -15,57 +15,57 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = APIHotProducts
 build_property.RootNamespace = APIHotProducts
-build_property.ProjectDir = C:\Users\erendira.radichel\source\repos\APIHotProducts\
+build_property.ProjectDir = C:\Users\erendira.radichel\Source\Repos\ErendiraRadichel\curiumproject\APIHotProducts\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\erendira.radichel\source\repos\APIHotProducts
+build_property.MSBuildProjectDirectory = C:\Users\erendira.radichel\Source\Repos\ErendiraRadichel\curiumproject\APIHotProducts
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Error.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Index.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Privacy.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Targets/Create.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Targets/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyZ2V0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Targets/Delete.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Targets/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyZ2V0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Targets/Details.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Targets/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyZ2V0c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Targets/Edit.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Targets/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyZ2V0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Targets/Index.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Targets/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyZ2V0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/_ViewImports.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/_ViewStart.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/erendira.radichel/source/repos/APIHotProducts/Pages/Shared/_Layout.cshtml]
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/APIHotProducts/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-722ychvwvh
