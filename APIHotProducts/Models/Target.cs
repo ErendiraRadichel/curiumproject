@@ -7,8 +7,9 @@ namespace APIHotProducts.Models
         // Primary Key, unique
         public int ID { get; set; }
 
-        // Product Name, one for target
+        // Product Name & Status, one for target
         public string Product { get; set; } = string.Empty;
+        public string Status { get; set; } = string.Empty;
 
         // Warehouse Columns
         [DataType(DataType.Date)]
@@ -18,9 +19,6 @@ namespace APIHotProducts.Models
 
         [Display(Name = "Name")]
         public string WName { get; set; } = string.Empty;
-
-        [Display(Name = "Status")]
-        public string WStatus { get; set; } = string.Empty;
 
         [Display(Name = "Code")]
         public string WCode { get; set; } = string.Empty;
@@ -37,9 +35,6 @@ namespace APIHotProducts.Models
         [Display(Name = "Name")]
         public string CName { get; set; } = string.Empty;
 
-        [Display(Name = "Status")]
-        public string CStatus { get; set; } = string.Empty;
-
         [Display(Name = "Code")]
         public string CCode { get; set; } = string.Empty;
 
@@ -54,9 +49,6 @@ namespace APIHotProducts.Models
 
         [Display(Name = "Name")]
         public string C1Name { get; set; } = string.Empty;
-
-        [Display(Name = "Status")]
-        public string C1Status { get; set; } = string.Empty;
 
         [Display(Name = "Code")]
         public string C1Code { get; set; } = string.Empty;
@@ -73,9 +65,6 @@ namespace APIHotProducts.Models
         [Display(Name = "Name")]
         public string BName { get; set; } = string.Empty;
 
-        [Display(Name = "Status")]
-        public string BStatus { get; set; } = string.Empty;
-
         [Display(Name = "Code")]
         public string BCode { get; set; } = string.Empty;
 
@@ -90,9 +79,6 @@ namespace APIHotProducts.Models
 
         [Display(Name = "Name")]
         public string C2Name { get; set; } = string.Empty;
-
-        [Display(Name = "Status")]
-        public string C2Status { get; set; } = string.Empty;
 
         [Display(Name = "Code")]
         public string C2Code { get; set; } = string.Empty;

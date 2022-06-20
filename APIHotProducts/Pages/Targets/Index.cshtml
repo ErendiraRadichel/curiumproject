@@ -33,7 +33,7 @@
                 Lot Number
             </th>
             <th>
-                Status
+                @Html.DisplayNameFor(model => model.Target[0].Status)
             </th>
             <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">Date</a>
@@ -62,11 +62,7 @@
                 @Html.DisplayFor(modelItem => item.C2LotNum)<br>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WStatus)<br>
-                @Html.DisplayFor(modelItem => item.CStatus)<br>
-                @Html.DisplayFor(modelItem => item.C1Status)<br>
-                @Html.DisplayFor(modelItem => item.BStatus)<br>
-                @Html.DisplayFor(modelItem => item.C2Status)<br>
+                @Html.DisplayFor(modelItem => item.Status)<br>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreationDate)<br>

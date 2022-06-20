@@ -42,9 +42,6 @@ namespace APIHotProducts.Migrations
                     b.Property<string>("BName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BStatus")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("C1Code")
                         .HasColumnType("nvarchar(max)");
 
@@ -55,9 +52,6 @@ namespace APIHotProducts.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("C1Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("C1Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("C2Code")
@@ -72,9 +66,6 @@ namespace APIHotProducts.Migrations
                     b.Property<string>("C2Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("C2Status")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -87,13 +78,13 @@ namespace APIHotProducts.Migrations
                     b.Property<string>("CName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CStatus")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Product")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WCode")
@@ -103,9 +94,6 @@ namespace APIHotProducts.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WStatus")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
