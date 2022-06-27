@@ -16,12 +16,16 @@ namespace TargetDB.Data
                 return;   // DB has been seeded
             }
 
-            var students = new Target[]
+            var targets = new Target[]
             {
             new Target{TargetType="CS-30/IBA",Status="Warehouse"},
             new Target{TargetType="CS-30/IBA",Status="Warehouse"},
             new Target{TargetType="CS-30(flat)",Status="Cyclotron Spares"}
             };
+            foreach (Target t in targets)
+            {
+                context.Targets.Add(t);
+            }
             context.SaveChanges();
 
             var warehouses = new Warehouse[]
@@ -30,6 +34,10 @@ namespace TargetDB.Data
             new Warehouse{WCode="W00023",WLotNum=1256,WarehouseName="John D",WarehouseDate=DateTime.Parse("2022-01-01")},
             new Warehouse{WCode="W00012",WLotNum=1256,WarehouseName="John D", WarehouseDate = DateTime.Parse("2022-01-01")},
             };
+            foreach (Warehouse w in warehouses)
+            {
+                context.Warehouses.Add(w);
+            }
             context.SaveChanges();
 
             var cyclotrons = new Cyclotron[]
@@ -37,8 +45,11 @@ namespace TargetDB.Data
             new Cyclotron{CyclotronName="Ed D",CyclotronDate=DateTime.Parse("2022-01-12")},
             new Cyclotron{CyclotronName="Ed D",CyclotronDate=DateTime.Parse("2022-01-12")},
             new Cyclotron{CyclotronName="Ed D",CyclotronDate=DateTime.Parse("2022-01-12")},
-            
             };
+            foreach (Cyclotron c in cyclotrons)
+            {
+                context.Cyclotrons.Add(c);
+            }
             context.SaveChanges();
         }
     }
