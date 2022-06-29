@@ -5,10 +5,13 @@
     ViewData["Title"] = "Update";
 }
 
-<h1 style="margin-top: 30px !important;">Update Target Information</h1>
+<h1 class="text-center" style="margin-top: 30px !important;">Update Target Information</h1>
+<div style="margin: 30px 0 50px 0 !important;" class="text-center text-success">
+    <h2>Current Target Status: @Html.DisplayFor(model => model.Target.Status)</h2>
+</div>
 
-<h4 class="text-center" style="margin: 50px 0 50px 0 !important;" >Click on what you want to update about this target</h4>
-<div class="d-flex" style="margin: 30px 0 30px 0 !important;">
+<h4 class="text-center" style="margin-top: 50px !important;" >Click on what you want to update about this target</h4>
+<div class="d-flex" style="margin: 10px 0 30px 0 !important;">
     <button class="btn btn-primary" style="margin: 5px !important;" onclick="displayWarehouse()">Update Warehose Information</button>
     <button class="btn btn-secondary" style="margin: 5px !important;" onclick="displayCyclotronS()">Update Cyclotron Spares Information</button>
     <button class="btn btn-success" style="margin: 5px !important;" onclick="displayChemistry1()">Update Chemistry: Plating Information</button>
@@ -21,8 +24,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Target.ID" />
             <div class="form-group">
-                <h4 style="margin-top: 20px !important;">Update Target Status</h4>
-                <label style="margin-bottom: 10px !important;" asp-for="Target.Status" class="control-label"></label>
+                <h4 class="text-center" style="margin-top: 20px !important;">Update Target Status</h4>
                 <select asp-for="Target.Status" class="form-control" style="margin: 10px !important;" id="status">
                     <option value="Warehouse">Warehouse</option>
                     <option value="Cyclotron Spares">Cyclotron Spares</option>
@@ -34,7 +36,7 @@
             @* Warehouse Data Fields *@
             <div id="Warehouse" style="display:none; margin: 20px !important;">
                 <hr>
-                <h3 style="margin: 10px 0 10px 0 !important;" >Edit Target in Warehouse information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;" >Edit Target in Warehouse information:</h3>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.TargetType" class="control-label"></label>
                     <select style="margin-bottom: 10px !important;" asp-for="Target.TargetType" class="form-control" id="product">
@@ -71,7 +73,7 @@
             @* Cyclotron Spares Data Fields *@
             <div id="CyclotronSpares" style="display:none; margin: 20px !important;">
                 <hr>
-                <h3 style="margin: 10px 0 10px 0 !important;">Edit Target in Cyclotron Spares information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Cyclotron Spares information:</h3>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.CyclotronDate" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.CyclotronDate" class="form-control" />
@@ -86,7 +88,7 @@
             @* Chemistry:Plating Data Fields *@
             <div id="Chemistry1" style="display:none; margin: 20px !important;">
                 <hr>
-                <h3 style="margin: 10px 0 10px 0 !important;">Edit Target in Chemistry Lab1 information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Chemistry Lab1 information:</h3>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.PlatingDate" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.PlatingDate" class="form-control" />
@@ -126,7 +128,7 @@
              @* Cyclotron Bombarding Data Fields *@
              <div id="Bombarding" style="display:none; margin: 20px !important;">
                  <hr>
-                <h3 style="margin: 10px 0 10px 0 !important;">Edit Target in Bombarding information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Bombarding information:</h3>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.BombardingDate" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.BombardingDate" class="form-control" />
@@ -141,7 +143,7 @@
             @* Chemistry: Processing Data Fields *@
             <div id="Chemistry2" style="display:none; margin: 20px !important;">
                 <hr>
-                <h3 style="margin: 10px 0 10px 0 !important;">Edit Target in Chemistry Lab2 information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Chemistry Lab2 information:</h3>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.ProcessingDate" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.ProcessingDate" class="form-control" />
@@ -153,15 +155,15 @@
                     <span asp-validation-for="Target.ProcessingName" class="text-danger"></span>
                 </div>
             </div>
-            <div class="form-group text-center" style="margin: 20px !important;" >
-                <h3 class="text-warning" >Save your changes!</h3>
-                <input type="submit" value="Save" class="btn btn-primary btn-lg" />
+            <div class="form-group text-center" style="margin: 40px !important;" >
+                <h3 class="text-warning" style="margin: 10px !important;" >Save your changes!</h3>
+                <input type="submit" value="Save" class="btn btn-primary btn-lg col-sm-10" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div class="text-center" >
     <a class="btn btn-outline-primary" asp-page="./Index">Back to List</a>
 </div>
 
