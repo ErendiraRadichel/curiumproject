@@ -5,174 +5,164 @@
     ViewData["Title"] = "Update";
 }
 
-<h1>Update Target Status</h1>
+<h1 style="margin-top: 30px !important;">Update Target Information</h1>
 
-<h4>Click on what you want to update about this target</h4>
-<hr />
-<div>
-    <button onclick="displayWarehouse()">Update Warehose Information</button>
-    <button onclick="displayCyclotronS()">Update Cyclotron Spares Information</button>
-    <button onclick="displayChemistry1()">Update Chemistry 1 Information</button>
-    <button onclick="displayBombarding()">Update Bombarding Information</button>
-    <button onclick="displayChemistry2()">Update Chemistry 2 Information</button>
+<h4 class="text-center" style="margin: 50px 0 50px 0 !important;" >Click on what you want to update about this target</h4>
+<div class="d-flex" style="margin: 30px 0 30px 0 !important;">
+    <button class="btn btn-primary" style="margin: 5px !important;" onclick="displayWarehouse()">Update Warehose Information</button>
+    <button class="btn btn-secondary" style="margin: 5px !important;" onclick="displayCyclotronS()">Update Cyclotron Spares Information</button>
+    <button class="btn btn-success" style="margin: 5px !important;" onclick="displayChemistry1()">Update Chemistry: Plating Information</button>
+    <button class="btn btn-info" style="margin: 5px !important;" onclick="displayBombarding()">Update Bombarding Information</button>
+    <button class="btn btn-light" style="margin: 5px !important;" onclick="displayChemistry2()">Update Chemistry: Processing Information</button>
 </div>
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Target.ID" />
             <div class="form-group">
-                <label asp-for="Target.Product" class="control-label"></label>
-                <select asp-for="Target.Product" class="form-control" id="product">
-                    <option value="Ga-67">Ga-67</option>
-                    <option value="In-111">In-111</option>
-                    <option value="Pb-201">Pb-201</option>
-                    <option value="Ge-68">Ge-68</option>
-                    <option value="Cu-64">Cu-64</option>
-                    <option value="N/A">N/A</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Target.Status" class="control-label"></label>
-                <select asp-for="Target.Status" class="form-control" id="status">
+                <h4 style="margin-top: 20px !important;">Update Target Status</h4>
+                <label style="margin-bottom: 10px !important;" asp-for="Target.Status" class="control-label"></label>
+                <select asp-for="Target.Status" class="form-control" style="margin: 10px !important;" id="status">
                     <option value="Warehouse">Warehouse</option>
-                    <option value="Cyclotron Spares">Cyclotron</option>
-                    <option value="Chemistry Lab 1">Chemistry Lab 1</option>
+                    <option value="Cyclotron Spares">Cyclotron Spares</option>
+                    <option value="Plating">Plating</option>
                     <option value="Bombarding">Bombarding</option>
-                    <option value="Chemistry Lab 2">Chemistry Lab 2</option>
+                    <option value="Processing">Processing</option>
                 </select>
             </div>
-            <hr>
             @* Warehouse Data Fields *@
-            <div id="Warehouse" style="display:none;">
-                <h3>Edit Target in Warehouse information:</h3>
+            <div id="Warehouse" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 style="margin: 10px 0 10px 0 !important;" >Edit Target in Warehouse information:</h3>
                 <div class="form-group">
-                    <label asp-for="Target.CreationDate" class="control-label"></label>
-                    <input asp-for="Target.CreationDate" class="form-control" />
-                    <span asp-validation-for="Target.CreationDate" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.TargetType" class="control-label"></label>
+                    <select style="margin-bottom: 10px !important;" asp-for="Target.TargetType" class="form-control" id="product">
+                        <option value="CS-30/IBA">CS-30/IBA</option>
+                        <option value="CS-30(Flat)">CS-30(Flat)</option>
+                        <option value="01-CS-30">01-CS-30</option>
+                        <option value="02-IBA">02-IBA</option>
+                        <option value="03-TR-30">03-TR-30</option>
+                        <option value="TR-30">TR-30</option>
+                        <option value="IBA">IBA</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.WName" class="control-label"></label>
-                    <input asp-for="Target.WName" class="form-control" />
-                    <span asp-validation-for="Target.WName" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.WarehouseDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.WarehouseDate" class="form-control" />
+                    <span asp-validation-for="Target.WarehouseDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.WCode" class="control-label"></label>
-                    <input asp-for="Target.WCode" class="form-control" />
-                    <span asp-validation-for="Target.WCode" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" class="control-label">Who did this change? (First Name & Last Name Initials)</label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.WarehouseName" class="form-control" />
+                    <span asp-validation-for="Target.WarehouseName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.WLotNum" class="control-label"></label>
-                    <input asp-for="Target.WLotNum" class="form-control" />
-                    <span asp-validation-for="Target.WLotNum" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.WarehouseCode" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.WarehouseCode" class="form-control" />
+                    <span asp-validation-for="Target.WarehouseCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="Target.WarehouseLotNum" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.WarehouseLotNum" class="form-control" />
+                    <span asp-validation-for="Target.WarehouseLotNum" class="text-danger"></span>
                 </div>
             </div>
             @* Cyclotron Spares Data Fields *@
-            <div id="CyclotronSpares" style="display:none;">
-                <h3>Edit Target in Cyclotron Spares information:</h3>
+            <div id="CyclotronSpares" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 style="margin: 10px 0 10px 0 !important;">Edit Target in Cyclotron Spares information:</h3>
                 <div class="form-group">
-                    <label asp-for="Target.CDate" class="control-label"></label>
-                    <input asp-for="Target.CDate" class="form-control" />
-                    <span asp-validation-for="Target.CDate" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.CyclotronDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.CyclotronDate" class="form-control" />
+                    <span asp-validation-for="Target.CyclotronDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.CName" class="control-label"></label>
-                    <input asp-for="Target.CName" class="form-control" />
-                    <span asp-validation-for="Target.CName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.CCode" class="control-label"></label>
-                    <input asp-for="Target.CCode" class="form-control" />
-                    <span asp-validation-for="Target.CCode" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.CLotNum" class="control-label"></label>
-                    <input asp-for="Target.CLotNum" class="form-control" />
-                    <span asp-validation-for="Target.CLotNum" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.CyclotronName" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.CyclotronName" class="form-control" />
+                    <span asp-validation-for="Target.CyclotronName" class="text-danger"></span>
                 </div>
             </div>
-            @* Chemistry Lab 1 Data Fields *@
-            <div id="Chemistry1" style="display:none;">
-                <h3>Edit Target in Chemistry Lab1 information:</h3>
+            @* Chemistry:Plating Data Fields *@
+            <div id="Chemistry1" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 style="margin: 10px 0 10px 0 !important;">Edit Target in Chemistry Lab1 information:</h3>
                 <div class="form-group">
-                    <label asp-for="Target.C1Date" class="control-label"></label>
-                    <input asp-for="Target.C1Date" class="form-control" />
-                    <span asp-validation-for="Target.C1Date" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.PlatingDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.PlatingDate" class="form-control" />
+                    <span asp-validation-for="Target.PlatingDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.C1Name" class="control-label"></label>
-                    <input asp-for="Target.C1Name" class="form-control" />
-                    <span asp-validation-for="Target.C1Name" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.PlatingName" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.PlatingName" class="form-control" />
+                    <span asp-validation-for="Target.PlatingName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.C1Code" class="control-label"></label>
-                    <input asp-for="Target.C1Code" class="form-control" />
-                    <span asp-validation-for="Target.C1Code" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.PlatingCode" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.PlatingCode" class="form-control" />
+                    <span asp-validation-for="Target.PlatingCode" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.C1LotNum" class="control-label"></label>
-                    <input asp-for="Target.C1LotNum" class="form-control" />
-                    <span asp-validation-for="Target.C1LotNum" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.PlatingLotNum" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.PlatingLotNum" class="form-control" />
+                    <span asp-validation-for="Target.PlatingLotNum" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="Target.ProductName" class="control-label"></label>
+                    <select style="margin-bottom: 10px !important;" asp-for="Target.ProductName" class="form-control" id="product">
+                        <option value="Ga-67">Ga-67</option>
+                        <option value="In-111">In-111</option>
+                        <option value="Pb-201">Pb-201</option>
+                        <option value="Ge-68">Ge-68</option>
+                        <option value="Cu-64">Cu-64</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="Target.TargetNum" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.TargetNum" class="form-control" />
+                    <span asp-validation-for="Target.TargetNum" class="text-danger"></span>
                 </div>
             </div>
              @* Cyclotron Bombarding Data Fields *@
-             <div id="Bombarding" style="display:none;">
-                <h3>Edit Target in Bombarding information:</h3>
+             <div id="Bombarding" style="display:none; margin: 20px !important;">
+                 <hr>
+                <h3 style="margin: 10px 0 10px 0 !important;">Edit Target in Bombarding information:</h3>
                 <div class="form-group">
-                    <label asp-for="Target.BDate" class="control-label"></label>
-                    <input asp-for="Target.BDate" class="form-control" />
-                    <span asp-validation-for="Target.BDate" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.BombardingDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.BombardingDate" class="form-control" />
+                    <span asp-validation-for="Target.BombardingDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.BName" class="control-label"></label>
-                    <input asp-for="Target.BName" class="form-control" />
-                    <span asp-validation-for="Target.BName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.BCode" class="control-label"></label>
-                    <input asp-for="Target.BCode" class="form-control" />
-                    <span asp-validation-for="Target.BCode" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.BLotNum" class="control-label"></label>
-                    <input asp-for="Target.BLotNum" class="form-control" />
-                    <span asp-validation-for="Target.BLotNum" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.BombardingName" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.BombardingName" class="form-control" />
+                    <span asp-validation-for="Target.BombardingName" class="text-danger"></span>
                 </div>
             </div>
-            @* Chemistry Lab 2 Data Fields *@
-            <div id="Chemistry2" style="display:none;">
-                <h3>Edit Target in Chemistry Lab2 information:</h3>
+            @* Chemistry: Processing Data Fields *@
+            <div id="Chemistry2" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 style="margin: 10px 0 10px 0 !important;">Edit Target in Chemistry Lab2 information:</h3>
                 <div class="form-group">
-                    <label asp-for="Target.C2Date" class="control-label"></label>
-                    <input asp-for="Target.C2Date" class="form-control" />
-                    <span asp-validation-for="Target.C2Date" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.ProcessingDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.ProcessingDate" class="form-control" />
+                    <span asp-validation-for="Target.ProcessingDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Target.C2Name" class="control-label"></label>
-                    <input asp-for="Target.C2Name" class="form-control" />
-                    <span asp-validation-for="Target.C2Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.C2Code" class="control-label"></label>
-                    <input asp-for="Target.C2Code" class="form-control" />
-                    <span asp-validation-for="Target.C2Code" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.C2LotNum" class="control-label"></label>
-                    <input asp-for="Target.C2LotNum" class="form-control" />
-                    <span asp-validation-for="Target.C2LotNum" class="text-danger"></span>
+                    <label style="margin-top: 10px !important;" asp-for="Target.ProcessingName" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.ProcessingName" class="form-control" />
+                    <span asp-validation-for="Target.ProcessingName" class="text-danger"></span>
                 </div>
             </div>
-            <div class="form-group">
-                <h3>Save your changes!</h3>
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group text-center" style="margin: 20px !important;" >
+                <h3 class="text-warning" >Save your changes!</h3>
+                <input type="submit" value="Save" class="btn btn-primary btn-lg" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a class="btn btn-outline-primary" asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

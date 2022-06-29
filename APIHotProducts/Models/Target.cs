@@ -6,85 +6,72 @@ namespace APIHotProducts.Models
     {
         // Primary Key, unique
         public int ID { get; set; }
-
-        // Product Name & Status, one for target
-        public string Product { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
 
         // Warehouse Columns
+        public string TargetType { get; set; } = string.Empty;
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [Display(Name = "Creation Date")]
-        public DateTime CreationDate { get; set; }
+        public DateTime WarehouseDate { get; set; }
 
         [Display(Name = "Name")]
-        public string WName { get; set; } = string.Empty;
+        public string WarehouseName { get; set; } = string.Empty;
 
         [Display(Name = "Code")]
-        public string WCode { get; set; } = string.Empty;
+        public string WarehouseCode { get; set; } = string.Empty;
 
         [Display(Name = "Lot Number")]
-        public string WLotNum { get; set; } = string.Empty;
+        public int WarehouseLotNum { get; set; }
 
         // Cyclotron Spares Columns
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [Display(Name = "Date")]
-        public DateTime CDate { get; set; } = DateTime.Today;
+        public DateTime CyclotronDate { get; set; } = DateTime.Today;
 
         [Display(Name = "Name")]
-        public string CName { get; set; } = string.Empty;
+        public string CyclotronName { get; set; } = string.Empty;
 
-        [Display(Name = "Code")]
-        public string CCode { get; set; } = string.Empty;
-
-        [Display(Name = "Lot Number")]
-        public string CLotNum { get; set; } = string.Empty;
-
-        //Chemistry Lab 1
+        // Chemistry: Plating
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [Display(Name = "Date")]
-        public DateTime C1Date { get; set; } = DateTime.Today;
+        public DateTime PlatingDate { get; set; } = DateTime.Today;
 
         [Display(Name = "Name")]
-        public string C1Name { get; set; } = string.Empty;
+        public string PlatingName { get; set; } = string.Empty;
 
         [Display(Name = "Code")]
-        public string C1Code { get; set; } = string.Empty;
+        public string PlatingCode { get; set; } = string.Empty;
 
         [Display(Name = "Lot Number")]
-        public string C1LotNum { get; set; } = string.Empty;
+        public int PlatingLotNum { get; set; }
 
-        //Cyclotron Bombarding
+        [Display(Name = "Product Name")]
+        public string ProductName { get; set; } = string.Empty;
+
+        [Display(Name = "Target Number")]
+        public int TargetNum { get; set; }
+
+        //Cyclotron: Bombarding
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [Display(Name = "Date")]
-        public DateTime BDate { get; set; } = DateTime.Today;
+        public DateTime BombardingDate { get; set; } = DateTime.Today;
 
         [Display(Name = "Name")]
-        public string BName { get; set; } = string.Empty;
+        public string BombardingName { get; set; } = string.Empty;
 
-        [Display(Name = "Code")]
-        public string BCode { get; set; } = string.Empty;
-
-        [Display(Name = "Lot Number")]
-        public string BLotNum { get; set; } = string.Empty;
-
-        //Chemistry Lab 2: After bombarding
+        //Chemistry: Processing
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [Display(Name = "Date")]
-        public DateTime C2Date { get; set; } = DateTime.Today;
+        public DateTime ProcessingDate { get; set; } = DateTime.Today;
 
         [Display(Name = "Name")]
-        public string C2Name { get; set; } = string.Empty;
-
-        [Display(Name = "Code")]
-        public string C2Code { get; set; } = string.Empty;
-
-        [Display(Name = "Lot Number")]
-        public string C2LotNum { get; set; } = string.Empty;
+        public string ProcessingName { get; set; } = string.Empty;
         
     }
 }

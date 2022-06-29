@@ -4,61 +4,55 @@
 @{
     ViewData["Title"] = "Target Details";
 }
-<div>
+<div style="margin: 50px 0 50px 0  !important;">
     <h2>Current Target Status: @Html.DisplayFor(model => model.Target.Status)</h2>
 </div>
-<div class="container">
+<div class="container" style="margin: 30px !important;">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Target Life Cycle</h3>
+                <div>
+                    <div>
+                        <h3 class="card-title text-primary text-center" style="margin: 20px !important;">Target Life Cycle</h3>
                         <div id="content">
                             <ul class="timeline">
-                                <li class="event" data-date="@Html.DisplayFor(model => model.Target.CreationDate)">
+                                <li class="event" data-date="@Html.DisplayFor(model => model.Target.WarehouseDate)" id="time-warehouse">
                                     <h4>Target in Warehouse:</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.WName)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.WName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.WCode)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.WCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.WLotNum)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.WLotNum)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.TargetType)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.TargetType)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseName)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.WarehouseName)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseCode)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.WarehouseCode)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseLotNum)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.WarehouseLotNum)</p>
                                 </li>
-                                <li class="event" data-date="@Html.DisplayFor(model => model.Target.CDate)">
+                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.Target.CyclotronDate)" id="time-cyclotron">
                                     <h4>Target in Cyclotron Spares:</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.CName)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.CName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.CCode)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.CCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.CLotNum)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.CLotNum)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.CyclotronName)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.CyclotronName)</p>
                                 </li>
-                                <li class="event" data-date="@Html.DisplayFor(model => model.Target.C1Date)">
-                                    <h4>Target in Chemistry Lab1:</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.C1Name)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.C1Name)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.C1Code)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.C1Code)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.C1LotNum)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.C1LotNum)</p>
+                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.Target.PlatingDate)" id="time-plating">
+                                    <h4>Target in Chemistry: Plating</h4>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingName)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.PlatingName)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingCode)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.PlatingCode)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingLotNum)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.PlatingLotNum)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.ProductName)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.ProductName)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.TargetNum)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.TargetNum)</p>
                                 </li>
-                                <li class="event" data-date="@Html.DisplayFor(model => model.Target.BDate)">
+                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.Target.BombardingDate)" id="time-bombarding">
                                     <h4>Target in Bombarding:</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.BName)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.BName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.BCode)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.BCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.BLotNum)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.BLotNum)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.BombardingName)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.BombardingName)</p>
                                 </li>
-                                <li class="event" data-date="@Html.DisplayFor(model => model.Target.C2Date)">
-                                    <h4>Target in Chemistry Lab2:</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.C2Name)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.C2Name)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.C2Code)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.C2Code)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.C2LotNum)</h5>
-                                    <p>@Html.DisplayFor(model => model.Target.C2LotNum)</p>
+                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.Target.ProcessingDate)" id="time-processing">
+                                    <h4>Target in Chemistry: Processing</h4>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.ProcessingName)</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.ProcessingName)</p>
                                 </li>
                             </ul>
                         </div>
@@ -67,7 +61,7 @@
             </div>
         </div>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Target?.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+<div style="margin: 40px !important;">
+    <a class="btn btn-warning" style="margin-right: 10px !important;" asp-page="./Edit" asp-route-id="@Model.Target?.ID">Edit</a> |
+    <a class="btn btn-outline-primary" style="margin-left: 10px !important;" asp-page="./Index">Back to List</a>
 </div>

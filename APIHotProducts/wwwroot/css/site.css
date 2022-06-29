@@ -17,6 +17,14 @@ body {
   margin-bottom: 60px;
 }
 
+.extramarginsite {
+    margin: 30px !important;
+}
+
+.extramargintop {
+    margin-top: 30px !important;
+}
+
 .timeline {
     border-left: 3px solid #727cf5;
     border-bottom-right-radius: 4px;

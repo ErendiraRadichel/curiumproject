@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\TargetDB"
+    "\\APIHotProducts",
+    "\\APIHotProducts\\Data"
   ],
-  "SelectedNode": "\\TargetDB\\Program.cs",
+  "SelectedNode": "\\APIHotProducts\\Pages",
   "PreviewInSolutionExplorer": false
 }

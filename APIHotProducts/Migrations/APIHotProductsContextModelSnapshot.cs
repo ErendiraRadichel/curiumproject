@@ -30,70 +30,58 @@ namespace APIHotProducts.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("BCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("BDate")
+                    b.Property<DateTime>("BombardingDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("BLotNum")
+                    b.Property<string>("BombardingName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("C1Code")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("C1Date")
+                    b.Property<DateTime>("CyclotronDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("C1LotNum")
+                    b.Property<string>("CyclotronName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("C1Name")
+                    b.Property<string>("PlatingCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("C2Code")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("C2Date")
+                    b.Property<DateTime>("PlatingDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("C2LotNum")
+                    b.Property<int>("PlatingLotNum")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PlatingName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("C2Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CDate")
+                    b.Property<DateTime>("ProcessingDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CLotNum")
+                    b.Property<string>("ProcessingName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Product")
+                    b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WCode")
+                    b.Property<int>("TargetNum")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TargetType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WLotNum")
+                    b.Property<string>("WarehouseCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WName")
+                    b.Property<DateTime>("WarehouseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("WarehouseLotNum")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WarehouseName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");

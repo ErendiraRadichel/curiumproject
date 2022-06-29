@@ -25,9 +25,15 @@ namespace APIHotProducts.Pages.Targets
             _context = context;
         }
 
+        public string StatusSort { get; set; }
+        public string TargetTypeSort { get; set; }
         public string ProductSort { get; set; }
+        public string TargetNumSort { get; set; }
+        public string WCodeSort { get; set; }
+        public string PCodeSort { get; set; }
+        public string WLotNumSort { get; set; }
+        public string PLotNumSort { get; set; }
         public string DateSort { get; set; }
-        public string CodeSort { get; set; }
         public IList<Target> Target { get;set; } = default!;
 
         [BindProperty(SupportsGet = true)]
@@ -35,9 +41,15 @@ namespace APIHotProducts.Pages.Targets
 
         public async Task OnGetAsync(string sortOrder, string searchString)
         {
-            ProductSort = String.IsNullOrEmpty(sortOrder) ? "product_desc" : "";
+            StatusSort = String.IsNullOrEmpty(sortOrder) ? "status_desc" : "";
+            TargetTypeSort = String.IsNullOrEmpty(sortOrder) ? "targettype_desc" : "";
+            ProductSort = String.IsNullOrEmpty(sortOrder) ? "productname_desc" : "";
+            TargetNumSort = String.IsNullOrEmpty(sortOrder) ? "targetnum_desc" : "";
+            WCodeSort = String.IsNullOrEmpty(sortOrder) ? "warehousecode_desc" : "";
+            PCodeSort = String.IsNullOrEmpty(sortOrder) ? "platingcode_desc" : "";
+            WLotNumSort = String.IsNullOrEmpty(sortOrder) ? "warehouselotnum_desc" : "";
+            PLotNumSort = String.IsNullOrEmpty(sortOrder) ? "platinglotnum_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
-            CodeSort = String.IsNullOrEmpty(sortOrder) ? "code_desc" : "";
 
             searchString = SearchString;
 
@@ -48,22 +60,40 @@ namespace APIHotProducts.Pages.Targets
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                targetIQ = targetIQ.Where(s => s.WCode.Contains(SearchString));
+                targetIQ = targetIQ.Where(s => s.WarehouseCode.Contains(searchString) || s.PlatingCode.Contains(searchString));
                 //targetIQ = targetIQ.Where(s => s.TargetType.Contains(SearchString));
             }
             switch (sortOrder) 
             {
-                case "product_desc":
-                    targetIQ = targetIQ.OrderByDescending(s => s.Product);
+                case "status_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.Status);
+                    break;
+                case "targettype_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.TargetType);
+                    break;
+                case "productname_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.ProductName);
+                    break;
+                case "targetnum_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.TargetNum);
+                    break;
+                case "warehousecode_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.WarehouseCode);
+                    break;
+                case "platingcode_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.PlatingCode);
+                    break;
+                case "warehouselotnum_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.WarehouseLotNum);
+                    break;
+                case "platinglotnum_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.PlatingLotNum);
                     break;
                 case "Date":
-                    targetIQ = targetIQ.OrderBy(s => s.CreationDate);
-                    break;
-                case "code_desc":
-                    targetIQ = targetIQ.OrderByDescending(s => s.WCode);
+                    targetIQ = targetIQ.OrderBy(s => s.WarehouseDate);
                     break;
                 default:
-                    targetIQ = targetIQ.OrderBy(s => s.Product);
+                    targetIQ = targetIQ.OrderBy(s => s.Status);
                     break;
             }
 
@@ -71,7 +101,7 @@ namespace APIHotProducts.Pages.Targets
                            select m;
             if (!string.IsNullOrEmpty(searchString))
             {
-                products = products.Where(s => s.WCode.Contains(searchString) || s.CCode.Contains(searchString) || s.C1Code.Contains(searchString) || s.BCode.Contains(searchString) || s.C2Code.Contains(searchString));
+                products = products.Where(s => s.WarehouseCode.Contains(searchString) || s.PlatingCode.Contains(searchString));
                 //products = products.Where(s => s.TargetType!.Contains(searchString));
             }
             if (_context.Target != null)
