@@ -25,14 +25,15 @@ namespace APIHotProducts.Models
                 context.Target.AddRange(
                     new Target
                     {
-                        TargetType = "CS-30/IBA",
-                        Status = "Warehouse",
+                        TargetType = "CS-30(Flat)",
+                        Status = "Processing",
                         WarehouseDate = DateTime.Now,
                         WarehouseName = "John Doe",
                         WarehouseCode = "G00027",
                         WarehouseLotNum = 12356,
                         CyclotronDate = DateTime.Now,
                         CyclotronName = "John Doe",
+                        Quantity = 12,
                         PlatingDate = DateTime.Now,
                         PlatingName = "John Doe",
                         PlatingCode = "G00010",
@@ -42,19 +43,21 @@ namespace APIHotProducts.Models
                         BombardingDate = DateTime.Now,
                         BombardingName = "John Doe",
                         ProcessingDate = DateTime.Now,
-                        ProcessingName = "John Doe"
+                        ProcessingName = "John Doe",
+                        ProcessingLotNum = "02-IBA"
                     },
 
                     new Target
                     {
-                        TargetType = "CS-30/IBA",
-                        Status = "Warehouse",
+                        TargetType = "CS-30(Flat)",
+                        Status = "Processing",
                         WarehouseDate = DateTime.Now,
                         WarehouseName = "John Doe",
                         WarehouseCode = "G00014",
                         WarehouseLotNum = 12356,
                         CyclotronDate = DateTime.Now,
                         CyclotronName = "John Doe",
+                        Quantity = 10,
                         PlatingDate = DateTime.Now,
                         PlatingName = "John Doe",
                         PlatingCode = "G00007",
@@ -65,6 +68,7 @@ namespace APIHotProducts.Models
                         BombardingName = "John Doe",
                         ProcessingDate = DateTime.Now,
                         ProcessingName = "John Doe",
+                        ProcessingLotNum = "01-CS-30"
                     }
                 );
                 context.SaveChanges();

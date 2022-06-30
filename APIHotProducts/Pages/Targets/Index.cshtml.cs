@@ -33,7 +33,7 @@ namespace APIHotProducts.Pages.Targets
         public string PCodeSort { get; set; }
         public string WLotNumSort { get; set; }
         public string PLotNumSort { get; set; }
-        public string DateSort { get; set; }
+        public string ProcessLotNumSort { get; set; }
         public IList<Target> Target { get;set; } = default!;
 
         [BindProperty(SupportsGet = true)]
@@ -49,7 +49,7 @@ namespace APIHotProducts.Pages.Targets
             PCodeSort = String.IsNullOrEmpty(sortOrder) ? "platingcode_desc" : "";
             WLotNumSort = String.IsNullOrEmpty(sortOrder) ? "warehouselotnum_desc" : "";
             PLotNumSort = String.IsNullOrEmpty(sortOrder) ? "platinglotnum_desc" : "";
-            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            ProcessLotNumSort = String.IsNullOrEmpty(sortOrder) ? "processlotnum_desc" : "";
 
             searchString = SearchString;
 
@@ -89,8 +89,8 @@ namespace APIHotProducts.Pages.Targets
                 case "platinglotnum_desc":
                     targetIQ = targetIQ.OrderByDescending(s => s.PlatingLotNum);
                     break;
-                case "Date":
-                    targetIQ = targetIQ.OrderBy(s => s.WarehouseDate);
+                case "processlotnum_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.ProcessingLotNum);
                     break;
                 default:
                     targetIQ = targetIQ.OrderBy(s => s.Status);

@@ -2,7 +2,7 @@
 @model APIHotProducts.Pages.Targets.EditModel
 
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = "Update Information";
 }
 
 <h1 class="text-center" style="margin-top: 30px !important;">Update Target Information</h1>
@@ -36,16 +36,13 @@
             @* Warehouse Data Fields *@
             <div id="Warehouse" style="display:none; margin: 20px !important;">
                 <hr>
-                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;" >Edit Target in Warehouse information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;" >Edit Target in Warehouse:</h3>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.TargetType" class="control-label"></label>
                     <select style="margin-bottom: 10px !important;" asp-for="Target.TargetType" class="form-control" id="product">
-                        <option value="CS-30/IBA">CS-30/IBA</option>
+                        <option value="CS-30(Curve)">CS-30(Curve)</option>
                         <option value="CS-30(Flat)">CS-30(Flat)</option>
-                        <option value="01-CS-30">01-CS-30</option>
-                        <option value="02-IBA">02-IBA</option>
-                        <option value="03-TR-30">03-TR-30</option>
-                        <option value="TR-30">TR-30</option>
+                        <option value="CS-30">CS-30</option>
                         <option value="IBA">IBA</option>
                     </select>
                 </div>
@@ -73,7 +70,13 @@
             @* Cyclotron Spares Data Fields *@
             <div id="CyclotronSpares" style="display:none; margin: 20px !important;">
                 <hr>
-                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Cyclotron Spares information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Cyclotron Spares:</h3>
+                <div class="form-group">
+                    <p><b>Code: </b>@Html.DisplayFor(model => model.Target.WarehouseCode)</p>
+                </div>
+                <div class="form-group">
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.Target.WarehouseLotNum)</p>
+                </div>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.CyclotronDate" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.CyclotronDate" class="form-control" />
@@ -84,11 +87,16 @@
                     <input style="margin-bottom: 10px !important;" asp-for="Target.CyclotronName" class="form-control" />
                     <span asp-validation-for="Target.CyclotronName" class="text-danger"></span>
                 </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="Target.Quantity" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.Quantity" class="form-control" />
+                    <span asp-validation-for="Target.Quantity" class="text-danger"></span>
+                </div>
             </div>
             @* Chemistry:Plating Data Fields *@
             <div id="Chemistry1" style="display:none; margin: 20px !important;">
                 <hr>
-                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Chemistry Lab1 information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Plating:</h3>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.PlatingDate" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.PlatingDate" class="form-control" />
@@ -127,8 +135,14 @@
             </div>
              @* Cyclotron Bombarding Data Fields *@
              <div id="Bombarding" style="display:none; margin: 20px !important;">
-                 <hr>
+                <hr>
                 <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Bombarding information:</h3>
+                <div class="form-group" style="margin: 10px 0 10px 0 !important;">
+                    <p><b>Product Name: </b>@Html.DisplayFor(model => model.Target.ProductName)</p>
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.Target.PlatingLotNum)</p>
+                    <p><b>Code: </b>@Html.DisplayFor(model => model.Target.PlatingCode)</p>
+                    <p><b>Target Number: </b>@Html.DisplayFor(model => model.Target.TargetNum)</p>
+                </div>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.BombardingDate" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.BombardingDate" class="form-control" />
@@ -143,7 +157,13 @@
             @* Chemistry: Processing Data Fields *@
             <div id="Chemistry2" style="display:none; margin: 20px !important;">
                 <hr>
-                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Chemistry Lab2 information:</h3>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Processing:</h3>
+                <div class="form-group" style="margin: 10px 0 10px 0 !important;">
+                    <p><b>Product Name: </b>@Html.DisplayFor(model => model.Target.ProductName)</p>
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.Target.PlatingLotNum)</p>
+                    <p><b>Code: </b>@Html.DisplayFor(model => model.Target.PlatingCode)</p>
+                    <p><b>Target Number: </b>@Html.DisplayFor(model => model.Target.TargetNum)</p>
+                </div>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.ProcessingDate" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.ProcessingDate" class="form-control" />
@@ -153,6 +173,11 @@
                     <label style="margin-top: 10px !important;" asp-for="Target.ProcessingName" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.ProcessingName" class="form-control" />
                     <span asp-validation-for="Target.ProcessingName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="Target.ProcessingLotNum" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="Target.ProcessingLotNum" class="form-control" />
+                    <span asp-validation-for="Target.ProcessingLotNum" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group text-center" style="margin: 40px !important;" >

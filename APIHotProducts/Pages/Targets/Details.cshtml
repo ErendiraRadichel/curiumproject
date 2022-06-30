@@ -16,43 +16,65 @@
                         <div id="content">
                             <ul class="timeline">
                                 <li class="event" data-date="@Html.DisplayFor(model => model.Target.WarehouseDate)" id="time-warehouse">
-                                    <h4>Target in Warehouse:</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.TargetType)</h5>
+                                    <h4><b><i>Target in Warehouse:</i></b></h4>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.TargetType):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.TargetType)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseName)</h5>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseName):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.WarehouseName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseCode)</h5>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseCode):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.WarehouseCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseLotNum)</h5>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseLotNum):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.WarehouseLotNum)</p>
                                 </li>
                                 <li class="event displaytime" data-date="@Html.DisplayFor(model => model.Target.CyclotronDate)" id="time-cyclotron">
-                                    <h4>Target in Cyclotron Spares:</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.CyclotronName)</h5>
+                                    <h4><b><i>Target in Cyclotron Spares:</i></b></h4>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.CyclotronName):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.CyclotronName)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseCode):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.WarehouseCode)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.WarehouseLotNum):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.WarehouseLotNum)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.Quantity):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.Quantity)</p>
                                 </li>
                                 <li class="event displaytime" data-date="@Html.DisplayFor(model => model.Target.PlatingDate)" id="time-plating">
-                                    <h4>Target in Chemistry: Plating</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingName)</h5>
+                                    <h4><b><i>Target in Lab: Plating</i></b></h4>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingName):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.PlatingName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingCode)</h5>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingCode):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.PlatingCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingLotNum)</h5>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingLotNum):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.PlatingLotNum)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.ProductName)</h5>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.ProductName):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.ProductName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.TargetNum)</h5>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.TargetNum):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.TargetNum)</p>
                                 </li>
                                 <li class="event displaytime" data-date="@Html.DisplayFor(model => model.Target.BombardingDate)" id="time-bombarding">
-                                    <h4>Target in Bombarding:</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.BombardingName)</h5>
+                                    <h4><b><i>Target in Bombarding:</i></b></h4>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.BombardingName):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.BombardingName)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingCode):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.PlatingCode)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingLotNum):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.PlatingLotNum)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.ProductName):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.ProductName)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.TargetNum):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.TargetNum)</p>
                                 </li>
                                 <li class="event displaytime" data-date="@Html.DisplayFor(model => model.Target.ProcessingDate)" id="time-processing">
-                                    <h4>Target in Chemistry: Processing</h4>
-                                    <h5>@Html.DisplayNameFor(model => model.Target.ProcessingName)</h5>
+                                    <h4><b><i>Target in Lab: Processing</i></b></h4>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.ProcessingName):</h5>
                                     <p>@Html.DisplayFor(model => model.Target.ProcessingName)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.PlatingCode):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.PlatingCode)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.ProductName):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.ProductName)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.TargetNum):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.TargetNum)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.Target.ProcessingLotNum):</h5>
+                                    <p>@Html.DisplayFor(model => model.Target.ProcessingLotNum)</p>
                                 </li>
                             </ul>
                         </div>

@@ -13,123 +13,131 @@
     <p class="card-text">Deleting elements are irreversible!</p>
   </div>
 </div>
-
 <div style="margin: 30px !important;">
-    <h4>Target</h4>
+    <h4>Target Information:</h4>
     <hr />
+    <div style="margin: 10px 0 10px 0 !important;">
+        <h2>Current Target Status: @Html.DisplayFor(model => model.Target.Status)</h2>
+    </div>
     <dl class="row">
+        <dt style="margin-top: 10px !important; font-size: larger !important"><i><b>Warehouse:</b></i></dt>
         <dt class="col-sm-2">
-            <b>@Html.DisplayNameFor(model => model.Target.Status)</b>
-        </dt>
-        <dd class="col-sm-10">
-            <b>@Html.DisplayFor(model => model.Target.Status)</b>
-        </dd>
-        <dt style="margin-top: 40px !important; font-size: larger !important"><i><b>Warehouse:</b></i></dt>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.TargetType)
+            @Html.DisplayNameFor(model => model.Target.TargetType):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.TargetType)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.WarehouseDate)
+            @Html.DisplayNameFor(model => model.Target.WarehouseDate):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.WarehouseDate)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.WarehouseName)
+            @Html.DisplayNameFor(model => model.Target.WarehouseName):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.WarehouseName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.WarehouseCode)
+            @Html.DisplayNameFor(model => model.Target.WarehouseCode):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.WarehouseCode)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.WarehouseLotNum)
+            @Html.DisplayNameFor(model => model.Target.WarehouseLotNum):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.WarehouseLotNum)
         </dd>
         <dt style="margin-top: 40px !important; font-size: larger !important"><i><b>Cyclotron Spares:</b></i></dt>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.CyclotronDate)
+            @Html.DisplayNameFor(model => model.Target.CyclotronDate):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.CyclotronDate)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.CyclotronName)
+            @Html.DisplayNameFor(model => model.Target.CyclotronName):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.CyclotronName)
         </dd>
-        <dt style="margin-top: 40px !important; font-size: larger !important"><i><b>Chemistry: Plating</b></i></dt>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.PlatingDate)
+            @Html.DisplayNameFor(model => model.Target.Quantity):
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Target.Quantity)
+        </dd>
+        <dt style="margin-top: 40px !important; font-size: larger !important"><i><b>Plating:</b></i></dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Target.PlatingDate):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.PlatingDate)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.PlatingName)
+            @Html.DisplayNameFor(model => model.Target.PlatingName):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.PlatingName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.PlatingCode)
+            @Html.DisplayNameFor(model => model.Target.PlatingCode):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.PlatingCode)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.PlatingLotNum)
+            @Html.DisplayNameFor(model => model.Target.PlatingLotNum):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.PlatingLotNum)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.ProductName)
+            @Html.DisplayNameFor(model => model.Target.ProductName):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.ProductName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.TargetNum)
+            @Html.DisplayNameFor(model => model.Target.TargetNum):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.TargetNum)
         </dd>
         <dt style="margin-top: 40px !important; font-size: larger !important"><i><b>Bombarding:</b></i></dt>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.BombardingDate)
+            @Html.DisplayNameFor(model => model.Target.BombardingDate):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.BombardingDate)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.BombardingName)
+            @Html.DisplayNameFor(model => model.Target.BombardingName):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.BombardingName)
         </dd>
-        <dt style="margin-top: 40px !important; font-size: larger !important"><i><b>Chemistry: Processing</b></i></dt>
+        <dt style="margin-top: 40px !important; font-size: larger !important"><i><b>Processing:</b></i></dt>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.ProcessingDate)
+            @Html.DisplayNameFor(model => model.Target.ProcessingDate):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.ProcessingDate)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Target.ProcessingName)
+            @Html.DisplayNameFor(model => model.Target.ProcessingName):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Target.ProcessingName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Target.ProcessingLotNum):
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Target.ProcessingLotNum)
         </dd>
     </dl>
     <form method="post" style="margin: 40px !important;">

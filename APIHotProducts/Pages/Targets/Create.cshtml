@@ -2,34 +2,25 @@
 @model APIHotProducts.Pages.Targets.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create New Target";
 }
 
-<h1 class="text-center" style="margin-top: 50px !important;">Create Target</h1>
+<h1 class="text-center" style="margin-top: 50px !important;">Create New Target</h1>
 <div class="row justify-content-center" style="margin: 40px !important;">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Target.Status" class="control-label"></label>
-                <select asp-for="Target.Status" class="form-control" id="status">
-                    <option value="Warehouse">Warehouse</option>
-                    <option value="Cyclotron Spares">Cyclotron</option>
-                    <option value="Chemistry Lab 1">Chemistry Lab 1</option>
-                    <option value="Bombarding">Bombarding</option>
-                    <option value="Chemistry Lab 2">Chemistry Lab 2</option>
-                </select>
+                <input style="margin-bottom: 10px !important;" asp-for="Target.Status" value="Warehouse" class="form-control" readonly/>
             </div>
             @* Warehouse Data Fields *@
             <div class="form-group">
                 <label style="margin-top: 20px !important;" asp-for="Target.TargetType" class="control-label"></label>
                 <select asp-for="Target.TargetType" class="form-control" id="product">
-                    <option value="CS-30/IBA">CS-30/IBA</option>
+                    <option value="CS-30(Curve)">CS-30(Curve)</option>
                     <option value="CS-30(Flat)">CS-30(Flat)</option>
-                    <option value="01-CS-30">01-CS-30</option>
-                    <option value="02-IBA">02-IBA</option>
-                    <option value="03-TR-30">03-TR-30</option>
-                    <option value="TR-30">TR-30</option>
+                    <option value="CS-30">CS-30</option>
                     <option value="IBA">IBA</option>
                 </select>
             </div>
@@ -52,51 +43,7 @@
                 <label style="margin-top: 10px !important;" asp-for="Target.WarehouseLotNum" class="control-label"></label>
                 <input style="margin-bottom: 10px !important;" asp-for="Target.WarehouseLotNum" class="form-control" />
                 <span asp-validation-for="Target.WarehouseLotNum" class="text-danger"></span>
-            </div>
-            @* Cyclotron Spares Data Fields *@
-            <div class="d-none">
-                <div class="form-group">
-                    <label asp-for="Target.CyclotronName" class="control-label"></label>
-                    <input asp-for="Target.CyclotronName" class="form-control" value="N/A"/>
-                </div>
-            </div>
-            @* Chemistry: Plating Data Fields *@
-            <div class="d-none">
-                <div class="form-group">
-                    <label asp-for="Target.PlatingName" class="control-label"></label>
-                    <input asp-for="Target.PlatingName" class="form-control" value="N/A"/>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.PlatingCode" class="control-label"></label>
-                    <input asp-for="Target.PlatingCode" class="form-control" value="N/A"/>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.PlatingLotNum" class="control-label"></label>
-                    <input asp-for="Target.PlatingLotNum" class="form-control" value=000/>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.ProductName" class="control-label"></label>
-                    <input asp-for="Target.ProductName" class="form-control" value="N/A"/>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Target.TargetNum" class="control-label"></label>
-                    <input asp-for="Target.TargetNum" class="form-control" value=000/>
-                </div>
-            </div>
-             @* Cyclotron Bombarding Data Fields *@
-            <div class="d-none">
-                <div class="form-group">
-                    <label asp-for="Target.BombardingName" class="control-label"></label>
-                    <input asp-for="Target.BombardingName" class="form-control" value="N/A"/>
-                </div>
-            </div>
-             @* Chemistry Lab 2 Data Fields *@
-             <div class="d-none">
-                <div class="form-group">
-                    <label asp-for="Target.ProcessingName" class="control-label"></label>
-                    <input asp-for="Target.ProcessingName" class="form-control" value="N/A"/>
-                </div>
-             </div>
+            </div>    
             <div class="form-group text-center" style="margin: 30px !important;">
                 <input type="submit" value="Create" class="btn btn-primary col-sm-10" />
             </div>

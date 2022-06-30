@@ -2,6 +2,7 @@
 
 namespace APIHotProducts.Models
 {
+#pragma warning disable CS8632
     public class Target
     {
         // Primary Key, unique
@@ -9,10 +10,10 @@ namespace APIHotProducts.Models
         public string Status { get; set; } = string.Empty;
 
         // Warehouse Columns
+        [Display(Name = "Target Type")]
         public string TargetType { get; set; } = string.Empty;
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy H:mm tt}")]
         [Display(Name = "Creation Date")]
         public DateTime WarehouseDate { get; set; }
 
@@ -26,52 +27,53 @@ namespace APIHotProducts.Models
         public int WarehouseLotNum { get; set; }
 
         // Cyclotron Spares Columns
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy H:mm tt}")]
         [Display(Name = "Date")]
-        public DateTime CyclotronDate { get; set; } = DateTime.Today;
+        public DateTime? CyclotronDate { get; set; }
 
         [Display(Name = "Name")]
-        public string CyclotronName { get; set; } = string.Empty;
+        public string? CyclotronName { get; set; } = string.Empty;
+
+        public int? Quantity { get; set; }
 
         // Chemistry: Plating
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy H:mm tt}")]
         [Display(Name = "Date")]
-        public DateTime PlatingDate { get; set; } = DateTime.Today;
+        public DateTime? PlatingDate { get; set; }
 
         [Display(Name = "Name")]
-        public string PlatingName { get; set; } = string.Empty;
+        public string? PlatingName { get; set; } = string.Empty;
 
         [Display(Name = "Code")]
-        public string PlatingCode { get; set; } = string.Empty;
+        public string? PlatingCode { get; set; } = string.Empty;
 
         [Display(Name = "Lot Number")]
-        public int PlatingLotNum { get; set; }
+        public int? PlatingLotNum { get; set; }
 
         [Display(Name = "Product Name")]
-        public string ProductName { get; set; } = string.Empty;
+        public string? ProductName { get; set; } = string.Empty;
 
         [Display(Name = "Target Number")]
-        public int TargetNum { get; set; }
+        public int? TargetNum { get; set; }
 
         //Cyclotron: Bombarding
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy H:mm tt}")]
         [Display(Name = "Date")]
-        public DateTime BombardingDate { get; set; } = DateTime.Today;
+        public DateTime? BombardingDate { get; set; }
 
         [Display(Name = "Name")]
-        public string BombardingName { get; set; } = string.Empty;
+        public string? BombardingName { get; set; } = string.Empty;
 
         //Chemistry: Processing
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy H:mm tt}")]
         [Display(Name = "Date")]
-        public DateTime ProcessingDate { get; set; } = DateTime.Today;
+        public DateTime? ProcessingDate { get; set; }
 
         [Display(Name = "Name")]
-        public string ProcessingName { get; set; } = string.Empty;
-        
+        public string? ProcessingName { get; set; } = string.Empty;
+
+        [Display(Name = "Processing Lot Number")]
+        public string? ProcessingLotNum { get; set; } = string.Empty;
     }
+#pragma warning restore CS8632
 }

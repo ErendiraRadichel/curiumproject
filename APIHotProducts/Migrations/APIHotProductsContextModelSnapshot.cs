@@ -30,13 +30,13 @@ namespace APIHotProducts.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<DateTime>("BombardingDate")
+                    b.Property<DateTime?>("BombardingDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("BombardingName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CyclotronDate")
+                    b.Property<DateTime?>("CyclotronDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CyclotronName")
@@ -45,17 +45,20 @@ namespace APIHotProducts.Migrations
                     b.Property<string>("PlatingCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PlatingDate")
+                    b.Property<DateTime?>("PlatingDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PlatingLotNum")
+                    b.Property<int?>("PlatingLotNum")
                         .HasColumnType("int");
 
                     b.Property<string>("PlatingName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ProcessingDate")
+                    b.Property<DateTime?>("ProcessingDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ProcessingLotNum")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProcessingName")
                         .HasColumnType("nvarchar(max)");
@@ -63,10 +66,13 @@ namespace APIHotProducts.Migrations
                     b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TargetNum")
+                    b.Property<int?>("TargetNum")
                         .HasColumnType("int");
 
                     b.Property<string>("TargetType")
