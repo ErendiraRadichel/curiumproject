@@ -42,7 +42,7 @@
                     <select style="margin-bottom: 10px !important;" asp-for="Target.TargetType" class="form-control" id="product">
                         <option value="CS-30(Curve)">CS-30(Curve)</option>
                         <option value="CS-30(Flat)">CS-30(Flat)</option>
-                        <option value="CS-30">CS-30</option>
+                        <option value="TR-30">TR-30</option>
                         <option value="IBA">IBA</option>
                     </select>
                 </div>
@@ -58,8 +58,13 @@
                 </div>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.WarehouseCode" class="control-label"></label>
-                    <input style="margin-bottom: 10px !important;" asp-for="Target.WarehouseCode" class="form-control" />
-                    <span asp-validation-for="Target.WarehouseCode" class="text-danger"></span>
+                    <select asp-for="Target.WarehouseCode" class="form-control" id="WCode" style="margin-bottom: 10px !important;">
+                        <option value="Curve-J54701">CS-30-Curve-J54701</option>
+                        <option value="Flat-G000271">CS-30-Flat-6000271</option>
+                        <option value="Face-J86005">TR-Face-J86005</option>
+                        <option value="Body-J86004">TR-Body-J86004</option>
+                        <option value="J54600">IBA-J54600</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.WarehouseLotNum" class="control-label"></label>
