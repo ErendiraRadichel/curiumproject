@@ -60,9 +60,10 @@ namespace APIHotProducts.Pages.Targets
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                targetIQ = targetIQ.Where(s => s.WarehouseCode.Contains(searchString) || s.PlatingCode.Contains(searchString));
-                //targetIQ = targetIQ.Where(s => s.TargetType.Contains(SearchString));
+                targetIQ = targetIQ.Where(s => s.WarehouseCode.Contains(searchString) || s.PlatingCode.Contains(searchString) || s.Status.Contains(searchString) || s.TargetType.Contains(searchString) ||
+                s.ProductName.Contains(searchString) || s.ProcessingLotNum.Contains(searchString) || s.TargetNum.Contains(searchString) || s.WarehouseLotNum.Contains(searchString) || s.PlatingLotNum.Contains(searchString));
             }
+
             switch (sortOrder) 
             {
                 case "status_desc":
@@ -101,8 +102,8 @@ namespace APIHotProducts.Pages.Targets
                            select m;
             if (!string.IsNullOrEmpty(searchString))
             {
-                products = products.Where(s => s.WarehouseCode.Contains(searchString) || s.PlatingCode.Contains(searchString));
-                //products = products.Where(s => s.TargetType!.Contains(searchString));
+                products = products.Where(s => s.WarehouseCode.Contains(searchString) || s.PlatingCode.Contains(searchString) || s.Status.Contains(searchString) || s.TargetType.Contains(searchString) ||
+                s.ProductName.Contains(searchString) || s.ProcessingLotNum.Contains(searchString) || s.TargetNum.Contains(searchString) || s.WarehouseLotNum.Contains(searchString) || s.PlatingLotNum.Contains(searchString));
             }
             if (_context.Target != null)
             {

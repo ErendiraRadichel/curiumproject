@@ -24,7 +24,7 @@ namespace APIHotProducts.Models
         public string WarehouseCode { get; set; } = string.Empty;
 
         [Display(Name = "Lot Number")]
-        public int WarehouseLotNum { get; set; }
+        public string WarehouseLotNum { get; set; } = string.Empty;
 
         // Cyclotron Spares Columns
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy H:mm tt}")]
@@ -34,7 +34,7 @@ namespace APIHotProducts.Models
         [Display(Name = "Name")]
         public string? CyclotronName { get; set; } = string.Empty;
 
-        public int? Quantity { get; set; }
+        public string? Quantity { get; set; } = string.Empty;
 
         // Chemistry: Plating
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy H:mm tt}")]
@@ -48,13 +48,13 @@ namespace APIHotProducts.Models
         public string? PlatingCode { get; set; } = string.Empty;
 
         [Display(Name = "Lot Number")]
-        public int? PlatingLotNum { get; set; }
+        public string? PlatingLotNum { get; set; } = string.Empty;
 
         [Display(Name = "Product Name")]
         public string? ProductName { get; set; } = string.Empty;
 
         [Display(Name = "Target Number")]
-        public int? TargetNum { get; set; }
+        public string? TargetNum { get; set; } = string.Empty;
 
         //Cyclotron: Bombarding
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy H:mm tt}")]

@@ -48,8 +48,8 @@ namespace APIHotProducts.Migrations
                     b.Property<DateTime?>("PlatingDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("PlatingLotNum")
-                        .HasColumnType("int");
+                    b.Property<string>("PlatingLotNum")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PlatingName")
                         .HasColumnType("nvarchar(max)");
@@ -66,14 +66,14 @@ namespace APIHotProducts.Migrations
                     b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Quantity")
-                        .HasColumnType("int");
+                    b.Property<string>("Quantity")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TargetNum")
-                        .HasColumnType("int");
+                    b.Property<string>("TargetNum")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TargetType")
                         .HasColumnType("nvarchar(max)");
@@ -84,8 +84,8 @@ namespace APIHotProducts.Migrations
                     b.Property<DateTime>("WarehouseDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("WarehouseLotNum")
-                        .HasColumnType("int");
+                    b.Property<string>("WarehouseLotNum")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WarehouseName")
                         .HasColumnType("nvarchar(max)");
