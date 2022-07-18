@@ -36,6 +36,9 @@ namespace APIHotProducts.Migrations
                     b.Property<string>("BombardingName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CyclotronCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("CyclotronDate")
                         .HasColumnType("datetime2");
 

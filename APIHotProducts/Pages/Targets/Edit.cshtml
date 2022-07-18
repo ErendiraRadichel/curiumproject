@@ -61,9 +61,13 @@
                     <select asp-for="Target.WarehouseCode" class="form-control" id="WCode" style="margin-bottom: 10px !important;">
                         <option value="Curve-J54701">CS-30-Curve-J54701</option>
                         <option value="Flat-G000271">CS-30-Flat-6000271</option>
-                        <option value="Face-J86005">TR-Face-J86005</option>
-                        <option value="Body-J86004">TR-Body-J86004</option>
+                        <option value="J86005 & J86004">TR Face-J86005 & Body-J86004</option>
+                        <option value="H67600 & J86004">TR Face-H67600 & Body-J86004</option>
+                        <option value="H97600 & J86004">TR Face-H97600 & Body-J86004</option>
+                        <option value="H97601 & J86004">TR Face-H97601 & Body-J86004</option>
                         <option value="J54600">IBA-J54600</option>
+                        <option value="H38300">IBA-H38300</option>
+                        <option value="H98300">IBA-H98300</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -77,9 +81,6 @@
                 <hr>
                 <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Cyclotron Spares:</h3>
                 <div class="form-group">
-                    <p><b>Code: </b>@Html.DisplayFor(model => model.Target.WarehouseCode)</p>
-                </div>
-                <div class="form-group">
                     <p><b>Lot Number: </b>@Html.DisplayFor(model => model.Target.WarehouseLotNum)</p>
                 </div>
                 <div class="form-group">
@@ -91,6 +92,18 @@
                     <label style="margin-top: 10px !important;" asp-for="Target.CyclotronName" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.CyclotronName" class="form-control" />
                     <span asp-validation-for="Target.CyclotronName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="Target.CyclotronCode" class="control-label"></label>
+                    <select asp-for="Target.CyclotronCode" class="form-control" id="WCode" style="margin-bottom: 10px !important;">
+                        <option value="Curve-J54701">CS-30 Curve-J54701</option>
+                        <option value="Gold-G00010">CS-30 Gold-600010</option>
+                        <option value="J86003">TR-J86003</option>
+                        <option value="S67500 & J86004">Face-S67500 & Body-J86004</option>
+                        <option value="S97500 & J86004">Face-S97500 & Body-J86004</option>
+                        <option value="S97501 & J86004">Face 0.25-S97501 & Body-J86004</option>
+                        <option value="J54600">IBA-J54600</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.Quantity" class="control-label"></label>
@@ -113,11 +126,6 @@
                     <span asp-validation-for="Target.PlatingName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label style="margin-top: 10px !important;" asp-for="Target.PlatingCode" class="control-label"></label>
-                    <input style="margin-bottom: 10px !important;" asp-for="Target.PlatingCode" class="form-control" />
-                    <span asp-validation-for="Target.PlatingCode" class="text-danger"></span>
-                </div>
-                <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.PlatingLotNum" class="control-label"></label>
                     <input style="margin-bottom: 10px !important;" asp-for="Target.PlatingLotNum" class="form-control" />
                     <span asp-validation-for="Target.PlatingLotNum" class="text-danger"></span>
@@ -125,11 +133,28 @@
                 <div class="form-group">
                     <label style="margin-top: 10px !important;" asp-for="Target.ProductName" class="control-label"></label>
                     <select style="margin-bottom: 10px !important;" asp-for="Target.ProductName" class="form-control" id="product">
-                        <option value="Ga-67">Ga-67</option>
                         <option value="In-111">In-111</option>
-                        <option value="Pb-201">Pb-201</option>
-                        <option value="Ge-68">Ge-68</option>
+                        <option value="Ga-67">Ga-67</option>
                         <option value="Cu-64">Cu-64</option>
+                        <option value="Pb-201">Pb-201</option>
+                        <option value="Ge-68 61/39">Ge-68 61/39</option>
+                        <option value="Ge-68 75/25">Ge-68 75/25</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="Target.PlatingCode" class="control-label"></label>
+                    <select style="margin-bottom: 10px !important;" asp-for="Target.PlatingCode" class="form-control" id="product">
+                        <option value="CS-30 S790">CS-30-Curved S790</option>
+                        <option value="CS-30 S732">CS-30-Curved S732</option>
+                        <option value="CS-30 S217">CS-30-Flat S217</option>
+                        <option value="TR-30 S730">TR-30 S730</option>
+                        <option value="TR-30 S67600">TR-30 S67600</option>
+                        <option value="TR-30 S97600">TR-30 S97600</option>
+                        <option value="TR-30 S97601">TR-30 S97601</option>
+                        <option value="IBA S790">IBA S790</option>
+                        <option value="IBA S732">IBA S732</option>
+                        <option value="IBA S38300">IBA S38300</option>
+                        <option value="IBA S98300">IBA S98300</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -165,8 +190,8 @@
                 <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Processing:</h3>
                 <div class="form-group" style="margin: 10px 0 10px 0 !important;">
                     <p><b>Product Name: </b>@Html.DisplayFor(model => model.Target.ProductName)</p>
-                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.Target.PlatingLotNum)</p>
                     <p><b>Code: </b>@Html.DisplayFor(model => model.Target.PlatingCode)</p>
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.Target.PlatingLotNum)</p>
                     <p><b>Target Number: </b>@Html.DisplayFor(model => model.Target.TargetNum)</p>
                 </div>
                 <div class="form-group">

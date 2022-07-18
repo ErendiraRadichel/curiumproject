@@ -45,6 +45,9 @@
                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WCodeSort">Warehouse Code</a>
             </th>
             <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WCodeSort">Cyclotron Code</a>
+            </th>
+            <th>
                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.PCodeSort">Plating Code</a>
             </th>
             <th>
@@ -56,6 +59,9 @@
             <th>
                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.ProcessLotNumSort">Processing Lot Number</a>
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Target[0].Quantity)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -63,7 +69,7 @@
 @foreach (var item in Model.Target) {
         <tr class="table-active">
             <td>
-                @Html.DisplayFor(modelItem => item.Status)<br>
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TargetType)
@@ -75,19 +81,25 @@
                 @Html.DisplayFor(modelItem => item.TargetNum)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WarehouseCode)<br>
+                @Html.DisplayFor(modelItem => item.WarehouseCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PlatingCode)<br>
+                @Html.DisplayFor(modelItem => item.CyclotronCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WarehouseLotNum)<br>
+                @Html.DisplayFor(modelItem => item.PlatingCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PlatingLotNum)<br>
+                @Html.DisplayFor(modelItem => item.WarehouseLotNum)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProcessingLotNum)<br>
+                @Html.DisplayFor(modelItem => item.PlatingLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessingLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             <td>
                 <a class="badge rounded-pill bg-primary text-decoration-none" asp-page="./Edit" asp-route-id="@item.ID">Update</a>  |

@@ -30,6 +30,7 @@ namespace APIHotProducts.Pages.Targets
         public string ProductSort { get; set; }
         public string TargetNumSort { get; set; }
         public string WCodeSort { get; set; }
+        public string CCodeSort { get; set; }
         public string PCodeSort { get; set; }
         public string WLotNumSort { get; set; }
         public string PLotNumSort { get; set; }
@@ -46,6 +47,7 @@ namespace APIHotProducts.Pages.Targets
             ProductSort = String.IsNullOrEmpty(sortOrder) ? "productname_desc" : "";
             TargetNumSort = String.IsNullOrEmpty(sortOrder) ? "targetnum_desc" : "";
             WCodeSort = String.IsNullOrEmpty(sortOrder) ? "warehousecode_desc" : "";
+            CCodeSort = String.IsNullOrEmpty(sortOrder) ? "cyclocode_desc" : "";
             PCodeSort = String.IsNullOrEmpty(sortOrder) ? "platingcode_desc" : "";
             WLotNumSort = String.IsNullOrEmpty(sortOrder) ? "warehouselotnum_desc" : "";
             PLotNumSort = String.IsNullOrEmpty(sortOrder) ? "platinglotnum_desc" : "";
@@ -61,7 +63,8 @@ namespace APIHotProducts.Pages.Targets
             if (!string.IsNullOrEmpty(SearchString))
             {
                 targetIQ = targetIQ.Where(s => s.WarehouseCode.Contains(searchString) || s.PlatingCode.Contains(searchString) || s.Status.Contains(searchString) || s.TargetType.Contains(searchString) ||
-                s.ProductName.Contains(searchString) || s.ProcessingLotNum.Contains(searchString) || s.TargetNum.Contains(searchString) || s.WarehouseLotNum.Contains(searchString) || s.PlatingLotNum.Contains(searchString));
+                s.ProductName.Contains(searchString) || s.ProcessingLotNum.Contains(searchString) || s.TargetNum.Contains(searchString) || s.WarehouseLotNum.Contains(searchString) || 
+                s.PlatingLotNum.Contains(searchString) || s.CyclotronCode.Contains(searchString));
             }
 
             switch (sortOrder) 
@@ -80,6 +83,9 @@ namespace APIHotProducts.Pages.Targets
                     break;
                 case "warehousecode_desc":
                     targetIQ = targetIQ.OrderByDescending(s => s.WarehouseCode);
+                    break;
+                case "cyclocode_desc":
+                    targetIQ = targetIQ.OrderByDescending(s => s.CyclotronCode);
                     break;
                 case "platingcode_desc":
                     targetIQ = targetIQ.OrderByDescending(s => s.PlatingCode);
@@ -103,7 +109,8 @@ namespace APIHotProducts.Pages.Targets
             if (!string.IsNullOrEmpty(searchString))
             {
                 products = products.Where(s => s.WarehouseCode.Contains(searchString) || s.PlatingCode.Contains(searchString) || s.Status.Contains(searchString) || s.TargetType.Contains(searchString) ||
-                s.ProductName.Contains(searchString) || s.ProcessingLotNum.Contains(searchString) || s.TargetNum.Contains(searchString) || s.WarehouseLotNum.Contains(searchString) || s.PlatingLotNum.Contains(searchString));
+                s.ProductName.Contains(searchString) || s.ProcessingLotNum.Contains(searchString) || s.TargetNum.Contains(searchString) || s.WarehouseLotNum.Contains(searchString) || 
+                s.PlatingLotNum.Contains(searchString) || s.CyclotronCode.Contains(searchString));
             }
             if (_context.Target != null)
             {

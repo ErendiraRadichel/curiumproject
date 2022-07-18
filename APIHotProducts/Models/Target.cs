@@ -34,6 +34,9 @@ namespace APIHotProducts.Models
         [Display(Name = "Name")]
         public string? CyclotronName { get; set; } = string.Empty;
 
+        [Display(Name = "Code")]
+        public string? CyclotronCode { get; set; } = string.Empty;
+
         public string? Quantity { get; set; } = string.Empty;
 
         // Chemistry: Plating
@@ -50,7 +53,7 @@ namespace APIHotProducts.Models
         [Display(Name = "Lot Number")]
         public string? PlatingLotNum { get; set; } = string.Empty;
 
-        [Display(Name = "Product Name")]
+        [Display(Name = "Isotope")]
         public string? ProductName { get; set; } = string.Empty;
 
         [Display(Name = "Target Number")]
