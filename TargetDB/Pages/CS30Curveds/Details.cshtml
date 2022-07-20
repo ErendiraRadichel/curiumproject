@@ -1,0 +1,49 @@
+﻿@page
+@model TargetDB.Pages.CS30Curveds.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CS30Curved</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30Curved.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30Curved.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30Curved.WarehouseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30Curved.WarehouseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30Curved.WarehouseName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30Curved.WarehouseName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30Curved.WarehouseCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30Curved.WarehouseCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30Curved.WarehouseLotNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30Curved.WarehouseLotNum)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CS30Curved?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

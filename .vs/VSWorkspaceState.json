@@ -1,11 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\APIHotProducts",
-    "\\APIHotProducts\\Data",
-    "\\APIHotProducts\\Pages",
-    "\\APIHotProducts\\Pages\\Targets"
+    ""
   ],
-  "SelectedNode": "\\APIHotProducts\\Pages\\Targets\\Edit.cshtml",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,60 @@
+﻿@page
+@model TargetDB.Pages.CS30Curveds.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CS30Curved[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CS30Curved[0].WarehouseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CS30Curved[0].WarehouseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CS30Curved[0].WarehouseCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CS30Curved[0].WarehouseLotNum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CS30Curved) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarehouseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarehouseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarehouseCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarehouseLotNum)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
