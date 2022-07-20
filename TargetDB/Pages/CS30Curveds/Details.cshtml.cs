@@ -28,7 +28,11 @@ namespace TargetDB.Pages.CS30Curveds
                 return NotFound();
             }
 
-            var cs30curved = await _context.CS30Curveds.FirstOrDefaultAsync(m => m.ID == id);
+            var cs30curved = await _context.CS30Curveds
+                .Include(c => c.CS30CurvedTargets)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
+
             if (cs30curved == null)
             {
                 return NotFound();

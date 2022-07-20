@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\APIHotProducts",
+    "\\APIHotProducts\\Pages",
+    "\\APIHotProducts\\Pages\\Targets"
   ],
+  "SelectedNode": "\\APIHotProducts\\APIHotProducts.sln",
   "PreviewInSolutionExplorer": false
 }

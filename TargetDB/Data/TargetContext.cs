@@ -18,8 +18,8 @@ namespace TargetDB.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CS30Curved>().ToTable("CS30Curved");
-            modelBuilder.Entity<CS30CurvedTarget>().ToTable("CS30CurvedTarget");
+            modelBuilder.Entity<CS30Curved>().ToTable(nameof(CS30Curved));
+            modelBuilder.Entity<CS30CurvedTarget>().ToTable(nameof(CS30CurvedTarget));
         }
 
         //public DbSet<TargetDB.Models.CS30Curved> CS30Curved { get; set; } = default!;

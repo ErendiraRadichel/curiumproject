@@ -2,51 +2,47 @@
 @model TargetDB.Pages.CS30Curveds.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create New CS-30 Curved";
 }
 
-<h1>Create</h1>
-
-<h4>CS30Curved</h4>
-<hr />
-<div class="row">
+<h1 class="text-center" style="margin-top: 50px !important;">Create New CS-30 Curved Target</h1>
+<div class="row justify-content-center" style="margin: 40px !important;">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CS30Curved.Status" class="control-label"></label>
-                <input asp-for="CS30Curved.Status" class="form-control" />
-                <span asp-validation-for="CS30Curved.Status" class="text-danger"></span>
+                <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.Status" value="Warehouse" class="form-control" readonly/>
             </div>
+            @* Warehouse Data Fields *@
             <div class="form-group">
-                <label asp-for="CS30Curved.WarehouseDate" class="control-label"></label>
-                <input asp-for="CS30Curved.WarehouseDate" class="form-control" />
+                <label style="margin-top: 20px !important;" asp-for="CS30Curved.WarehouseDate" class="control-label"></label>
+                <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.WarehouseDate" class="form-control" />
                 <span asp-validation-for="CS30Curved.WarehouseDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CS30Curved.WarehouseName" class="control-label"></label>
-                <input asp-for="CS30Curved.WarehouseName" class="form-control" />
+                <label style="margin-top: 20px !important;" asp-for="CS30Curved.WarehouseName" class="control-label"></label>
+                <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.WarehouseName" class="form-control" />
                 <span asp-validation-for="CS30Curved.WarehouseName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CS30Curved.WarehouseCode" class="control-label"></label>
-                <input asp-for="CS30Curved.WarehouseCode" class="form-control" />
-                <span asp-validation-for="CS30Curved.WarehouseCode" class="text-danger"></span>
+                <label style="margin-top: 20px !important;" asp-for="CS30Curved.WarehouseCode" class="control-label"></label>
+                <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.WarehouseCode" class="form-control" value="J54701" readonly/>
             </div>
             <div class="form-group">
-                <label asp-for="CS30Curved.WarehouseLotNum" class="control-label"></label>
-                <input asp-for="CS30Curved.WarehouseLotNum" class="form-control" />
+                <label style="margin-top: 20px !important;" asp-for="CS30Curved.WarehouseLotNum" class="control-label"></label>
+                <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.WarehouseLotNum" class="form-control" />
                 <span asp-validation-for="CS30Curved.WarehouseLotNum" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-center" style="margin: 30px !important;">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
+<div class="text-center" style="margin-bottom: 40px !important;">
+    <a class="btn btn-outline-primary" asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

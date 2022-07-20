@@ -31,15 +31,20 @@ namespace TargetDB.Pages.CS30Curveds
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+            var emptyCS30 = new CS30Curved();
+
+            if (await TryUpdateModelAsync<CS30Curved>(
+                emptyCS30,
+                "cs30curved",   // Prefix for form value.
+                s => s.Status, s => s.WarehouseDate, s => s.WarehouseName, s => s.WarehouseCode, s => s.WarehouseLotNum, s => s.CyclotronDate, s => s.CyclotronName, s => s.Quantity,
+                s => s.PlatingDate, s => s.PlatingName, s => s.PlatingCode, s => s.PlatingLotNum, s => s.ProductName, s => s.TargetNum, s => s.BombardingDate, s => s.BombardingName,
+                s => s.ProcessingDate, s => s.ProcessingName, s => s.ProcessingLotNum))
             {
-                return Page();
+                _context.CS30Curveds.Add(emptyCS30);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
-
-            _context.CS30Curveds.Add(CS30Curved);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            return Page();
         }
     }
 }

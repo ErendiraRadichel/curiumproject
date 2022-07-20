@@ -1,0 +1,40 @@
+﻿@page
+@model TargetDB.Pages.CS30CurvedTargets.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CS30CurvedTarget</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30CurvedTarget.JigTest)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30CurvedTarget.JigTest)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30CurvedTarget.HNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30CurvedTarget.HNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30CurvedTarget.CS30Curved)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30CurvedTarget.CS30Curved.ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="CS30CurvedTarget.CurvedTestID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -41,6 +41,28 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CS30Curved.WarehouseLotNum)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30Curved.CS30CurvedTargets)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Jig Test</th>
+                    <th>H-Number</th>
+                </tr>
+                @foreach (var item in Model.CS30Curved.CS30CurvedTargets)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JigTest)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HNumber)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
     </dl>
 </div>
 <div>

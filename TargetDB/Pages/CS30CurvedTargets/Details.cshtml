@@ -1,0 +1,37 @@
+﻿@page
+@model TargetDB.Pages.CS30CurvedTargets.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CS30CurvedTarget</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30CurvedTarget.JigTest)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30CurvedTarget.JigTest)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30CurvedTarget.HNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30CurvedTarget.HNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CS30CurvedTarget.CS30Curved)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CS30CurvedTarget.CS30Curved.ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CS30CurvedTarget?.CurvedTestID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

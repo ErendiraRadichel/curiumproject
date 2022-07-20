@@ -30,43 +30,37 @@ namespace TargetDB.Pages.CS30Curveds
                 return NotFound();
             }
 
-            var cs30curved =  await _context.CS30Curveds.FirstOrDefaultAsync(m => m.ID == id);
-            if (cs30curved == null)
+            CS30Curved = await _context.CS30Curveds.FindAsync(id);
+
+            if (CS30Curved == null)
             {
                 return NotFound();
             }
-            CS30Curved = cs30curved;
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int id)
         {
-            if (!ModelState.IsValid)
+            var cs30ToUpdate = await _context.CS30Curveds.FindAsync(id);
+
+            if (cs30ToUpdate == null)
             {
-                return Page();
+                return NotFound();
             }
 
-            _context.Attach(CS30Curved).State = EntityState.Modified;
-
-            try
+            if (await TryUpdateModelAsync<CS30Curved>(
+                cs30ToUpdate,
+                "cs30curved",
+                s => s.Status, s => s.WarehouseDate, s => s.WarehouseName, s => s.WarehouseCode, s => s.WarehouseLotNum, s => s.CyclotronDate, s => s.CyclotronName, s => s.Quantity,
+                s => s.PlatingDate, s => s.PlatingName, s => s.PlatingCode, s => s.PlatingLotNum, s => s.ProductName, s => s.TargetNum, s => s.BombardingDate, s => s.BombardingName,
+                s => s.ProcessingDate, s => s.ProcessingName, s => s.ProcessingLotNum))
             {
                 await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CS30CurvedExists(CS30Curved.ID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return RedirectToPage("./Index");
+            return Page();
         }
 
         private bool CS30CurvedExists(int id)

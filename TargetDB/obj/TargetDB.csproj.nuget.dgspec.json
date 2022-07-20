@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDB\\TargetDB.csproj": {}
+    "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\TargetDB\\TargetDB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDB\\TargetDB.csproj": {
+    "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\TargetDB\\TargetDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDB\\TargetDB.csproj",
+        "projectUniqueName": "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\TargetDB\\TargetDB.csproj",
         "projectName": "TargetDB",
-        "projectPath": "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDB\\TargetDB.csproj",
+        "projectPath": "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\TargetDB\\TargetDB.csproj",
         "packagesPath": "C:\\Users\\erendira.radichel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDB\\obj\\",
+        "outputPath": "C:\\Users\\erendira.radichel\\Source\\Repos\\ErendiraRadichel\\curiumproject\\TargetDB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

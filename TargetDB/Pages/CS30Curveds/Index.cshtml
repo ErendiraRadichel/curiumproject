@@ -2,46 +2,78 @@
 @model TargetDB.Pages.CS30Curveds.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "CS-30 Curved Index";
 }
 
-<h1>Index</h1>
+<h1 style="margin: 30px !important;">CS-30 Curved Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
+<p style="margin: 30px !important;">
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<form style="margin: 30px !important;" asp-page="./Index" method="get">
+    <div class="form-actions d-flex">
+        Find by name:
+        <input type="text" name="SearchString" value="@Model.Search" />
+        <input type="submit" value="Search" class="btn btn-primary" /> |
+    </div>
+</form>
+<table class="table table-hover text-center" style="margin: 30px !important;">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CS30Curved[0].Status)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.StatusSort">
+                    @Html.DisplayNameFor(model => model.CS30Curveds[0].Status)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CS30Curved[0].WarehouseDate)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.ProductSort">
+                    @Html.DisplayNameFor(model => model.CS30Curveds[0].ProductName)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CS30Curved[0].WarehouseName)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.TargetNumSort">
+                    @Html.DisplayNameFor(model => model.CS30Curveds[0].TargetNum)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CS30Curved[0].WarehouseCode)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WCodeSort">
+                    @Html.DisplayNameFor(model => model.CS30Curveds[0].WarehouseCode)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CS30Curved[0].WarehouseLotNum)
+                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WLotNumSort">
+                    @Html.DisplayNameFor(model => model.CS30Curveds[0].WarehouseLotNum)
+                </a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.PCodeSort">Plating Code</a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WLotNumSort">Warehouse Lot Number</a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.PLotNumSort">Plating Lot Number</a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.ProcessLotNumSort">Processing Lot Number</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CS30Curveds[0].Quantity)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.CS30Curved) {
+@foreach (var item in Model.CS30Curveds) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WarehouseDate)
+                @Html.DisplayFor(modelItem => item.ProductName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WarehouseName)
+                @Html.DisplayFor(modelItem => item.TargetNum)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WarehouseCode)
@@ -50,9 +82,24 @@
                 @Html.DisplayFor(modelItem => item.WarehouseLotNum)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                @Html.DisplayFor(modelItem => item.PlatingCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarehouseLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlatingLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessingLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <a class="badge rounded-pill bg-primary text-decoration-none" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a class="badge rounded-pill bg-primary text-decoration-none" style="padding-left: 10px !important;" asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a class="badge rounded-pill bg-primary text-decoration-none" style="padding-left: 10px !important;" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }

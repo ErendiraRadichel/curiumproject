@@ -2,52 +2,188 @@
 @model TargetDB.Pages.CS30Curveds.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Update Information of CS-30 Curved Target";
 }
 
-<h1>Edit</h1>
+<h1 class="text-center" style="margin-top: 30px !important;">Update CS-30 Curved Target</h1>
+<div style="margin: 30px 0 50px 0 !important;" class="text-center text-success">
+    <h2>Current Target Status: @Html.DisplayFor(model => model.CS30Curved.Status)</h2>
+</div>
 
-<h4>CS30Curved</h4>
-<hr />
-<div class="row">
+<h4 class="text-center" style="margin-top: 50px !important;" >Click on what you want to update about this target</h4>
+<div class="d-flex" style="margin: 10px 0 30px 0 !important;">
+    <button class="btn btn-primary" style="margin: 5px !important;" onclick="displayWarehouse()">Update Warehose Information</button>
+    <button class="btn btn-secondary" style="margin: 5px !important;" onclick="displayCyclotronS()">Update Cyclotron Spares Information</button>
+    <button class="btn btn-success" style="margin: 5px !important;" onclick="displayChemistry1()">Update Plating Information</button>
+    <button class="btn btn-info" style="margin: 5px !important;" onclick="displayBombarding()">Update Bombarding Information</button>
+    <button class="btn btn-light" style="margin: 5px !important;" onclick="displayChemistry2()">Update Processing Information</button>
+</div>
+
+<div class="row justify-content-center">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CS30Curved.ID" />
             <div class="form-group">
-                <label asp-for="CS30Curved.Status" class="control-label"></label>
-                <input asp-for="CS30Curved.Status" class="form-control" />
-                <span asp-validation-for="CS30Curved.Status" class="text-danger"></span>
+                <h4 class="text-center" style="margin-top: 20px !important;">Update Target Status</h4>
+                <select asp-for="CS30Curved.Status" class="form-control" style="margin: 10px !important;" id="status">
+                    <option value="Warehouse">Warehouse</option>
+                    <option value="Cyclotron Spares">Cyclotron Spares</option>
+                    <option value="Plating">Plating</option>
+                    <option value="Bombarding">Bombarding</option>
+                    <option value="Processing">Processing</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label asp-for="CS30Curved.WarehouseDate" class="control-label"></label>
-                <input asp-for="CS30Curved.WarehouseDate" class="form-control" />
-                <span asp-validation-for="CS30Curved.WarehouseDate" class="text-danger"></span>
+            @* Warehouse Data Fields *@
+            <div id="Warehouse" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;" >Edit Target in Warehouse:</h3>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.WarehouseDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.WarehouseDate" class="form-control" />
+                    <span asp-validation-for="CS30Curved.WarehouseDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CS30Curved.WarehouseName" style="margin-top: 10px !important;" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.WarehouseName" class="form-control" />
+                    <span asp-validation-for="CS30Curved.WarehouseName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.WarehouseCode" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.WarehouseCode" class="form-control" />
+                    <span asp-validation-for="CS30Curved.WarehouseCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.WarehouseLotNum" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.WarehouseLotNum" class="form-control" />
+                    <span asp-validation-for="CS30Curved.WarehouseLotNum" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="CS30Curved.WarehouseName" class="control-label"></label>
-                <input asp-for="CS30Curved.WarehouseName" class="form-control" />
-                <span asp-validation-for="CS30Curved.WarehouseName" class="text-danger"></span>
+            @* Cyclotron Spares Data Fields *@
+            <div id="CyclotronSpares" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Cyclotron Spares:</h3>
+                <div class="form-group">
+                    <p><b>Code: </b>@Html.DisplayFor(model => model.CS30Curved.WarehouseCode)</p>
+                </div>
+                <div class="form-group">
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.CS30Curved.WarehouseLotNum)</p>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.CyclotronDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.CyclotronDate" class="form-control" />
+                    <span asp-validation-for="CS30Curved.CyclotronDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.CyclotronName" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.CyclotronName" class="form-control" />
+                    <span asp-validation-for="CS30Curved.CyclotronName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.Quantity" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.Quantity" class="form-control" />
+                    <span asp-validation-for="CS30Curved.Quantity" class="text-danger"></span>
+                </div>
+                <div>
+                     <a class="btn btn-primary" asp-page="/CS30CurvedTargets/Create">Add JIG Exam Data</a>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="CS30Curved.WarehouseCode" class="control-label"></label>
-                <input asp-for="CS30Curved.WarehouseCode" class="form-control" />
-                <span asp-validation-for="CS30Curved.WarehouseCode" class="text-danger"></span>
+            @* Chemistry:Plating Data Fields *@
+            <div id="Chemistry1" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Plating:</h3>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.PlatingDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.PlatingDate" class="form-control" />
+                    <span asp-validation-for="CS30Curved.PlatingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.PlatingName" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.PlatingName" class="form-control" />
+                    <span asp-validation-for="CS30Curved.PlatingName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.PlatingLotNum" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.PlatingLotNum" class="form-control" />
+                    <span asp-validation-for="CS30Curved.PlatingLotNum" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.ProductName" class="control-label"></label>
+                    <select style="margin-bottom: 10px !important;" asp-for="CS30Curved.ProductName" class="form-control" id="product">
+                        <option value="In-111">In-111</option>
+                        <option value="Ga-67">Ga-67</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.PlatingCode" class="control-label"></label>
+                    <select style="margin-bottom: 10px !important;" asp-for="CS30Curved.PlatingCode" class="form-control" id="product">
+                        <option value="S790">S790</option>
+                        <option value="S732">S732</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.TargetNum" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.TargetNum" class="form-control" />
+                    <span asp-validation-for="CS30Curved.TargetNum" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="CS30Curved.WarehouseLotNum" class="control-label"></label>
-                <input asp-for="CS30Curved.WarehouseLotNum" class="form-control" />
-                <span asp-validation-for="CS30Curved.WarehouseLotNum" class="text-danger"></span>
+            @* Cyclotron Bombarding Data Fields *@
+             <div id="Bombarding" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Bombarding information:</h3>
+                <div class="form-group" style="margin: 10px 0 10px 0 !important;">
+                    <p><b>Product Name: </b>@Html.DisplayFor(model => model.CS30Curved.ProductName)</p>
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.CS30Curved.PlatingLotNum)</p>
+                    <p><b>Code: </b>@Html.DisplayFor(model => model.CS30Curved.PlatingCode)</p>
+                    <p><b>Target Number: </b>@Html.DisplayFor(model => model.CS30Curved.TargetNum)</p>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.BombardingDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.BombardingDate" class="form-control" />
+                    <span asp-validation-for="CS30Curved.BombardingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.BombardingName" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.BombardingName" class="form-control" />
+                    <span asp-validation-for="CS30Curved.BombardingName" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            @* Chemistry: Processing Data Fields *@
+            <div id="Chemistry2" style="display:none; margin: 20px !important;">
+                <hr>
+                <h3 class="text-center" style="margin: 10px 0 10px 0 !important;">Edit Target in Processing:</h3>
+                <div class="form-group" style="margin: 10px 0 10px 0 !important;">
+                    <p><b>Product Name: </b>@Html.DisplayFor(model => model.CS30Curved.ProductName)</p>
+                    <p><b>Code: </b>@Html.DisplayFor(model => model.CS30Curved.PlatingCode)</p>
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.CS30Curved.PlatingLotNum)</p>
+                    <p><b>Target Number: </b>@Html.DisplayFor(model => model.CS30Curved.TargetNum)</p>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.ProcessingDate" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.ProcessingDate" class="form-control" />
+                    <span asp-validation-for="CS30Curved.ProcessingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.ProcessingName" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.ProcessingName" class="form-control" />
+                    <span asp-validation-for="CS30Curved.ProcessingName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 10px !important;" asp-for="CS30Curved.ProcessingLotNum" class="control-label"></label>
+                    <input style="margin-bottom: 10px !important;" asp-for="CS30Curved.ProcessingLotNum" class="form-control" />
+                    <span asp-validation-for="CS30Curved.ProcessingLotNum" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group text-center" style="margin: 40px !important;">
+                <h3 class="text-warning" style="margin: 10px !important;" >Save your changes!</h3>
+                <input type="submit" value="Save" class="btn btn-primary btn-lg col-sm-10" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
+<div class="text-center">
+    <a class="btn btn-outline-primary" asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {
