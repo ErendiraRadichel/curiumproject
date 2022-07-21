@@ -1,10 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\APIHotProducts",
-    "\\APIHotProducts\\Pages",
-    "\\APIHotProducts\\Pages\\Targets"
+    "\\TargetDB",
+    "\\TargetDB\\Pages",
+    "\\TargetDB\\Pages\\CS30CurvedTargets"
   ],
-  "SelectedNode": "\\APIHotProducts\\APIHotProducts.sln",
+  "SelectedNode": "\\TargetDB\\Pages\\CS30CurvedTargets\\Create.cshtml.cs",
   "PreviewInSolutionExplorer": false
 }
