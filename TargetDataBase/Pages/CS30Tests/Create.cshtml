@@ -1,0 +1,43 @@
+﻿@page
+@model TargetDataBase.Pages.CS30Tests.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CS30Test</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CS30Test.CS30ID" class="control-label"></label>
+                <select asp-for="CS30Test.CS30ID" class ="form-control" asp-items="ViewBag.CS30ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CS30Test.Result" class="control-label"></label>
+                <input asp-for="CS30Test.Result" class="form-control" />
+                <span asp-validation-for="CS30Test.Result" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CS30Test.HNum" class="control-label"></label>
+                <input asp-for="CS30Test.HNum" class="form-control" />
+                <span asp-validation-for="CS30Test.HNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

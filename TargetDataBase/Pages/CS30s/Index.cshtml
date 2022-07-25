@@ -1,0 +1,112 @@
+﻿@page
+@model TargetDataBase.Pages.CS30s.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+    <form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name:
+            <input type="text" name="SearchString" value="@Model.SearchString" />
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </p>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.StatusSort">
+                    @Html.DisplayNameFor(model => model.CS30s[0].Status)
+                </a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.TargetTypeSort">
+                    @Html.DisplayNameFor(model => model.CS30s[0].TargetType)
+                </a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.ProductSort">
+                    @Html.DisplayNameFor(model => model.CS30s[0].ProductName)
+                </a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.TargetNumSort">
+                    @Html.DisplayNameFor(model => model.CS30s[0].TargetNum)
+                </a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WCodeSort">Warehouse Code</a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WCodeSort">Cyclotron Code</a>
+            </th>
+            <th>
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.PCodeSort">Plating Code</a>
+            </th>
+            <th>
+                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WLotNumSort">Warehouse Lot Number</a>
+            </th>
+            <th>
+               <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.PLotNumSort">Plating Lot Number</a>
+            </th>
+            <th>
+                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.ProcessLotNumSort">Processing Lot Number</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CS30s[0].Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CS30s) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TargetType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TargetNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarehouseCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CyclotronCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlatingCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WarehouseLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlatingLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessingLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
