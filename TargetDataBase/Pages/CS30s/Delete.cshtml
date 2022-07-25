@@ -16,7 +16,7 @@
 <div style="margin: 30px !important;">
     <h4 class="text-center">Target Information:</h4>
     <hr />
-    <div style="margin: 10px 0 10px 0 !important;">
+    <div style="margin: 10px 0 10px 0 !important;" class="text-center">
         <h2>Current Target Status: @Html.DisplayFor(model => model.CS30.Status)</h2>
     </div>
     <table class="table text-center" style="margin-top: 10px !important;" id="Details-Warehouse">
@@ -40,7 +40,7 @@
     </table>
 
     <div id="Details-Cyclo" class="d-flex justify-content-center">
-        <table class="table text-center" style="margin-top: 40px !important;">
+        <table class="table text-center" style="margin: 20px 40px 20px 0 !important;">
           <tr>
             <th style="font-size: larger !important" colspan="4"><i><b>Cyclotron Spares</b></i></th>
           </tr>
@@ -57,7 +57,7 @@
             <td>@Html.DisplayFor(model => model.CS30.Quantity)</td>
           </tr>
         </table>
-        <table class="table text-center">
+        <table class="table text-center" style="margin: 20px 40px 20px 0 !important;">
                 <tr>
                     <th>Results</th>
                     <th>H-Number</th>
@@ -114,7 +114,7 @@
 
     <table class="table text-center" style="margin-top: 40px !important;" id="Details-Processing">
       <tr>
-        <th style="font-size: larger !important" colspan="2"><i><b>Processing</b></i></th>
+        <th style="font-size: larger !important" colspan="3"><i><b>Processing</b></i></th>
       </tr>
       <tr>
         <th>@Html.DisplayNameFor(model => model.CS30.ProcessingDate)</th>

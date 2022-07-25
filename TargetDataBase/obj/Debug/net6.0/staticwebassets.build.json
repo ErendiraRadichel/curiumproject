@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7kRyD0Ie9saJUvBSxDBNkI/NfaObU8C2bGiPeHPWsbw=",
+  "Hash": "44QTWI2Mq6qg1iJqqqvoXNT/6uJhBCSPuhNWbt+ySLE=",
   "Source": "TargetDataBase",
   "BasePath": "_content/TargetDataBase",
   "Mode": "Default",
@@ -100,6 +100,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDataBase\\wwwroot\\lib\\bootstrap\\dist\\css\\_bootswatch.scss",
+      "SourceId": "TargetDataBase",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDataBase\\wwwroot\\",
+      "BasePath": "_content/TargetDataBase",
+      "RelativePath": "lib/bootstrap/dist/css/_bootswatch.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\_bootswatch.scss"
+    },
+    {
+      "Identity": "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDataBase\\wwwroot\\lib\\bootstrap\\dist\\css\\_variables.scss",
+      "SourceId": "TargetDataBase",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDataBase\\wwwroot\\",
+      "BasePath": "_content/TargetDataBase",
+      "RelativePath": "lib/bootstrap/dist/css/_variables.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\_variables.scss"
     },
     {
       "Identity": "C:\\Users\\erendira.radichel\\source\\repos\\ErendiraRadichel\\curiumproject\\TargetDataBase\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
