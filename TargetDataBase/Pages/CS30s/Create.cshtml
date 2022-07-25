@@ -2,131 +2,57 @@
 @model TargetDataBase.Pages.CS30s.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create CS-30 Target";
 }
 
-<h1>Create</h1>
-
-<h4>CS30</h4>
-<hr />
-<div class="row">
+<h1 class="text-center" style="margin-top: 50px !important;" >@ViewData["Title"]</h1>
+<div class="row justify-content-center" style="margin: 40px !important;">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CS30.Status" class="control-label"></label>
-                <input asp-for="CS30.Status" class="form-control" />
-                <span asp-validation-for="CS30.Status" class="text-danger"></span>
+                <input style="margin-bottom: 10px !important;" asp-for="CS30.Status" value="Warehouse" class="form-control" readonly/>
+            </div>
+             @* Warehouse Data Fields *@
+            <div class="form-group">
+                <label asp-for="CS30.TargetType" class="control-label" style="margin-top: 20px !important;"></label>
+                <select asp-for="CS30.TargetType" class="form-control" id="product">
+                    <option value="Curve">Curve</option>
+                    <option value="Flat">Flat</option>
+                </select>
             </div>
             <div class="form-group">
-                <label asp-for="CS30.TargetType" class="control-label"></label>
-                <input asp-for="CS30.TargetType" class="form-control" />
-                <span asp-validation-for="CS30.TargetType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.WarehouseDate" class="control-label"></label>
-                <input asp-for="CS30.WarehouseDate" class="form-control" />
+                <label asp-for="CS30.WarehouseDate" class="control-label" style="margin-top: 20px !important;"></label>
+                <input asp-for="CS30.WarehouseDate" class="form-control" style="margin-bottom: 10px !important;"/>
                 <span asp-validation-for="CS30.WarehouseDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CS30.WarehouseName" class="control-label"></label>
-                <input asp-for="CS30.WarehouseName" class="form-control" />
+                <label asp-for="CS30.WarehouseName" class="control-label" style="margin-top: 10px !important;"></label>
+                <input asp-for="CS30.WarehouseName" class="form-control" style="margin-bottom: 10px !important;"/>
                 <span asp-validation-for="CS30.WarehouseName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CS30.WarehouseCode" class="control-label"></label>
-                <input asp-for="CS30.WarehouseCode" class="form-control" />
-                <span asp-validation-for="CS30.WarehouseCode" class="text-danger"></span>
+                <label asp-for="CS30.WarehouseCode" class="control-label" style="margin-top: 10px !important;"></label>
+                <select asp-for="CS30.WarehouseCode" class="form-control" id="WCode" style="margin-bottom: 10px !important;">
+                    <option value="J54701">Curve-J54701</option>
+                    <option value="G000271">Flat-6000271</option>
+                </select>
             </div>
             <div class="form-group">
-                <label asp-for="CS30.WarehouseLotNum" class="control-label"></label>
-                <input asp-for="CS30.WarehouseLotNum" class="form-control" />
+                <label asp-for="CS30.WarehouseLotNum" class="control-label" style="margin-top: 10px !important;"></label>
+                <input style="margin-bottom: 10px !important;" asp-for="CS30.WarehouseLotNum" class="form-control" />
                 <span asp-validation-for="CS30.WarehouseLotNum" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="CS30.CyclotronDate" class="control-label"></label>
-                <input asp-for="CS30.CyclotronDate" class="form-control" />
-                <span asp-validation-for="CS30.CyclotronDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.CyclotronName" class="control-label"></label>
-                <input asp-for="CS30.CyclotronName" class="form-control" />
-                <span asp-validation-for="CS30.CyclotronName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.CyclotronCode" class="control-label"></label>
-                <input asp-for="CS30.CyclotronCode" class="form-control" />
-                <span asp-validation-for="CS30.CyclotronCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.Quantity" class="control-label"></label>
-                <input asp-for="CS30.Quantity" class="form-control" />
-                <span asp-validation-for="CS30.Quantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.PlatingDate" class="control-label"></label>
-                <input asp-for="CS30.PlatingDate" class="form-control" />
-                <span asp-validation-for="CS30.PlatingDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.PlatingName" class="control-label"></label>
-                <input asp-for="CS30.PlatingName" class="form-control" />
-                <span asp-validation-for="CS30.PlatingName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.PlatingCode" class="control-label"></label>
-                <input asp-for="CS30.PlatingCode" class="form-control" />
-                <span asp-validation-for="CS30.PlatingCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.PlatingLotNum" class="control-label"></label>
-                <input asp-for="CS30.PlatingLotNum" class="form-control" />
-                <span asp-validation-for="CS30.PlatingLotNum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.ProductName" class="control-label"></label>
-                <input asp-for="CS30.ProductName" class="form-control" />
-                <span asp-validation-for="CS30.ProductName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.TargetNum" class="control-label"></label>
-                <input asp-for="CS30.TargetNum" class="form-control" />
-                <span asp-validation-for="CS30.TargetNum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.BombardingDate" class="control-label"></label>
-                <input asp-for="CS30.BombardingDate" class="form-control" />
-                <span asp-validation-for="CS30.BombardingDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.BombardingName" class="control-label"></label>
-                <input asp-for="CS30.BombardingName" class="form-control" />
-                <span asp-validation-for="CS30.BombardingName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.ProcessingDate" class="control-label"></label>
-                <input asp-for="CS30.ProcessingDate" class="form-control" />
-                <span asp-validation-for="CS30.ProcessingDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.ProcessingName" class="control-label"></label>
-                <input asp-for="CS30.ProcessingName" class="form-control" />
-                <span asp-validation-for="CS30.ProcessingName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CS30.ProcessingLotNum" class="control-label"></label>
-                <input asp-for="CS30.ProcessingLotNum" class="form-control" />
-                <span asp-validation-for="CS30.ProcessingLotNum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group text-center" style="margin: 30px !important;">
+                <input type="submit" value="Create" class="btn btn-primary col-sm-10" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
+<div class="text-center" style="margin-bottom: 40px !important;">
+    <a class="btn btn-outline-primary" asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

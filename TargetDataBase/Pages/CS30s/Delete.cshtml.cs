@@ -34,7 +34,9 @@ namespace TargetDataBase.Pages.CS30s
                 return NotFound();
             }
 
-            CS30 = await _context.CS30s.AsNoTracking()
+            CS30 = await _context.CS30s
+                .Include(s => s.CS30Tests)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
 
             if (CS30 == null)
