@@ -14,6 +14,7 @@
             <div class="form-group">
                 <label asp-for="IBATest.IBAID" class="control-label" style="margin-top: 20px !important;"></label>
                 <select asp-for="IBATest.IBAID" class ="form-control" asp-items="ViewBag.IBAID" style="margin-bottom: 10px !important;"></select>
+                <span asp-validation-for="IBATest.IBAID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label" style="margin-top: 20px !important;">Test Type</label><br />
@@ -21,6 +22,7 @@
                 <label for="jig">JIG</label><br>
                 <input name="IBATest.TestType" type="radio" value="Sisembled"/>
                 <label for="sisembled">Sisembled</label><br>
+                <span asp-validation-for="IBATest.TestType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label" style="margin-top: 20px !important;">Result</label><br />
@@ -28,6 +30,7 @@
                 <label for="true">True</label><br>
                 <input name="IBATest.Result" type="radio" value="False"/>
                 <label for="False">False</label><br>
+                <span asp-validation-for="IBATest.Result" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IBATest.HNum" class="control-label" style="margin-top: 20px !important;"></label>

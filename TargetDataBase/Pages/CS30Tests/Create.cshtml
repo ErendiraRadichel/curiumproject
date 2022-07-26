@@ -2,40 +2,39 @@
 @model TargetDataBase.Pages.CS30Tests.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create CS-30 Test";
 }
 
-<h1>Create</h1>
-
-<h4>CS30Test</h4>
-<hr />
-<div class="row">
+<h1 class="text-center" style="margin-top: 50px !important;">@ViewData["Title"]</h1>
+<div class="row justify-content-center">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CS30Test.CS30ID" class="control-label"></label>
-                <select asp-for="CS30Test.CS30ID" class ="form-control" asp-items="ViewBag.CS30ID"></select>
+                <label asp-for="CS30Test.CS30ID" class="control-label" style="margin-top: 20px !important;"></label>
+                <select asp-for="CS30Test.CS30ID" class ="form-control" asp-items="ViewBag.CS30ID" style="margin-bottom: 10px !important;"></select>
             </div>
             <div class="form-group">
-                <label asp-for="CS30Test.Result" class="control-label"></label>
-                <input asp-for="CS30Test.Result" class="form-control" />
-                <span asp-validation-for="CS30Test.Result" class="text-danger"></span>
+                <label class="control-label" style="margin-top: 20px !important;">Result</label><br />
+                <input name="CS30Test.Result" type="radio" value="True"/>
+                <label for="true">True</label><br>
+                <input name="CS30Test.Result" type="radio" value="False"/>
+                <label for="False">False</label><br>
             </div>
             <div class="form-group">
-                <label asp-for="CS30Test.HNum" class="control-label"></label>
-                <input asp-for="CS30Test.HNum" class="form-control" />
+                <label asp-for="CS30Test.HNum" class="control-label" style="margin-top: 20px !important;"></label>
+                <input asp-for="CS30Test.HNum" class="form-control" style="margin-bottom: 10px !important;"/>
                 <span asp-validation-for="CS30Test.HNum" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group text-center" style="margin: 30px !important;">
+                <input type="submit" value="Create" class="btn btn-primary col-sm-10" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
+<div class="text-center" style="margin-bottom: 40px !important;">
+    <a class="btn btn-outline-primary" asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

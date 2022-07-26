@@ -19,15 +19,24 @@ namespace TargetDataBase.Pages.IBATests
             _context = context;
         }
 
-        public IList<IBATest> IBATest { get;set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
 
-        public async Task OnGetAsync()
+        public IList<IBATest> IBATests { get;set; } = default!;
+
+        public async Task OnGetAsync(string searchString)
         {
-            if (_context.IBATests != null)
+            searchString = SearchString;
+
+            // Use LINQ to get list of materials.
+            IQueryable<IBATest> IBATestIQ = from s in _context.IBATests
+                                              select s;
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                IBATest = await _context.IBATests
-                .Include(i => i.IBA).ToListAsync();
+                IBATestIQ = IBATestIQ.Where(s => s.HNum.Contains(searchString));
             }
+
+            IBATests = await IBATestIQ.Include(c => c.IBA).AsNoTracking().ToListAsync();
         }
     }
 }

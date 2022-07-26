@@ -2,39 +2,35 @@
 @model TargetDataBase.Pages.CS30Tests.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete CS-30 Test";
 }
 
-<h1>Delete</h1>
+<h1 class="text-center" style="margin: 30px !important;">@ViewData["Title"]</h1>
+<h3 class="text-center" style="margin: 30px !important;">Are you sure you want to delete this Target Test?</h3>
+<div class="card border-danger mb-3 text-center">
+  <div class="card-body">
+    <p class="card-text">Deleting elements are irreversible!</p>
+  </div>
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>CS30Test</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CS30Test.Result)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CS30Test.Result)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CS30Test.HNum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CS30Test.HNum)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CS30Test.CS30)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CS30Test.CS30.ID)
-        </dd>
-    </dl>
-    
-    <form method="post">
+    <table class="table text-center" style="margin-top: 10px !important;">
+      <tr>
+        <th style="font-size: larger !important" colspan="4">Target ID: @Html.DisplayFor(model => model.CS30Test.CS30.ID)</th>
+      </tr>
+      <tr>
+        <th>@Html.DisplayNameFor(model => model.CS30Test.Result)</th>
+        <th>@Html.DisplayNameFor(model => model.CS30Test.HNum)</th>
+      </tr>
+      <tr>
+        <td>@Html.DisplayFor(model => model.CS30Test.Result)</td>
+        <td>@Html.DisplayFor(model => model.CS30Test.HNum)</td>
+      </tr>
+    </table>  
+    <form method="post" class="text-center">
         <input type="hidden" asp-for="CS30Test.ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input style="margin-right: 10px !important;" type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Target Test Result?');"/> |
+        <a class="btn btn-outline-warning" style="margin: 10px 0 10px 0 !important;" asp-page="./Edit" asp-route-id="@Model.CS30Test?.ID">Edit</a> |
+        <a class="btn btn-outline-primary" style="margin-left: 10px !important;" asp-page="./Index">Back to List</a>
     </form>
 </div>

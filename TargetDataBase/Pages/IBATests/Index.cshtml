@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IBATest[0].TestType)
+                @Html.DisplayNameFor(model => model.IBATests[0].TestType)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBATest[0].Result)
+                @Html.DisplayNameFor(model => model.IBATests[0].Result)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBATest[0].HNum)
+                @Html.DisplayNameFor(model => model.IBATests[0].HNum)
             </th>
             <th>
                 Target ID
@@ -28,7 +28,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.IBATest) {
+@foreach (var item in Model.IBATests) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.TestType)
