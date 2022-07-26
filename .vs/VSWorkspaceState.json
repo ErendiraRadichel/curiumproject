@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TargetDataBase",
+    "\\TargetDataBase\\Pages",
+    "\\TargetDataBase\\Pages\\IBAs"
   ],
+  "SelectedNode": "\\TargetDataBase\\Pages\\IBAs\\Create.cshtml.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,48 @@
+﻿@page
+@model TargetDataBase.Pages.IBATests.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>IBATest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IBATest.IBAID" class="control-label"></label>
+                <select asp-for="IBATest.IBAID" class ="form-control" asp-items="ViewBag.IBAID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBATest.TestType" class="control-label"></label>
+                <input asp-for="IBATest.TestType" class="form-control" />
+                <span asp-validation-for="IBATest.TestType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBATest.Result" class="control-label"></label>
+                <input asp-for="IBATest.Result" class="form-control" />
+                <span asp-validation-for="IBATest.Result" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBATest.HNum" class="control-label"></label>
+                <input asp-for="IBATest.HNum" class="form-control" />
+                <span asp-validation-for="IBATest.HNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -8,11 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TargetDataBase
 build_property.RootNamespace = TargetDataBase
-build_property.ProjectDir = C:\Users\erendira.radichel\Source\Repos\ErendiraRadichel\curiumproject\TargetDataBase\
+build_property.ProjectDir = C:\Users\erendira.radichel\source\repos\ErendiraRadichel\curiumproject\TargetDataBase\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\erendira.radichel\Source\Repos\ErendiraRadichel\curiumproject\TargetDataBase
+build_property.MSBuildProjectDirectory = C:\Users\erendira.radichel\source\repos\ErendiraRadichel\curiumproject\TargetDataBase
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/CS30s/Create.cshtml]
@@ -77,6 +77,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/IBAs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSUJBc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/IBATests/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSUJBVGVzdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/IBATests/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSUJBVGVzdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/IBATests/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSUJBVGVzdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/IBATests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSUJBVGVzdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/IBATests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSUJBVGVzdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/Index.cshtml]
