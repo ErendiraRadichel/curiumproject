@@ -2,15 +2,14 @@
 @model TargetDataBase.Pages.IBATests.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "IBA Test Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
+<h1 style="margin: 30px !important;" class="text-center">@ViewData["Title"]</h1>
+<p style="margin: 30px !important;" class="text-center">
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-hover text-center" style="margin: 30px !important;">
     <thead>
         <tr>
             <th>
@@ -23,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.IBATest[0].HNum)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBATest[0].IBA)
+                Target ID
             </th>
             <th></th>
         </tr>
@@ -44,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.IBA.ID)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a class="badge rounded-pill bg-primary text-decoration-none" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a class="badge rounded-pill bg-primary text-decoration-none" asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a class="badge rounded-pill bg-primary text-decoration-none" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }

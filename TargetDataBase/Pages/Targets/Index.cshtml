@@ -1,0 +1,19 @@
+﻿@page
+@model TargetDataBase.Pages.Targets.IndexModel
+@{
+    ViewData["Title"] = "Target Menu";
+}
+<h1 class="text-center" style="margin-top: 30px !important;">Target Menu</h1>
+<h2 style="margin: 30px 0 50px 0 !important;" class="text-center text-success">CS-30 Targets</h2>
+<div class="d-flex justify-content-center" style="margin: 10px 0 30px 0 !important;">
+    <a class="btn btn-success btn-lg" style="margin: 5px !important;" asp-page="/CS30s/Create">Create CS-30 Target</a>
+    <a class="btn btn-success btn-lg" style="margin: 5px !important;" asp-page="/CS30s/Index">See all CS-30 Targets</a>
+    <a class="btn btn-success btn-lg" style="margin: 5px !important;" asp-page="/CS30Tests/Index">See all CS-30 Tests</a>
+</div>
+
+<h2 style="margin: 30px 0 50px 0 !important;" class="text-center text-warning">IBA Targets</h2>
+<div class="d-flex justify-content-center" style="margin: 10px 0 30px 0 !important;">
+    <a class="btn btn-warning btn-lg" style="margin: 5px !important;" asp-page="/IBAs/Create">Create IBA Target</a>
+    <a class="btn btn-warning btn-lg" style="margin: 5px !important;" asp-page="/IBAs/Index">See all IBA Targets</a>
+    <a class="btn btn-warning btn-lg" style="margin: 5px !important;" asp-page="/IBATests/Index">See all IBA Tests</a>
+</div>

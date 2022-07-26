@@ -3,8 +3,9 @@
     "",
     "\\TargetDataBase",
     "\\TargetDataBase\\Pages",
-    "\\TargetDataBase\\Pages\\IBAs"
+    "\\TargetDataBase\\Pages\\IBAs",
+    "\\TargetDataBase\\Pages\\IBATests"
   ],
-  "SelectedNode": "\\TargetDataBase\\Pages\\IBAs\\Create.cshtml.cs",
+  "SelectedNode": "\\TargetDataBase\\Pages\\IBATests\\Create.cshtml",
   "PreviewInSolutionExplorer": false
 }
