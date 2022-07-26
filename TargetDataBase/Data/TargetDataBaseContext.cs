@@ -15,12 +15,16 @@ namespace TargetDataBase.Data
         }
         public DbSet<CS30> CS30s { get; set; }
         public DbSet<CS30Test> CS30Tests { get; set; }
+        public DbSet<IBA> IBAs { get; set; }
+        public DbSet<IBATest> IBATests { get; set; }
         //public DbSet<TargetDataBase.Models.CS30> CS30 { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CS30>().ToTable("CS30");
             modelBuilder.Entity<CS30Test>().ToTable("CS30Test");
+            modelBuilder.Entity<IBA>().ToTable("IBA");
+            modelBuilder.Entity<IBATest>().ToTable("IBATest");
         }
     }
 }

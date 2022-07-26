@@ -1,0 +1,130 @@
+﻿@page
+@model TargetDataBase.Pages.IBAs.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>IBA</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IBA.ID" />
+            <div class="form-group">
+                <label asp-for="IBA.Status" class="control-label"></label>
+                <input asp-for="IBA.Status" class="form-control" />
+                <span asp-validation-for="IBA.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.WarehouseDate" class="control-label"></label>
+                <input asp-for="IBA.WarehouseDate" class="form-control" />
+                <span asp-validation-for="IBA.WarehouseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.WarehouseName" class="control-label"></label>
+                <input asp-for="IBA.WarehouseName" class="form-control" />
+                <span asp-validation-for="IBA.WarehouseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.WarehouseCode" class="control-label"></label>
+                <input asp-for="IBA.WarehouseCode" class="form-control" />
+                <span asp-validation-for="IBA.WarehouseCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.WarehouseLotNum" class="control-label"></label>
+                <input asp-for="IBA.WarehouseLotNum" class="form-control" />
+                <span asp-validation-for="IBA.WarehouseLotNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.CyclotronDate" class="control-label"></label>
+                <input asp-for="IBA.CyclotronDate" class="form-control" />
+                <span asp-validation-for="IBA.CyclotronDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.CyclotronName" class="control-label"></label>
+                <input asp-for="IBA.CyclotronName" class="form-control" />
+                <span asp-validation-for="IBA.CyclotronName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.CyclotronCode" class="control-label"></label>
+                <input asp-for="IBA.CyclotronCode" class="form-control" />
+                <span asp-validation-for="IBA.CyclotronCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.Quantity" class="control-label"></label>
+                <input asp-for="IBA.Quantity" class="form-control" />
+                <span asp-validation-for="IBA.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.PlatingDate" class="control-label"></label>
+                <input asp-for="IBA.PlatingDate" class="form-control" />
+                <span asp-validation-for="IBA.PlatingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.PlatingName" class="control-label"></label>
+                <input asp-for="IBA.PlatingName" class="form-control" />
+                <span asp-validation-for="IBA.PlatingName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.PlatingCode" class="control-label"></label>
+                <input asp-for="IBA.PlatingCode" class="form-control" />
+                <span asp-validation-for="IBA.PlatingCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.PlatingLotNum" class="control-label"></label>
+                <input asp-for="IBA.PlatingLotNum" class="form-control" />
+                <span asp-validation-for="IBA.PlatingLotNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.ProductName" class="control-label"></label>
+                <input asp-for="IBA.ProductName" class="form-control" />
+                <span asp-validation-for="IBA.ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.TargetNum" class="control-label"></label>
+                <input asp-for="IBA.TargetNum" class="form-control" />
+                <span asp-validation-for="IBA.TargetNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.BombardingDate" class="control-label"></label>
+                <input asp-for="IBA.BombardingDate" class="form-control" />
+                <span asp-validation-for="IBA.BombardingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.BombardingName" class="control-label"></label>
+                <input asp-for="IBA.BombardingName" class="form-control" />
+                <span asp-validation-for="IBA.BombardingName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.ProcessingDate" class="control-label"></label>
+                <input asp-for="IBA.ProcessingDate" class="form-control" />
+                <span asp-validation-for="IBA.ProcessingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.ProcessingName" class="control-label"></label>
+                <input asp-for="IBA.ProcessingName" class="form-control" />
+                <span asp-validation-for="IBA.ProcessingName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.ProcessingLotNum" class="control-label"></label>
+                <input asp-for="IBA.ProcessingLotNum" class="form-control" />
+                <span asp-validation-for="IBA.ProcessingLotNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

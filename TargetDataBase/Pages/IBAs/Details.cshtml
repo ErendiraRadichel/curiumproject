@@ -1,0 +1,139 @@
+﻿@page
+@model TargetDataBase.Pages.IBAs.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>IBA</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.WarehouseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.WarehouseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.WarehouseName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.WarehouseName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.WarehouseCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.WarehouseCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.WarehouseLotNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.WarehouseLotNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.CyclotronDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.CyclotronDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.CyclotronName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.CyclotronName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.CyclotronCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.CyclotronCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.PlatingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.PlatingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.PlatingName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.PlatingName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.PlatingCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.PlatingCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.PlatingLotNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.PlatingLotNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.ProductName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.ProductName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.TargetNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.TargetNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.BombardingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.BombardingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.BombardingName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.BombardingName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.ProcessingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.ProcessingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.ProcessingName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.ProcessingName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IBA.ProcessingLotNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IBA.ProcessingLotNum)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.IBA?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

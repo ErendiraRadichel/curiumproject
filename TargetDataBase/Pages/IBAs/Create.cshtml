@@ -1,0 +1,54 @@
+﻿@page
+@model TargetDataBase.Pages.IBAs.CreateModel
+
+@{
+    ViewData["Title"] = "Create IBA Target";
+}
+
+<h1 class="text-center" style="margin-top: 50px !important;" >@ViewData["Title"]</h1>
+<div class="row justify-content-center" style="margin: 40px !important;">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IBA.Status" class="control-label"></label>
+                <input style="margin-bottom: 10px !important;" asp-for="IBA.Status" value="Warehouse" class="form-control" readonly />
+            </div>
+             @* Warehouse Data Fields *@
+            <div class="form-group">
+                <label asp-for="IBA.WarehouseDate" class="control-label" style="margin-top: 20px !important;"></label>
+                <input asp-for="IBA.WarehouseDate" class="form-control" style="margin-bottom: 10px !important;"/>
+                <span asp-validation-for="IBA.WarehouseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.WarehouseName" class="control-label" style="margin-top: 20px !important;"></label>
+                <input asp-for="IBA.WarehouseName" class="form-control" style="margin-bottom: 10px !important;"/>
+                <span asp-validation-for="IBA.WarehouseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.WarehouseCode" class="control-label" style="margin-top: 20px !important;"></label>
+                <select asp-for="IBA.WarehouseCode" class="form-control" id="WCode" style="margin-bottom: 10px !important;">
+                    <option value="J54600">J54600</option>
+                    <option value="H38300">H38300</option>
+                    <option value="H98300">H98300</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IBA.WarehouseLotNum" class="control-label" style="margin-top: 20px !important;"></label>
+                <input asp-for="IBA.WarehouseLotNum" class="form-control" style="margin-bottom: 10px !important;"/>
+                <span asp-validation-for="IBA.WarehouseLotNum" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center" style="margin: 30px !important;">
+                <input type="submit" value="Create" class="btn btn-primary col-sm-10"" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center" style="margin-bottom: 40px !important;">
+    <a class="btn btn-outline-primary" asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
