@@ -2,121 +2,68 @@
 @model TargetDataBase.Pages.IBAs.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "IBA Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
+<h1 style="margin: 30px !important;" class="text-center">IBA Target Index</h1>
+<p style="margin: 30px !important;" class="text-center">
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<form asp-page="./Index" method="get" style="margin: 30px !important;">
+    <p>
+        <div class="text-center">
+            Search By Key Word:<input type="text" name="SearchString" value="@Model.SearchString" />
+            <input class="btn btn-secondary" type="submit" value="Search" />
+        </div>
+    </p>
+</form>
+<table class="table table-hover text-center" style="margin: 30px !important;">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].Status)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.StatusSort">
+                    @Html.DisplayNameFor(model => model.IBAs[0].Status)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].WarehouseDate)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.ProductSort">
+                    @Html.DisplayNameFor(model => model.IBAs[0].ProductName)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].WarehouseName)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.TargetNumSort">
+                    @Html.DisplayNameFor(model => model.IBAs[0].TargetNum)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].WarehouseCode)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WCodeSort">Warehouse Code</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].WarehouseLotNum)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WCodeSort">Cyclotron Code</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].CyclotronDate)
+                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.PCodeSort">Plating Code</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].CyclotronName)
+                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WLotNumSort">Warehouse Lot Number</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].CyclotronCode)
+               <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.PLotNumSort">Plating Lot Number</a>
+            </th>
+            <th>
+                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.ProcessLotNumSort">Processing Lot Number</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IBAs[0].Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].PlatingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].PlatingName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].PlatingCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].PlatingLotNum)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].TargetNum)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].BombardingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].BombardingName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].ProcessingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].ProcessingName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IBAs[0].ProcessingLotNum)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.IBAs) {
-        <tr>
+        <tr class="table-active">
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WarehouseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WarehouseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WarehouseCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WarehouseLotNum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CyclotronDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CyclotronName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CyclotronCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlatingDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlatingName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlatingCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlatingLotNum)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
@@ -125,24 +72,30 @@
                 @Html.DisplayFor(modelItem => item.TargetNum)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BombardingDate)
+                @Html.DisplayFor(modelItem => item.WarehouseCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BombardingName)
+                @Html.DisplayFor(modelItem => item.CyclotronCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProcessingDate)
+                @Html.DisplayFor(modelItem => item.PlatingCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProcessingName)
+                @Html.DisplayFor(modelItem => item.WarehouseLotNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlatingLotNum)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProcessingLotNum)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <a class="badge rounded-pill bg-primary text-decoration-none" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a class="badge rounded-pill bg-secondary text-decoration-none" asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a class="badge rounded-pill bg-success text-decoration-none" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
