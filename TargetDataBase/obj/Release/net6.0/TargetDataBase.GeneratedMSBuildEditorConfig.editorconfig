@@ -8,11 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TargetDataBase
 build_property.RootNamespace = TargetDataBase
-build_property.ProjectDir = C:\Users\erendira.radichel\Source\Repos\ErendiraRadichel\curiumproject\TargetDataBase\
+build_property.ProjectDir = C:\Users\erendira.radichel\source\repos\ErendiraRadichel\curiumproject\TargetDataBase\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\erendira.radichel\Source\Repos\ErendiraRadichel\curiumproject\TargetDataBase
+build_property.MSBuildProjectDirectory = C:\Users\erendira.radichel\source\repos\ErendiraRadichel\curiumproject\TargetDataBase
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/CS30s/Create.cshtml]
@@ -113,6 +113,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/Targets/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFyZ2V0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/TR30s/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVFIzMHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/TR30s/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVFIzMHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/TR30s/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVFIzMHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/TR30s/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVFIzMHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/TR30s/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVFIzMHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/erendira.radichel/Source/Repos/ErendiraRadichel/curiumproject/TargetDataBase/Pages/_ViewImports.cshtml]

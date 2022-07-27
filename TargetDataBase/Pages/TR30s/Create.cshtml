@@ -1,0 +1,64 @@
+﻿@page
+@model TargetDataBase.Pages.TR30s.CreateModel
+
+@{
+    ViewData["Title"] = "Create TR-30 Target";
+}
+
+<h1 class="text-center mt-5">@ViewData["Title"]</h1>
+<div class="row justify-content-center m-5">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TR30.Status" class="control-label"></label>
+                <input asp-for="TR30.Status" value="Warehouse" class="form-control mb-2" readonly />
+            </div>
+            @* Warehouse Data Fields *@
+            <div class="form-group">
+                <label asp-for="TR30.WarehouseDate" class="control-label mt-3"></label>
+                <input asp-for="TR30.WarehouseDate" class="form-control mb-2" />
+                <span asp-validation-for="TR30.WarehouseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TR30.WarehouseName" class="control-label mt-3"></label>
+                <input asp-for="TR30.WarehouseName" class="form-control mb-2" />
+                <span asp-validation-for="TR30.WarehouseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TR30.WFaceCode" class="control-label mt-3"></label>
+                <select asp-for="TR30.WFaceCode" class="form-control mb-2" id="WCode">
+                    <option value="J86005">J86005</option>
+                    <option value="H67600">H67600</option>
+                    <option value="H97600">H97600</option>
+                    <option value="H97601">H97601</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TR30.WBodyCode" class="control-label mt-3"></label>
+                <input asp-for="TR30.WBodyCode" value="J86004" class="form-control mb-2" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="TR30.WFaceLotNum" class="control-label mt-3"></label>
+                <input asp-for="TR30.WFaceLotNum" class="form-control mb-2" />
+                <span asp-validation-for="TR30.WFaceLotNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TR30.WBodyLotNum" class="control-label mt-3"></label>
+                <input asp-for="TR30.WBodyLotNum" class="form-control mb-2" />
+                <span asp-validation-for="TR30.WBodyLotNum" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center m-3">
+                <input type="submit" value="Create" class="btn btn-primary col-sm-10" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center mb-4">
+    <a class="btn btn-outline-primary" asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

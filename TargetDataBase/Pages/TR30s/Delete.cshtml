@@ -1,0 +1,160 @@
+﻿@page
+@model TargetDataBase.Pages.TR30s.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TR30</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.WarehouseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.WarehouseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.WarehouseName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.WarehouseName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.WFaceCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.WFaceCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.WBodyCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.WBodyCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.WFaceLotNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.WFaceLotNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.WBodyLotNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.WBodyLotNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.CyclotronDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.CyclotronDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.CyclotronName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.CyclotronName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.CFaceCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.CFaceCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.CBodyCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.CBodyCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.PlatingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.PlatingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.PlatingName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.PlatingName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.PlatingCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.PlatingCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.PlatingLotNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.PlatingLotNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.ProductName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.ProductName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.TargetNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.TargetNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.BombardingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.BombardingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.BombardingName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.BombardingName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.ProcessingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.ProcessingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.ProcessingName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.ProcessingName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TR30.ProcessingLotNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TR30.ProcessingLotNum)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="TR30.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
