@@ -5,23 +5,23 @@
     ViewData["Title"] = "Delete CS-30 Target";
 }
 
-<h1 class="text-center" style="margin: 30px !important;">@ViewData["Title"]</h1>
-<h3 class="text-center" style="margin: 30px !important;">Are you sure you want to delete this Target?</h3>
+<h1 class="text-center m-3">@ViewData["Title"]</h1>
+<h3 class="text-center m-3">Are you sure you want to delete this Target?</h3>
 <p class="text-danger text-center">@Model.ErrorMessage</p>
 <div class="card border-danger mb-3 text-center">
   <div class="card-body">
     <p class="card-text">Deleting elements are irreversible!</p>
   </div>
 </div>
-<div style="margin: 30px !important;">
+<div class="m-3">
     <h4 class="text-center">Target Information:</h4>
     <hr />
-    <div style="margin: 10px 0 10px 0 !important;" class="text-center">
+    <div class="text-center mt-2 mb-2">
         <h2>Current Target Status: @Html.DisplayFor(model => model.CS30.Status)</h2>
     </div>
-    <table class="table text-center" style="margin-top: 10px !important;" id="Details-Warehouse">
+    <table class="table text-center mt-2" id="Details-Warehouse">
       <tr>
-        <th style="font-size: larger !important" colspan="5"><i><b>Warehouse</b></i></th>
+        <th class="h4" colspan="5"><i><b>Warehouse</b></i></th>
       </tr>
       <tr>
         <th>@Html.DisplayNameFor(model => model.CS30.TargetType)</th>
@@ -40,9 +40,9 @@
     </table>
 
     <div id="Details-Cyclo" class="d-flex justify-content-center">
-        <table class="table text-center" style="margin: 20px 40px 20px 0 !important;">
+        <table class="table text-center m-3" !important;">
           <tr>
-            <th style="font-size: larger !important" colspan="4"><i><b>Cyclotron Spares</b></i></th>
+            <th class="h4" colspan="4"><i><b>Cyclotron Spares</b></i></th>
           </tr>
           <tr>
             <th>@Html.DisplayNameFor(model => model.CS30.CyclotronDate)</th>
@@ -57,7 +57,7 @@
             <td>@Html.DisplayFor(model => model.CS30.Quantity)</td>
           </tr>
         </table>
-        <table class="table text-center" style="margin: 20px 40px 20px 0 !important;">
+        <table class="table text-center m-3">
                 <tr>
                     <th>Results</th>
                     <th>H-Number</th>
@@ -73,12 +73,12 @@
                         </td>
                     </tr>
                 }
-            </table>
+        </table>
     </div>
 
-    <table class="table text-center" style="margin-top: 40px !important;" id="Details-Plating">
+    <table class="table text-center mt-4" id="Details-Plating">
       <tr>
-        <th style="font-size: larger !important" colspan="6"><i><b>Plating</b></i></th>
+        <th class="h4" colspan="6"><i><b>Plating</b></i></th>
       </tr>
       <tr>
         <th>@Html.DisplayNameFor(model => model.CS30.PlatingDate)</th>
@@ -98,9 +98,9 @@
       </tr>
     </table>
 
-    <table class="table text-center" style="margin-top: 40px !important;" id="Details-Bombarding">
+    <table class="table text-center mt-4" id="Details-Bombarding">
       <tr>
-        <th style="font-size: larger !important" colspan="2"><i><b>Bombarding</b></i></th>
+        <th class="h4" colspan="2"><i><b>Bombarding</b></i></th>
       </tr>
       <tr>
         <th>@Html.DisplayNameFor(model => model.CS30.BombardingDate)</th>
@@ -112,9 +112,9 @@
       </tr>
     </table>
 
-    <table class="table text-center" style="margin-top: 40px !important;" id="Details-Processing">
+    <table class="table text-center mt-4" id="Details-Processing">
       <tr>
-        <th style="font-size: larger !important" colspan="3"><i><b>Processing</b></i></th>
+        <th class="h4" colspan="3"><i><b>Processing</b></i></th>
       </tr>
       <tr>
         <th>@Html.DisplayNameFor(model => model.CS30.ProcessingDate)</th>
@@ -130,8 +130,8 @@
     
     <form method="post" class="text-center">
         <input type="hidden" asp-for="CS30.ID" />
-        <input style="margin-right: 10px !important;" type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Target?');"/> |
-        <a class="btn btn-outline-warning" style="margin: 10px 0 10px 0 !important;" asp-page="./Edit" asp-route-id="@Model.CS30?.ID">Edit</a> |
-        <a class="btn btn-outline-primary" style="margin-left: 10px !important;" asp-page="./Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger mr-2" onclick="return confirm('Are you sure you want to delete this Target?');"/> |
+        <a class="btn btn-outline-warning mr-2 ml-2" asp-page="./Edit" asp-route-id="@Model.CS30?.ID">Edit</a> |
+        <a class="btn btn-outline-primary ml-2" asp-page="./Index">Back to List</a>
     </form>
 </div>

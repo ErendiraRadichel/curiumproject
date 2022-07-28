@@ -4,16 +4,16 @@
 @{
     ViewData["Title"] = "IBA Target Details";
 }
-<div style="margin: 50px 0 50px 0 !important;" class="text-center">
+<div class="text-center mt-5 mb-5">
     <h2 class="text-warning">Current Target Status: @Html.DisplayFor(model => model.IBA.Status)</h2>
 </div>
 
-<div class="container" style="margin: 30px !important;">
+<div class="container m-3">
         <div class="row">
             <div class="col-md-12">
                 <div>
                     <div>
-                        <h3 class="card-title text-primary text-center" style="margin: 20px !important;">Target Life Cycle</h3>
+                        <h3 class="card-title text-primary text-center m-2">Target Life Cycle</h3>
                         <div id="content">
                             <ul class="timeline">
                                 <li class="event" data-date="@Html.DisplayFor(model => model.IBA.WarehouseDate)" id="time-warehouse">
@@ -104,6 +104,6 @@
         </div>
 </div>
 <div style="margin: 40px !important;" class="text-center">
-    <a class="btn btn-outline-warning" style="margin-right: 10px !important;" asp-page="./Edit" asp-route-id="@Model.IBA?.ID">Edit</a> |
-    <a class="btn btn-outline-primary" style="margin-left: 10px !important;" asp-page="./Index">Back to List</a>
+    <a class="btn btn-outline-warning mr-2" asp-page="./Edit" asp-route-id="@Model.IBA?.ID">Edit</a> |
+    <a class="btn btn-outline-primary ml-2" asp-page="./Index">Back to List</a>
 </div>

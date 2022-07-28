@@ -2,159 +2,145 @@
 @model TargetDataBase.Pages.TR30s.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete TR-30 Target";
 }
 
-<h1>Delete</h1>
+<h1 class="text-center m-3">@ViewData["Title"]</h1>
+<h3 class="text-center m-3">Are you sure you want to delete this Target?</h3>
+<p class="text-danger text-center">@Model.ErrorMessage</p>
+<div class="card border-danger mb-3 text-center">
+  <div class="card-body">
+    <p class="card-text">Deleting elements are irreversible!</p>
+  </div>
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TR30</h4>
+<div class="m-3">
+    <h4 class="text-center">Target Information:</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.Status)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.Status)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.WarehouseDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.WarehouseDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.WarehouseName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.WarehouseName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.WFaceCode)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.WFaceCode)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.WBodyCode)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.WBodyCode)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.WFaceLotNum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.WFaceLotNum)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.WBodyLotNum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.WBodyLotNum)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.CyclotronDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.CyclotronDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.CyclotronName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.CyclotronName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.CFaceCode)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.CFaceCode)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.CBodyCode)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.CBodyCode)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.Quantity)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.Quantity)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.PlatingDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.PlatingDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.PlatingName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.PlatingName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.PlatingCode)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.PlatingCode)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.PlatingLotNum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.PlatingLotNum)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.ProductName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.ProductName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.TargetNum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.TargetNum)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.BombardingDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.BombardingDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.BombardingName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.BombardingName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.ProcessingDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.ProcessingDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.ProcessingName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.ProcessingName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30.ProcessingLotNum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30.ProcessingLotNum)
-        </dd>
-    </dl>
-    
-    <form method="post">
+    <div class="text-center mt-2 mb-2">
+        <h2>Current Target Status: @Html.DisplayFor(model => model.TR30.Status)</h2>
+    </div>
+    <table class="table text-center mt-2" id="Details-Warehouse">
+      <tr>
+        <th class="h4" colspan="4"><i><b>Warehouse</b></i></th>
+      </tr>
+      <tr>
+        <th>@Html.DisplayNameFor(model => model.TR30.WarehouseDate)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.WarehouseName)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.WFaceCode)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.WBodyCode)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.WFaceLotNum)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.WBodyLotNum)</th>
+      </tr>
+      <tr>
+        <td>@Html.DisplayFor(model => model.TR30.WarehouseDate)</td>
+        <td>@Html.DisplayFor(model => model.TR30.WarehouseName)</td>
+        <td>@Html.DisplayFor(model => model.TR30.WFaceCode)</td>
+        <td>@Html.DisplayFor(model => model.TR30.WBodyCode)</td>
+        <td>@Html.DisplayFor(model => model.TR30.WFaceLotNum)</td>
+        <td>@Html.DisplayFor(model => model.TR30.WBodyLotNum)</td>
+      </tr>
+    </table>
+
+    <div id="Details-Cyclo" class="d-flex justify-content-center">
+        <table class="table text-center m-3">
+          <tr>
+            <th class="h4" colspan="4"><i><b>Cyclotron Spares</b></i></th>
+          </tr>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.TR30.CyclotronDate)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.CyclotronName)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.CFaceCode)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.CBodyCode)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.Quantity)</th>
+          </tr>
+          <tr>
+            <td>@Html.DisplayFor(model => model.TR30.CyclotronDate)</td>
+            <td>@Html.DisplayFor(model => model.TR30.CyclotronName)</td>
+            <td>@Html.DisplayFor(model => model.TR30.CFaceCode)</td>
+            <th>@Html.DisplayFor(model => model.TR30.CBodyCode)</th>
+            <td>@Html.DisplayFor(model => model.TR30.Quantity)</td>
+          </tr>
+        </table>
+        <table class="table text-center m-3">
+                <tr>
+                    <th>Results</th>
+                    <th>H-Number</th>
+                    <th>Test Type</th>
+                </tr>
+                @foreach (var item in Model.TR30.TR30Tests)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Result)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HNum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TestType)
+                        </td>
+                    </tr>
+                }
+            </table>
+    </div>
+
+    <table class="table text-center mt-4" id="Details-Plating">
+      <tr>
+        <th class="h4" colspan="6"><i><b>Plating</b></i></th>
+      </tr>
+      <tr>
+        <th>@Html.DisplayNameFor(model => model.TR30.PlatingDate)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.PlatingName)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.PlatingCode)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.PlatingLotNum)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.ProductName)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.TargetNum)</th>
+      </tr>
+      <tr>
+        <td>@Html.DisplayFor(model => model.TR30.PlatingDate)</td>
+        <td>@Html.DisplayFor(model => model.TR30.PlatingName)</td>
+        <td>@Html.DisplayFor(model => model.TR30.PlatingCode)</td>
+        <td>@Html.DisplayFor(model => model.TR30.PlatingLotNum)</td>
+        <td>@Html.DisplayFor(model => model.TR30.ProductName)</td>
+        <td>@Html.DisplayFor(model => model.TR30.TargetNum)</td>
+      </tr>
+    </table>
+
+    <table class="table text-center mt-4" id="Details-Bombarding">
+      <tr>
+        <th class="h4" colspan="2"><i><b>Bombarding</b></i></th>
+      </tr>
+      <tr>
+        <th>@Html.DisplayNameFor(model => model.TR30.BombardingDate)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.BombardingName)</th>
+      </tr>
+      <tr>
+        <td>@Html.DisplayFor(model => model.TR30.BombardingDate)</td>
+        <td>@Html.DisplayFor(model => model.TR30.BombardingName)</td>
+      </tr>
+    </table>
+
+    <table class="table text-center mt-4" id="Details-Processing">
+      <tr>
+        <th class="h4" colspan="3"><i><b>Processing</b></i></th>
+      </tr>
+      <tr>
+        <th>@Html.DisplayNameFor(model => model.TR30.ProcessingDate)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.ProcessingName)</th>
+        <th>@Html.DisplayNameFor(model => model.TR30.ProcessingLotNum)</th>
+      </tr>
+      <tr>
+        <td>@Html.DisplayFor(model => model.TR30.ProcessingDate)</td>
+        <td>@Html.DisplayFor(model => model.TR30.ProcessingName)</td>
+        <td>@Html.DisplayFor(model => model.TR30.ProcessingLotNum)</td>
+      </tr>
+    </table>
+   
+    <form method="post" class="text-center">
         <input type="hidden" asp-for="TR30.ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger mr-2" onclick="return confirm('Are you sure you want to delete this Target?');"/> |
+        <a class="btn btn-outline-warning mr-2 ml-2" asp-page="./Edit" asp-route-id="@Model.TR30?.ID">Edit</a> |
+        <a class="btn btn-outline-primary ml-2" asp-page="./Index">Back to List</a>
     </form>
 </div>
