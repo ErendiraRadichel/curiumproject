@@ -24,9 +24,8 @@ namespace TargetDataBase.Pages.TR30s
         public string ProductSort { get; set; }
         public string TargetNumSort { get; set; }
         public string WFCSort { get; set; }
-        public string WBCSort { get; set; }
         public string CFCSort { get; set; }
-        public string CBCSort { get; set; }
+        public string CycloCSort { get; set; }
         public string PCodeSort { get; set; }
         public string WFLotNumSort { get; set; }
         public string WBLotNumSort { get; set; }
@@ -43,9 +42,7 @@ namespace TargetDataBase.Pages.TR30s
             ProductSort = String.IsNullOrEmpty(sortOrder) ? "productname_desc" : "";
             TargetNumSort = String.IsNullOrEmpty(sortOrder) ? "targetnum_desc" : "";
             WFCSort = String.IsNullOrEmpty(sortOrder) ? "wfacecode_desc" : "";
-            WBCSort = String.IsNullOrEmpty(sortOrder) ? "wbodycode_desc" : "";
             CFCSort = String.IsNullOrEmpty(sortOrder) ? "cfacecode_desc" : "";
-            CBCSort = String.IsNullOrEmpty(sortOrder) ? "cbodycode_desc" : "";
             PCodeSort = String.IsNullOrEmpty(sortOrder) ? "platingcode_desc" : "";
             WFLotNumSort = String.IsNullOrEmpty(sortOrder) ? "wfacelotnum_desc" : "";
             WBLotNumSort = String.IsNullOrEmpty(sortOrder) ? "wbodylotnum_desc" : "";
@@ -61,7 +58,7 @@ namespace TargetDataBase.Pages.TR30s
             {
                 TR30IQ = TR30IQ.Where(s => s.WFaceCode.Contains(searchString) || s.WBodyCode.Contains(searchString) || s.PlatingCode.Contains(searchString) || s.Status.Contains(searchString) ||
                 s.ProductName.Contains(searchString) || s.ProcessingLotNum.Contains(searchString) || s.TargetNum.Contains(searchString) || s.WFaceLotNum.Contains(searchString) || s.WBodyLotNum.Contains(searchString) ||
-                s.PlatingLotNum.Contains(searchString) || s.CFaceCode.Contains(searchString) || s.CBodyCode.Contains(searchString));
+                s.PlatingLotNum.Contains(searchString) || s.CFaceCode.Contains(searchString) || s.CycloCode.Contains(searchString));
             }
 
             switch (sortOrder)
@@ -78,14 +75,8 @@ namespace TargetDataBase.Pages.TR30s
                 case "wfacecode_desc":
                     TR30IQ = TR30IQ.OrderByDescending(s => s.WFaceCode);
                     break;
-                case "wbodycode_desc":
-                    TR30IQ = TR30IQ.OrderByDescending(s => s.WBodyCode);
-                    break;
                 case "cfacecode_desc":
                     TR30IQ = TR30IQ.OrderByDescending(s => s.CFaceCode);
-                    break;
-                case "cbodycode_desc":
-                    TR30IQ = TR30IQ.OrderByDescending(s => s.CBodyCode);
                     break;
                 case "platingcode_desc":
                     TR30IQ = TR30IQ.OrderByDescending(s => s.PlatingCode);

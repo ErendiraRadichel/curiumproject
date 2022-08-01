@@ -2,142 +2,225 @@
 @model TargetDataBase.Pages.TR30s.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Upadate TR-30 Target";
 }
 
-<h1>Edit</h1>
+<h1 class="text-center mt-4">Update TR-30 Target Information</h1>
+<div class="text-center text-success mt-3 mb-5">
+    <h2>Current Target Status: @Html.DisplayFor(model => model.TR30.Status)</h2>
+</div>
+<h4 class="text-center mt-5">Click on what you want to update about this target</h4>
+<div class="d-flex mt-1 mb-3">
+    <button class="btn btn-primary m-1" onclick="displayWarehouse()">Update Warehose Information</button>
+    <button class="btn btn-secondary m-1" onclick="displayCyclotronS()">Update Cyclotron Spares Information</button>
+    <button class="btn btn-success m-1" onclick="displayChemistry1()">Update Chemistry: Plating Information</button>
+    <button class="btn btn-info m-1" onclick="displayBombarding()">Update Bombarding Information</button>
+    <button class="btn btn-light m-1" onclick="displayChemistry2()">Update Chemistry: Processing Information</button>
+</div>
+<div class="text-center">
+    <a class="btn btn-warning m-1" asp-page="/IBATests/Create">Add JIG/Sisembled Test</a>
+</div>
 
-<h4>TR30</h4>
-<hr />
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="TR30.ID" />
             <div class="form-group">
-                <label asp-for="TR30.Status" class="control-label"></label>
-                <input asp-for="TR30.Status" class="form-control" />
-                <span asp-validation-for="TR30.Status" class="text-danger"></span>
+                <h4 class="text-center mt-2">Update Target Status</h4>
+                <select asp-for="TR30.Status" class="form-control m-1" id="status">
+                    <option value="Warehouse">Warehouse</option>
+                    <option value="Cyclotron Spares">Cyclotron Spares</option>
+                    <option value="Plating">Plating</option>
+                    <option value="Bombarding">Bombarding</option>
+                    <option value="Processing">Processing</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label asp-for="TR30.WarehouseDate" class="control-label"></label>
-                <input asp-for="TR30.WarehouseDate" class="form-control" />
-                <span asp-validation-for="TR30.WarehouseDate" class="text-danger"></span>
+            @* Warehouse Data Fields *@
+            <div id="Warehouse" style="display:none;" class="m-3">
+                <hr>
+                <h3 class="text-center mt-1 mb-1" >Edit Target in Warehouse:</h3>
+                <div class="form-group">
+                    <label asp-for="TR30.WarehouseDate" class="control-label mt-1"></label>
+                    <input asp-for="TR30.WarehouseDate" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.WarehouseDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-labe mt-1">Who did this change? (First Name & Last Name Initials)</label>
+                    <input asp-for="TR30.WarehouseName" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.WarehouseName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.WFaceCode" class="control-label mt-1"></label>
+                    <select asp-for="TR30.WFaceCode" class="form-control mb-1" id="W1Code">
+                        <option value="J86005">J86005</option>
+                        <option value="H67600">H67600</option>
+                        <option value="H97600">H97600</option>
+                        <option value="H97601">H97601(0.25 Top)</option>
+                    </select>
+                    <span asp-validation-for="TR30.WFaceCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.WBodyCode" class="control-label mt-1"></label>
+                    <input asp-for="TR30.WBodyCode" class="form-control mb-1" value="J86004"/>
+                    <span asp-validation-for="TR30.WBodyCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.WFaceLotNum" class="control-label mt-1"></label>
+                    <input asp-for="TR30.WFaceLotNum" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.WFaceLotNum" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.WBodyLotNum" class="control-label mt-1"></label>
+                    <input asp-for="TR30.WBodyLotNum" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.WBodyLotNum" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="TR30.WarehouseName" class="control-label"></label>
-                <input asp-for="TR30.WarehouseName" class="form-control" />
-                <span asp-validation-for="TR30.WarehouseName" class="text-danger"></span>
+            @* Cyclotron Spares Data Fields *@
+            <div id="CyclotronSpares" style="display:none;" class="m-3">
+                <hr>
+                <h3 class="text-center mt-1 mb-1">Edit Target in Cyclotron Spares:</h3>
+                <div class="form-group">
+                    <p><b>Face Lot Number: </b>@Html.DisplayFor(model => model.TR30.WFaceLotNum)</p>
+                    <p><b>Body Lot Number: </b>@Html.DisplayFor(model => model.TR30.WBodyLotNum)</p>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.CyclotronDate" class="control-label mt-1"></label>
+                    <input asp-for="TR30.CyclotronDate" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.CyclotronDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.CyclotronName" class="control-label mt-1"></label>
+                    <input asp-for="TR30.CyclotronName" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.CyclotronName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.CFaceCode" class="control-label"></label>
+                    <select asp-for="TR30.CFaceCode" class="form-control mb-1" id="CFaceCode">
+                        <option value="S67500">S67500</option>
+                        <option value="S97500">S97500</option>
+                        <option value="S97501">S97501</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.CBodyCode" class="control-label"></label>
+                    <select asp-for="TR30.CBodyCode" class="form-control mb-1" id="CBodyCode">
+                        <option value="J86004">J86004</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.CycloCode" class="control-label"></label>
+                    <select asp-for="TR30.CycloCode" class="form-control mb-1" id="CycloCode">
+                        <option value="J86003">J86003</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.Quantity" class="control-label mt-1"></label>
+                    <input asp-for="TR30.Quantity" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.Quantity" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="TR30.WFaceCode" class="control-label"></label>
-                <input asp-for="TR30.WFaceCode" class="form-control" />
-                <span asp-validation-for="TR30.WFaceCode" class="text-danger"></span>
+            @* Chemistry:Plating Data Fields *@
+            <div id="Chemistry1" style="display:none;" class="m-3">
+                <hr>
+                <h3 class="text-center mt-1 mb-1">Edit Target in Plating:</h3>
+                <div class="form-group">
+                    <label asp-for="TR30.PlatingDate" class="control-label mt-1"></label>
+                    <input asp-for="TR30.PlatingDate" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.PlatingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.PlatingName" class="control-label mt-1"></label>
+                    <input asp-for="TR30.PlatingName" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.PlatingName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.PlatingLotNum" class="control-label mt-1"></label>
+                    <input asp-for="TR30.PlatingLotNum" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.PlatingLotNum" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.ProductName" class="control-label mt-1"></label>
+                    <select asp-for="TR30.ProductName" class="form-control mb-1" id="product">
+                        <option value="Pb-201">Pb-201</option>
+                        <option value="Ge-68 61/39">Ge-68 61/39</option>
+                        <option value="Ge-68 75/25">Ge-68 75/25</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.PlatingCode" class="control-label mt-1"></label>
+                    <select asp-for="TR30.PlatingCode" class="form-control mb-1" id="product">
+                        <option value="S730">S730</option>
+                        <option value="S67600">S67600</option>
+                        <option value="S97600">S97600</option>
+                        <option value="S97601">S97601</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.TargetNum" class="control-label mt-1"></label>
+                    <input asp-for="TR30.TargetNum" class="form-control mb-1"/>
+                    <span asp-validation-for="TR30.TargetNum" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="TR30.WBodyCode" class="control-label"></label>
-                <input asp-for="TR30.WBodyCode" class="form-control" />
-                <span asp-validation-for="TR30.WBodyCode" class="text-danger"></span>
+             @* Cyclotron Bombarding Data Fields *@
+             <div id="Bombarding" style="display:none;" class="m-3">
+                <hr>
+                <h3 class="text-center mt-1 mb-1">Edit Target in Bombarding information:</h3>
+                <div class="form-group mt-1 mb-1">
+                    <p><b>Product Name: </b>@Html.DisplayFor(model => model.TR30.ProductName)</p>
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.TR30.PlatingLotNum)</p>
+                    <p><b>Code: </b>@Html.DisplayFor(model => model.TR30.PlatingCode)</p>
+                    <p><b>Target Number: </b>@Html.DisplayFor(model => model.TR30.TargetNum)</p>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.BombardingDate" class="control-label mt-1"></label>
+                    <input asp-for="TR30.BombardingDate" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.BombardingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.BombardingName" class="control-label mt-1"></label>
+                    <input asp-for="TR30.BombardingName" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.BombardingName" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="TR30.WFaceLotNum" class="control-label"></label>
-                <input asp-for="TR30.WFaceLotNum" class="form-control" />
-                <span asp-validation-for="TR30.WFaceLotNum" class="text-danger"></span>
+            @* Chemistry: Processing Data Fields *@
+            <div id="Chemistry2" style="display:none;" class="m-3">
+                <hr>
+                <h3 class="text-center mt-1 mb-1">Edit Target in Processing:</h3>
+                <div class="form-group mt-1 mb-1">
+                    <p><b>Product Name: </b>@Html.DisplayFor(model => model.TR30.ProductName)</p>
+                    <p><b>Code: </b>@Html.DisplayFor(model => model.TR30.PlatingCode)</p>
+                    <p><b>Lot Number: </b>@Html.DisplayFor(model => model.TR30.PlatingLotNum)</p>
+                    <p><b>Target Number: </b>@Html.DisplayFor(model => model.TR30.TargetNum)</p>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.ProcessingDate" class="control-label mt-1"></label>
+                    <input asp-for="TR30.ProcessingDate" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.ProcessingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.ProcessingName" class="control-label mt-1"></label>
+                    <input asp-for="TR30.ProcessingName" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.ProcessingName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TR30.ProcessingLotNum" class="control-label mt-1"></label>
+                    <input asp-for="TR30.ProcessingLotNum" class="form-control mb-1" />
+                    <span asp-validation-for="TR30.ProcessingLotNum" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="TR30.WBodyLotNum" class="control-label"></label>
-                <input asp-for="TR30.WBodyLotNum" class="form-control" />
-                <span asp-validation-for="TR30.WBodyLotNum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.CyclotronDate" class="control-label"></label>
-                <input asp-for="TR30.CyclotronDate" class="form-control" />
-                <span asp-validation-for="TR30.CyclotronDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.CyclotronName" class="control-label"></label>
-                <input asp-for="TR30.CyclotronName" class="form-control" />
-                <span asp-validation-for="TR30.CyclotronName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.CFaceCode" class="control-label"></label>
-                <input asp-for="TR30.CFaceCode" class="form-control" />
-                <span asp-validation-for="TR30.CFaceCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.CBodyCode" class="control-label"></label>
-                <input asp-for="TR30.CBodyCode" class="form-control" />
-                <span asp-validation-for="TR30.CBodyCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.Quantity" class="control-label"></label>
-                <input asp-for="TR30.Quantity" class="form-control" />
-                <span asp-validation-for="TR30.Quantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.PlatingDate" class="control-label"></label>
-                <input asp-for="TR30.PlatingDate" class="form-control" />
-                <span asp-validation-for="TR30.PlatingDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.PlatingName" class="control-label"></label>
-                <input asp-for="TR30.PlatingName" class="form-control" />
-                <span asp-validation-for="TR30.PlatingName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.PlatingCode" class="control-label"></label>
-                <input asp-for="TR30.PlatingCode" class="form-control" />
-                <span asp-validation-for="TR30.PlatingCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.PlatingLotNum" class="control-label"></label>
-                <input asp-for="TR30.PlatingLotNum" class="form-control" />
-                <span asp-validation-for="TR30.PlatingLotNum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.ProductName" class="control-label"></label>
-                <input asp-for="TR30.ProductName" class="form-control" />
-                <span asp-validation-for="TR30.ProductName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.TargetNum" class="control-label"></label>
-                <input asp-for="TR30.TargetNum" class="form-control" />
-                <span asp-validation-for="TR30.TargetNum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.BombardingDate" class="control-label"></label>
-                <input asp-for="TR30.BombardingDate" class="form-control" />
-                <span asp-validation-for="TR30.BombardingDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.BombardingName" class="control-label"></label>
-                <input asp-for="TR30.BombardingName" class="form-control" />
-                <span asp-validation-for="TR30.BombardingName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.ProcessingDate" class="control-label"></label>
-                <input asp-for="TR30.ProcessingDate" class="form-control" />
-                <span asp-validation-for="TR30.ProcessingDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.ProcessingName" class="control-label"></label>
-                <input asp-for="TR30.ProcessingName" class="form-control" />
-                <span asp-validation-for="TR30.ProcessingName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TR30.ProcessingLotNum" class="control-label"></label>
-                <input asp-for="TR30.ProcessingLotNum" class="form-control" />
-                <span asp-validation-for="TR30.ProcessingLotNum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group text-center m-4" >
+                <h3 class="text-warning m-1" >Save your changes!</h3>
+                <input type="submit" value="Save" class="btn btn-primary btn-lg col-sm-10" />
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
+<div class="text-center" >
+    <a class="btn btn-outline-primary" asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -22,7 +22,7 @@
     </div>
     <table class="table text-center mt-2" id="Details-Warehouse">
       <tr>
-        <th class="h4" colspan="4"><i><b>Warehouse</b></i></th>
+        <th class="h4" colspan="6"><i><b>Warehouse</b></i></th>
       </tr>
       <tr>
         <th>@Html.DisplayNameFor(model => model.TR30.WarehouseDate)</th>
@@ -45,13 +45,14 @@
     <div id="Details-Cyclo" class="d-flex justify-content-center">
         <table class="table text-center m-3">
           <tr>
-            <th class="h4" colspan="4"><i><b>Cyclotron Spares</b></i></th>
+            <th class="h4" colspan="6"><i><b>Cyclotron Spares</b></i></th>
           </tr>
           <tr>
             <th>@Html.DisplayNameFor(model => model.TR30.CyclotronDate)</th>
             <th>@Html.DisplayNameFor(model => model.TR30.CyclotronName)</th>
             <th>@Html.DisplayNameFor(model => model.TR30.CFaceCode)</th>
             <th>@Html.DisplayNameFor(model => model.TR30.CBodyCode)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.CycloCode)</th>
             <th>@Html.DisplayNameFor(model => model.TR30.Quantity)</th>
           </tr>
           <tr>
@@ -59,6 +60,7 @@
             <td>@Html.DisplayFor(model => model.TR30.CyclotronName)</td>
             <td>@Html.DisplayFor(model => model.TR30.CFaceCode)</td>
             <th>@Html.DisplayFor(model => model.TR30.CBodyCode)</th>
+            <th>@Html.DisplayFor(model => model.TR30.CycloCode)</th>
             <td>@Html.DisplayFor(model => model.TR30.Quantity)</td>
           </tr>
         </table>

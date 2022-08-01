@@ -37,8 +37,8 @@ namespace TargetDataBase.Pages.TR30s
                 emptyTR30,
                 "tr30",   // Prefix for form value.
                 s => s.Status, s => s.WarehouseDate, s => s.WarehouseName, s => s.WFaceCode, s => s.WBodyCode, s => s.WFaceLotNum, s => s.WBodyLotNum, s => s.CyclotronDate, s => s.CyclotronName,
-                s => s.CFaceCode, s => s.CBodyCode, s => s.Quantity, s => s.PlatingDate, s => s.PlatingName, s => s.PlatingCode, s => s.PlatingLotNum, s => s.ProductName, s => s.TargetNum, s => s.BombardingDate,
-                s => s.BombardingName, s => s.ProcessingDate, s => s.ProcessingName, s => s.ProcessingLotNum))
+                s => s.CFaceCode, s => s.CycloCode, s => s.Quantity, s => s.PlatingDate, s => s.PlatingName, s => s.PlatingCode, s => s.PlatingLotNum, s => s.ProductName, s => s.TargetNum, s => s.BombardingDate,
+                s => s.BombardingName, s => s.ProcessingDate, s => s.ProcessingName, s => s.ProcessingLotNum, s => s.CBodyCode))
             {
                 _context.TR30s.Add(emptyTR30);
                 await _context.SaveChangesAsync();

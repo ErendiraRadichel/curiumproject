@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TargetDataBase.Data;
 
@@ -11,9 +12,10 @@ using TargetDataBase.Data;
 namespace TargetDataBase.Migrations
 {
     [DbContext(typeof(TargetDataBaseContext))]
-    partial class TargetDataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220801192446_CBodyC")]
+    partial class CBodyC
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

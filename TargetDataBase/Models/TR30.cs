@@ -36,9 +36,14 @@ namespace TargetDataBase.Models
         [Display(Name = "Name")]
         public string? CyclotronName { get; set; } = string.Empty;
 
+        [Display(Name = "Face Code")]
         public string? CFaceCode { get; set; } = string.Empty;
 
+        [Display(Name = "Body Code")]
         public string? CBodyCode { get; set; } = string.Empty;
+
+        [Display(Name = "Face & Body Code")]
+        public string? CycloCode { get; set; } = string.Empty;
 
         public string? Quantity { get; set; } = string.Empty;
 

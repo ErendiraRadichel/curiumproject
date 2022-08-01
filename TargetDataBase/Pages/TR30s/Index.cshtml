@@ -38,13 +38,10 @@
                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WFCSort">Warehouse Face Code</a>
             </th>
             <th>
-                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.WBCSort">Warehouse Body Code</a>
+                Warehouse Body Code
             </th>
             <th>
                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.CFCSort">Cyclotron Face Code</a>
-            </th>
-            <th>
-                <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.CBCSort">Cyclotron Body Code</a>
             </th>
             <th>
                 <a class="text-decoration-none" asp-page="./Index" asp-route-sortOrder="@Model.PCodeSort">Plating Code</a>
@@ -87,9 +84,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CFaceCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CBodyCode)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PlatingCode)

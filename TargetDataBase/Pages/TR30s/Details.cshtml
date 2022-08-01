@@ -37,6 +37,8 @@
                                     <p>@Html.DisplayFor(model => model.TR30.CFaceCode)</p>
                                     <h5>@Html.DisplayNameFor(model => model.TR30.CBodyCode):</h5>
                                     <p>@Html.DisplayFor(model => model.TR30.CBodyCode)</p>
+                                    <h5>@Html.DisplayNameFor(model => model.TR30.CycloCode):</h5>
+                                    <p>@Html.DisplayFor(model => model.TR30.CycloCode)</p>
                                     <h5>@Html.DisplayNameFor(model => model.TR30.WFaceLotNum):</h5>
                                     <p>@Html.DisplayFor(model => model.TR30.WFaceLotNum)</p>
                                     <h5>@Html.DisplayNameFor(model => model.TR30.WBodyLotNum):</h5>
@@ -111,7 +113,7 @@
             </div>
         </div>
 </div>
-<div style="margin: 40px !important;" class="text-center">
+<div class="text-center m-5">
     <a class="btn btn-outline-warning mr-2" asp-page="./Edit" asp-route-id="@Model.TR30?.ID">Edit</a> |
     <a class="btn btn-outline-primary ml-2" asp-page="./Index">Back to List</a>
 </div>
