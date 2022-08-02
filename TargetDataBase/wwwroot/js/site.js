@@ -47,13 +47,3 @@ function displayChemistry2() {
         x.style.display = "none";
     }
 }
-
-function displayTimeCyclotron() {
-    var x = document.getElementByClass("displaytime");
-    var item = document.getElementsByTagName("p")
-    if (x.innerHTML = item[0].getAttribute("value") === "N/A") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
