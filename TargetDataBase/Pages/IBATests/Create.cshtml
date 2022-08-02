@@ -5,42 +5,42 @@
     ViewData["Title"] = "Create IBA Test";
 }
 
-<h1 class="text-center" style="margin-top: 50px !important;" >@ViewData["Title"]</h1>
+<h1 class="text-center mt-5" >@ViewData["Title"]</h1>
 <div class="row justify-content-center">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="IBATest.IBAID" class="control-label" style="margin-top: 20px !important;"></label>
-                <select asp-for="IBATest.IBAID" class ="form-control" asp-items="ViewBag.IBAID" style="margin-bottom: 10px !important;"></select>
+                <label asp-for="IBATest.IBAID" class="control-label mt-2"></label>
+                <select asp-for="IBATest.IBAID" class ="form-control mb-1" asp-items="ViewBag.IBAID"></select>
             </div>
             <div class="form-group">
-                <label class="control-label" style="margin-top: 20px !important;">Test Type</label><br />
+                <label class="control-label mt-2">Test Type</label><br />
                 <input name="IBATest.TestType" type="radio" value="JIG"/>
                 <label for="jig">JIG</label><br>
                 <input name="IBATest.TestType" type="radio" value="Sisembled"/>
                 <label for="sisembled">Sisembled</label><br>
             </div>
             <div class="form-group">
-                <label class="control-label" style="margin-top: 20px !important;">Result</label><br />
+                <label class="control-label mt-2">Result</label><br />
                 <input name="IBATest.Result" type="radio" value="True"/>
                 <label for="true">True</label><br>
                 <input name="IBATest.Result" type="radio" value="False"/>
                 <label for="False">False</label><br>
             </div>
             <div class="form-group">
-                <label asp-for="IBATest.HNum" class="control-label" style="margin-top: 20px !important;"></label>
-                <input asp-for="IBATest.HNum" class="form-control" style="margin-bottom: 10px !important;"/>
+                <label asp-for="IBATest.HNum" class="control-label mt-2"></label>
+                <input asp-for="IBATest.HNum" class="form-control mb-1"/>
                 <span asp-validation-for="IBATest.HNum" class="text-danger"></span>
             </div>
-            <div class="form-group text-center" style="margin: 30px !important;">
+            <div class="form-group text-center m-3">
                 <input type="submit" value="Create" class="btn btn-primary col-sm-10" />
             </div>
         </form>
     </div>
 </div>
 
-<div class="text-center" style="margin-bottom: 40px !important;">
+<div class="text-center mb-4">
     <a class="btn btn-outline-primary" asp-page="Index">Back to List</a>
 </div>
 
