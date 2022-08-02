@@ -22,14 +22,16 @@
                 <label for="jig">JIG</label><br>
                 <input name="IBATest.TestType" type="radio" value="Sisembled"/>
                 <label for="sisembled">Sisembled</label><br>
+                <input name="IBATest.TestType" type="radio" value="Both Tests"/>
+                <label for="BothTest">Both Tests</label><br>
                 <span asp-validation-for="IBATest.TestType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label mt-2">Result</label><br />
                 <input name="IBATest.Result" type="radio" value="True"/>
-                <label for="true">True</label><br>
+                <label for="Pass">Pass</label><br>
                 <input name="IBATest.Result" type="radio" value="False"/>
-                <label for="False">False</label><br>
+                <label for="Fail">Fail</label><br>
                 <span asp-validation-for="IBATest.Result" class="text-danger"></span>
             </div>
             <div class="form-group">

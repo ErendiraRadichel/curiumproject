@@ -28,7 +28,6 @@ namespace TargetDataBase.Pages.CS30Tests
         [BindProperty]
         public CS30Test CS30Test { get; set; }
         
-
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
@@ -40,7 +39,7 @@ namespace TargetDataBase.Pages.CS30Tests
             _context.CS30Tests.Add(CS30Test);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Create");
         }
     }
 }

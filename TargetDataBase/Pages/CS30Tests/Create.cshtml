@@ -16,10 +16,10 @@
             </div>
             <div class="form-group">
                 <label class="control-label mt-2">Result</label><br />
-                <input name="CS30Test.Result" type="radio" value="True"/>
-                <label for="true">True</label><br>
-                <input name="CS30Test.Result" type="radio" value="False"/>
-                <label for="False">False</label><br>
+                <input name="CS30Test.Result" type="radio" value="Pass"/>
+                <label for="Pass">Pass</label><br>
+                <input name="CS30Test.Result" type="radio" value="Fail"/>
+                <label for="Fail">Fail</label><br>
             </div>
             <div class="form-group">
                 <label asp-for="CS30Test.HNum" class="control-label mt-2"></label>
@@ -27,14 +27,14 @@
                 <span asp-validation-for="CS30Test.HNum" class="text-danger"></span>
             </div>
             <div class="form-group text-center m-3">
-                <input type="submit" value="Create" class="btn btn-primary col-sm-10" />
+                <input type="submit" value="Save & Create New Test" asp-page="Create" class="btn btn-primary col-sm-10" />
             </div>
         </form>
     </div>
 </div>
 
 <div class="text-center mb-4">
-    <a class="btn btn-outline-primary" asp-page="Index">Back to List</a>
+    <a class="btn btn-outline-primary" asp-page="/CS30s/Index">Back to List</a>
 </div>
 
 @section Scripts {
