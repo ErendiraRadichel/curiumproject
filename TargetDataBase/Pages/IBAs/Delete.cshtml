@@ -20,7 +20,7 @@
     <div class="text-center mt-2 mb-2">
         <h2>Current Target Status: @Html.DisplayFor(model => model.IBA.Status)</h2>
     </div>
-    <table class="table text-center mt-2" id="Details-Warehouse">
+    <table class="table text-center mt-2">
       <tr>
         <th class="h4" colspan="4"><i><b>Warehouse</b></i></th>
       </tr>
@@ -38,25 +38,27 @@
       </tr>
     </table>
 
-    <div id="Details-Cyclo" class="d-flex justify-content-center">
-        <table class="table text-center m-3">
-          <tr>
-            <th class="h4" colspan="4"><i><b>Cyclotron Spares</b></i></th>
-          </tr>
-          <tr>
-            <th>@Html.DisplayNameFor(model => model.IBA.CyclotronDate)</th>
-            <th>@Html.DisplayNameFor(model => model.IBA.CyclotronName)</th>
-            <th>@Html.DisplayNameFor(model => model.IBA.CyclotronCode)</th>
-            <th>@Html.DisplayNameFor(model => model.IBA.Quantity)</th>
-          </tr>
-          <tr>
-            <td>@Html.DisplayFor(model => model.IBA.CyclotronDate)</td>
-            <td>@Html.DisplayFor(model => model.IBA.CyclotronName)</td>
-            <td>@Html.DisplayFor(model => model.IBA.CyclotronCode)</td>
-            <td>@Html.DisplayFor(model => model.IBA.Quantity)</td>
-          </tr>
-        </table>
-        <table class="table text-center m-3">
+    @if (Model.IBA.CyclotronDate != null)
+    {
+        <div class="d-flex justify-content-center">
+            <table class="table text-center m-3">
+                <tr>
+                    <th class="h4" colspan="4"><i><b>Cyclotron Spares</b></i></th>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.IBA.CyclotronDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.IBA.CyclotronName)</th>
+                    <th>@Html.DisplayNameFor(model => model.IBA.CyclotronCode)</th>
+                    <th>@Html.DisplayNameFor(model => model.IBA.Quantity)</th>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.IBA.CyclotronDate)</td>
+                    <td>@Html.DisplayFor(model => model.IBA.CyclotronName)</td>
+                    <td>@Html.DisplayFor(model => model.IBA.CyclotronCode)</td>
+                    <td>@Html.DisplayFor(model => model.IBA.Quantity)</td>
+                </tr>
+            </table>
+            <table class="table text-center m-3">
                 <tr>
                     <th>Results</th>
                     <th>H-Number</th>
@@ -77,60 +79,66 @@
                     </tr>
                 }
             </table>
-    </div>
-
-    <table class="table text-center mt-4" id="Details-Plating">
-      <tr>
-        <th class="h4" colspan="6"><i><b>Plating</b></i></th>
-      </tr>
-      <tr>
-        <th>@Html.DisplayNameFor(model => model.IBA.PlatingDate)</th>
-        <th>@Html.DisplayNameFor(model => model.IBA.PlatingName)</th>
-        <th>@Html.DisplayNameFor(model => model.IBA.PlatingCode)</th>
-        <th>@Html.DisplayNameFor(model => model.IBA.PlatingLotNum)</th>
-        <th>@Html.DisplayNameFor(model => model.IBA.ProductName)</th>
-        <th>@Html.DisplayNameFor(model => model.IBA.TargetNum)</th>
-      </tr>
-      <tr>
-        <td>@Html.DisplayFor(model => model.IBA.PlatingDate)</td>
-        <td>@Html.DisplayFor(model => model.IBA.PlatingName)</td>
-        <td>@Html.DisplayFor(model => model.IBA.PlatingCode)</td>
-        <td>@Html.DisplayFor(model => model.IBA.PlatingLotNum)</td>
-        <td>@Html.DisplayFor(model => model.IBA.ProductName)</td>
-        <td>@Html.DisplayFor(model => model.IBA.TargetNum)</td>
-      </tr>
-    </table>
-
-    <table class="table text-center mt-4" id="Details-Bombarding">
-      <tr>
-        <th class="h4" colspan="2"><i><b>Bombarding</b></i></th>
-      </tr>
-      <tr>
-        <th>@Html.DisplayNameFor(model => model.IBA.BombardingDate)</th>
-        <th>@Html.DisplayNameFor(model => model.IBA.BombardingName)</th>
-      </tr>
-      <tr>
-        <td>@Html.DisplayFor(model => model.IBA.BombardingDate)</td>
-        <td>@Html.DisplayFor(model => model.IBA.BombardingName)</td>
-      </tr>
-    </table>
-
-    <table class="table text-center mt-4" id="Details-Processing">
-      <tr>
-        <th class="h4" colspan="3"><i><b>Processing</b></i></th>
-      </tr>
-      <tr>
-        <th>@Html.DisplayNameFor(model => model.IBA.ProcessingDate)</th>
-        <th>@Html.DisplayNameFor(model => model.IBA.ProcessingName)</th>
-        <th>@Html.DisplayNameFor(model => model.IBA.ProcessingLotNum)</th>
-      </tr>
-      <tr>
-        <td>@Html.DisplayFor(model => model.IBA.ProcessingDate)</td>
-        <td>@Html.DisplayFor(model => model.IBA.ProcessingName)</td>
-        <td>@Html.DisplayFor(model => model.IBA.ProcessingLotNum)</td>
-      </tr>
-    </table>
-    
+        </div>
+    }
+    @if (Model.IBA.PlatingDate != null)
+    {
+        <table class="table text-center mt-4">
+            <tr>
+                <th class="h4" colspan="6"><i><b>Plating</b></i></th>
+            </tr>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.IBA.PlatingDate)</th>
+            <th>@Html.DisplayNameFor(model => model.IBA.PlatingName)</th>
+            <th>@Html.DisplayNameFor(model => model.IBA.PlatingCode)</th>
+            <th>@Html.DisplayNameFor(model => model.IBA.PlatingLotNum)</th>
+            <th>@Html.DisplayNameFor(model => model.IBA.ProductName)</th>
+            <th>@Html.DisplayNameFor(model => model.IBA.TargetNum)</th>
+          </tr>
+          <tr>
+            <td>@Html.DisplayFor(model => model.IBA.PlatingDate)</td>
+            <td>@Html.DisplayFor(model => model.IBA.PlatingName)</td>
+            <td>@Html.DisplayFor(model => model.IBA.PlatingCode)</td>
+            <td>@Html.DisplayFor(model => model.IBA.PlatingLotNum)</td>
+            <td>@Html.DisplayFor(model => model.IBA.ProductName)</td>
+            <td>@Html.DisplayFor(model => model.IBA.TargetNum)</td>
+          </tr>
+        </table>
+    }
+    @if (Model.IBA.BombardingDate != null)
+    {
+        <table class="table text-center mt-4">
+          <tr>
+            <th class="h4" colspan="2"><i><b>Bombarding</b></i></th>
+          </tr>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.IBA.BombardingDate)</th>
+            <th>@Html.DisplayNameFor(model => model.IBA.BombardingName)</th>
+          </tr>
+          <tr>
+            <td>@Html.DisplayFor(model => model.IBA.BombardingDate)</td>
+            <td>@Html.DisplayFor(model => model.IBA.BombardingName)</td>
+          </tr>
+        </table>
+    }
+    @if (Model.IBA.ProcessingDate != null)
+    {
+        <table class="table text-center mt-4">
+          <tr>
+            <th class="h4" colspan="3"><i><b>Processing</b></i></th>
+          </tr>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.IBA.ProcessingDate)</th>
+            <th>@Html.DisplayNameFor(model => model.IBA.ProcessingName)</th>
+            <th>@Html.DisplayNameFor(model => model.IBA.ProcessingLotNum)</th>
+          </tr>
+          <tr>
+            <td>@Html.DisplayFor(model => model.IBA.ProcessingDate)</td>
+            <td>@Html.DisplayFor(model => model.IBA.ProcessingName)</td>
+            <td>@Html.DisplayFor(model => model.IBA.ProcessingLotNum)</td>
+          </tr>
+        </table>
+    }
     <form method="post" class="text-center">
         <input type="hidden" asp-for="IBA.ID" />
         <input type="submit" value="Delete" class="btn btn-danger mr-2" onclick="return confirm('Are you sure you want to delete this Target?');"/> |

@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace TargetDataBase.Pages
 {
+#pragma warning disable CS8632
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     [IgnoreAntiforgeryToken]
     public class ErrorModel : PageModel
@@ -24,4 +25,5 @@ namespace TargetDataBase.Pages
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }
+#pragma warning restore CS8632
 }

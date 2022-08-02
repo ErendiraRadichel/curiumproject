@@ -16,7 +16,7 @@
                         <h3 class="card-title text-primary text-center m-2">Target Life Cycle</h3>
                         <div id="content">
                             <ul class="timeline">
-                                <li class="event" data-date="@Html.DisplayFor(model => model.IBA.WarehouseDate)" id="time-warehouse">
+                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.WarehouseDate)">
                                     <h4><b><i>Target in Warehouse:</i></b></h4>
                                     <h5>@Html.DisplayNameFor(model => model.IBA.WarehouseName):</h5>
                                     <p>@Html.DisplayFor(model => model.IBA.WarehouseName)</p>
@@ -25,77 +25,90 @@
                                     <h5>@Html.DisplayNameFor(model => model.IBA.WarehouseLotNum):</h5>
                                     <p>@Html.DisplayFor(model => model.IBA.WarehouseLotNum)</p>
                                 </li>
-                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.CyclotronDate)" id="time-cyclotron">
-                                    <h4><b><i>Target in Cyclotron Spares:</i></b></h4>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.CyclotronName):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.CyclotronName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.CyclotronCode):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.CyclotronCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.WarehouseLotNum):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.WarehouseLotNum)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.Quantity):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.Quantity)</p>
-                                    <table class="table">
-                                        <tr>
-                                            <th>Results</th>
-                                            <th>H-Number</th>
-                                            <th>Test Type</th>
-                                        </tr>
-                                        @foreach (var item in Model.IBA.IBATests)
-                                        {
+                                @if (Model.IBA.CyclotronDate != null)
+                                {
+                                    <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.CyclotronDate)">
+                                        <h4><b><i>Target in Cyclotron Spares:</i></b></h4>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.CyclotronName):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.CyclotronName)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.CyclotronCode):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.CyclotronCode)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.WarehouseLotNum):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.WarehouseLotNum)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.Quantity):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.Quantity)</p>
+                                        <table class="table">
                                             <tr>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Result)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.HNum)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.TestType)
-                                                </td>
+                                                <th>Results</th>
+                                                <th>H-Number</th>
+                                                <th>Test Type</th>
                                             </tr>
-                                        }
-                                    </table>
-                                </li>
-                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.PlatingDate)" id="time-plating">
-                                    <h4><b><i>Target in Lab: Plating</i></b></h4>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.PlatingName):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.PlatingName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.PlatingCode):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.PlatingCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.PlatingLotNum):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.PlatingLotNum)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.ProductName):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.ProductName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.TargetNum):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.TargetNum)</p>
-                                </li>
-                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.BombardingDate)" id="time-bombarding">
-                                    <h4><b><i>Target in Bombarding:</i></b></h4>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.BombardingName):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.BombardingName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.PlatingCode):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.PlatingCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.PlatingLotNum):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.PlatingLotNum)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.ProductName):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.ProductName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.TargetNum):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.TargetNum)</p>
-                                </li>
-                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.ProcessingDate)" id="time-processing">
-                                    <h4><b><i>Target in Lab: Processing</i></b></h4>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.ProcessingName):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.ProcessingName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.PlatingCode):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.PlatingCode)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.ProductName):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.ProductName)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.TargetNum):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.TargetNum)</p>
-                                    <h5>@Html.DisplayNameFor(model => model.IBA.ProcessingLotNum):</h5>
-                                    <p>@Html.DisplayFor(model => model.IBA.ProcessingLotNum)</p>
-                                </li>
+                                            @foreach (var item in Model.IBA.IBATests)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Result)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.HNum)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.TestType)
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </table>
+                                
+                                    </li>
+                                }
+                                @if (Model.IBA.PlatingDate != null)
+                                {
+                                    <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.PlatingDate)">
+                                        <h4><b><i>Target in Lab: Plating</i></b></h4>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.PlatingName):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.PlatingName)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.PlatingCode):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.PlatingCode)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.PlatingLotNum):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.PlatingLotNum)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.ProductName):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.ProductName)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.TargetNum):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.TargetNum)</p>
+                                    </li>
+                                }
+                                @if (Model.IBA.BombardingDate != null)
+                                {
+                                    <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.BombardingDate)">
+                                        <h4><b><i>Target in Bombarding:</i></b></h4>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.BombardingName):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.BombardingName)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.PlatingCode):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.PlatingCode)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.PlatingLotNum):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.PlatingLotNum)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.ProductName):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.ProductName)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.TargetNum):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.TargetNum)</p>
+                                    </li>
+                                }
+                                @if (Model.IBA.ProcessingDate != null)
+                                {
+                                    <li class="event displaytime" data-date="@Html.DisplayFor(model => model.IBA.ProcessingDate)">
+                                        <h4><b><i>Target in Lab: Processing</i></b></h4>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.ProcessingName):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.ProcessingName)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.PlatingCode):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.PlatingCode)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.ProductName):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.ProductName)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.TargetNum):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.TargetNum)</p>
+                                        <h5>@Html.DisplayNameFor(model => model.IBA.ProcessingLotNum):</h5>
+                                        <p>@Html.DisplayFor(model => model.IBA.ProcessingLotNum)</p>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>

@@ -20,7 +20,7 @@
     <div class="text-center mt-2 mb-2">
         <h2>Current Target Status: @Html.DisplayFor(model => model.TR30.Status)</h2>
     </div>
-    <table class="table text-center mt-2" id="Details-Warehouse">
+    <table class="table text-center mt-2">
       <tr>
         <th class="h4" colspan="6"><i><b>Warehouse</b></i></th>
       </tr>
@@ -42,29 +42,31 @@
       </tr>
     </table>
 
-    <div id="Details-Cyclo" class="d-flex justify-content-center">
-        <table class="table text-center m-3">
-          <tr>
-            <th class="h4" colspan="6"><i><b>Cyclotron Spares</b></i></th>
-          </tr>
-          <tr>
-            <th>@Html.DisplayNameFor(model => model.TR30.CyclotronDate)</th>
-            <th>@Html.DisplayNameFor(model => model.TR30.CyclotronName)</th>
-            <th>@Html.DisplayNameFor(model => model.TR30.CFaceCode)</th>
-            <th>@Html.DisplayNameFor(model => model.TR30.CBodyCode)</th>
-            <th>@Html.DisplayNameFor(model => model.TR30.CycloCode)</th>
-            <th>@Html.DisplayNameFor(model => model.TR30.Quantity)</th>
-          </tr>
-          <tr>
-            <td>@Html.DisplayFor(model => model.TR30.CyclotronDate)</td>
-            <td>@Html.DisplayFor(model => model.TR30.CyclotronName)</td>
-            <td>@Html.DisplayFor(model => model.TR30.CFaceCode)</td>
-            <th>@Html.DisplayFor(model => model.TR30.CBodyCode)</th>
-            <th>@Html.DisplayFor(model => model.TR30.CycloCode)</th>
-            <td>@Html.DisplayFor(model => model.TR30.Quantity)</td>
-          </tr>
-        </table>
-        <table class="table text-center m-3">
+    @if (Model.TR30.CyclotronDate != null)
+    {
+        <div class="d-flex justify-content-center">
+            <table class="table text-center m-3">
+                <tr>
+                    <th class="h4" colspan="6"><i><b>Cyclotron Spares</b></i></th>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.TR30.CyclotronDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.TR30.CyclotronName)</th>
+                    <th>@Html.DisplayNameFor(model => model.TR30.CFaceCode)</th>
+                    <th>@Html.DisplayNameFor(model => model.TR30.CBodyCode)</th>
+                    <th>@Html.DisplayNameFor(model => model.TR30.CycloCode)</th>
+                    <th>@Html.DisplayNameFor(model => model.TR30.Quantity)</th>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.TR30.CyclotronDate)</td>
+                    <td>@Html.DisplayFor(model => model.TR30.CyclotronName)</td>
+                    <td>@Html.DisplayFor(model => model.TR30.CFaceCode)</td>
+                    <th>@Html.DisplayFor(model => model.TR30.CBodyCode)</th>
+                    <th>@Html.DisplayFor(model => model.TR30.CycloCode)</th>
+                    <td>@Html.DisplayFor(model => model.TR30.Quantity)</td>
+                </tr>
+            </table>
+            <table class="table text-center m-3">
                 <tr>
                     <th>Results</th>
                     <th>H-Number</th>
@@ -85,60 +87,66 @@
                     </tr>
                 }
             </table>
-    </div>
-
-    <table class="table text-center mt-4" id="Details-Plating">
-      <tr>
-        <th class="h4" colspan="6"><i><b>Plating</b></i></th>
-      </tr>
-      <tr>
-        <th>@Html.DisplayNameFor(model => model.TR30.PlatingDate)</th>
-        <th>@Html.DisplayNameFor(model => model.TR30.PlatingName)</th>
-        <th>@Html.DisplayNameFor(model => model.TR30.PlatingCode)</th>
-        <th>@Html.DisplayNameFor(model => model.TR30.PlatingLotNum)</th>
-        <th>@Html.DisplayNameFor(model => model.TR30.ProductName)</th>
-        <th>@Html.DisplayNameFor(model => model.TR30.TargetNum)</th>
-      </tr>
-      <tr>
-        <td>@Html.DisplayFor(model => model.TR30.PlatingDate)</td>
-        <td>@Html.DisplayFor(model => model.TR30.PlatingName)</td>
-        <td>@Html.DisplayFor(model => model.TR30.PlatingCode)</td>
-        <td>@Html.DisplayFor(model => model.TR30.PlatingLotNum)</td>
-        <td>@Html.DisplayFor(model => model.TR30.ProductName)</td>
-        <td>@Html.DisplayFor(model => model.TR30.TargetNum)</td>
-      </tr>
-    </table>
-
-    <table class="table text-center mt-4" id="Details-Bombarding">
-      <tr>
-        <th class="h4" colspan="2"><i><b>Bombarding</b></i></th>
-      </tr>
-      <tr>
-        <th>@Html.DisplayNameFor(model => model.TR30.BombardingDate)</th>
-        <th>@Html.DisplayNameFor(model => model.TR30.BombardingName)</th>
-      </tr>
-      <tr>
-        <td>@Html.DisplayFor(model => model.TR30.BombardingDate)</td>
-        <td>@Html.DisplayFor(model => model.TR30.BombardingName)</td>
-      </tr>
-    </table>
-
-    <table class="table text-center mt-4" id="Details-Processing">
-      <tr>
-        <th class="h4" colspan="3"><i><b>Processing</b></i></th>
-      </tr>
-      <tr>
-        <th>@Html.DisplayNameFor(model => model.TR30.ProcessingDate)</th>
-        <th>@Html.DisplayNameFor(model => model.TR30.ProcessingName)</th>
-        <th>@Html.DisplayNameFor(model => model.TR30.ProcessingLotNum)</th>
-      </tr>
-      <tr>
-        <td>@Html.DisplayFor(model => model.TR30.ProcessingDate)</td>
-        <td>@Html.DisplayFor(model => model.TR30.ProcessingName)</td>
-        <td>@Html.DisplayFor(model => model.TR30.ProcessingLotNum)</td>
-      </tr>
-    </table>
-   
+        </div>
+    }
+    @if (Model.TR30.PlatingDate != null)
+    {
+        <table class="table text-center mt-4">
+          <tr>
+             <th class="h4" colspan="6"><i><b>Plating</b></i></th>
+          </tr>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.TR30.PlatingDate)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.PlatingName)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.PlatingCode)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.PlatingLotNum)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.ProductName)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.TargetNum)</th>
+          </tr>
+          <tr>
+            <td>@Html.DisplayFor(model => model.TR30.PlatingDate)</td>
+            <td>@Html.DisplayFor(model => model.TR30.PlatingName)</td>
+            <td>@Html.DisplayFor(model => model.TR30.PlatingCode)</td>
+            <td>@Html.DisplayFor(model => model.TR30.PlatingLotNum)</td>
+            <td>@Html.DisplayFor(model => model.TR30.ProductName)</td>
+            <td>@Html.DisplayFor(model => model.TR30.TargetNum)</td>
+          </tr>
+        </table>
+    }
+    @if (Model.TR30.BombardingDate != null)
+    {
+        <table class="table text-center mt-4">
+          <tr>
+            <th class="h4" colspan="2"><i><b>Bombarding</b></i></th>
+          </tr>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.TR30.BombardingDate)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.BombardingName)</th>
+          </tr>
+          <tr>
+            <td>@Html.DisplayFor(model => model.TR30.BombardingDate)</td>
+            <td>@Html.DisplayFor(model => model.TR30.BombardingName)</td>
+          </tr>
+        </table>
+    }
+    @if (Model.TR30.ProcessingDate != null)
+    {
+        <table class="table text-center mt-4">
+          <tr>
+            <th class="h4" colspan="3"><i><b>Processing</b></i></th>
+          </tr>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.TR30.ProcessingDate)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.ProcessingName)</th>
+            <th>@Html.DisplayNameFor(model => model.TR30.ProcessingLotNum)</th>
+          </tr>
+          <tr>
+            <td>@Html.DisplayFor(model => model.TR30.ProcessingDate)</td>
+            <td>@Html.DisplayFor(model => model.TR30.ProcessingName)</td>
+            <td>@Html.DisplayFor(model => model.TR30.ProcessingLotNum)</td>
+          </tr>
+        </table>
+    }
     <form method="post" class="text-center">
         <input type="hidden" asp-for="TR30.ID" />
         <input type="submit" value="Delete" class="btn btn-danger mr-2" onclick="return confirm('Are you sure you want to delete this Target?');"/> |

@@ -16,7 +16,7 @@
                         <h3 class="card-title text-primary text-center m-2">Target Life Cycle</h3>
                         <div id="content">
                             <ul class="timeline">
-                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.CS30.WarehouseDate)" id="warehouse">
+                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.CS30.WarehouseDate)">
                                     <h4><b><i>Target in Warehouse:</i></b></h4>
                                     <h5>@Html.DisplayNameFor(model => model.CS30.TargetType):</h5>
                                     <p>@Html.DisplayFor(model => model.CS30.TargetType)</p>
@@ -29,7 +29,7 @@
                                 </li>
                             @if (Model.CS30.CyclotronDate != null)
                             {
-                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.CS30.CyclotronDate)" id="cyclotron">
+                                <li class="event displaytime" data-date="@Html.DisplayFor(model => model.CS30.CyclotronDate)">
                                     <h4><b><i>Target in Cyclotron Spares:</i></b></h4>
                                     <h5>@Html.DisplayNameFor(model => model.CS30.CyclotronName):</h5>
                                     <p>@Html.DisplayFor(model => model.CS30.CyclotronName)</p>
