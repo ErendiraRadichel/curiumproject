@@ -2,42 +2,22 @@
 @model TargetDataBase.Pages.TR30Tests.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details of Test";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>TR30Test</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30Test.TestType)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30Test.TestType)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30Test.Result)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30Test.Result)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30Test.HNum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30Test.HNum)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TR30Test.TR30)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TR30Test.TR30.ID)
-        </dd>
-    </dl>
+<h1 class="text-center mt-5 mb-5">Details of TR-30 Target Test</h1>
+<div class="text-center m-4">
+    <h4>@Html.DisplayNameFor(model => model.TR30Test.TestType)</h4>
+    <h6>@Html.DisplayFor(model => model.TR30Test.TestType)</h6>
+    <h4 class="font-weight-bold">@Html.DisplayNameFor(model => model.TR30Test.Result)</h4>
+    <h6>@Html.DisplayFor(model => model.TR30Test.Result)</h6>
+    <h4 class="font-weight-bold">@Html.DisplayNameFor(model => model.TR30Test.HNum)</h4>
+    <h6>@Html.DisplayFor(model => model.TR30Test.HNum)</h6>
+    <h4 class="font-weight-bold">@Html.DisplayNameFor(model => model.TR30Test.TR30)</h4>
+    <h6>@Html.DisplayFor(model => model.TR30Test.TR30.ID)</h6>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.TR30Test?.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+
+<div class="m-3 text-center">
+    <a class="btn btn-outline-warning me-2" asp-page="./Edit" asp-route-id="@Model.TR30Test?.ID">Edit</a> |
+    <a class="btn btn-outline-primary ms-2" asp-page="./Index">Back to List</a>
 </div>

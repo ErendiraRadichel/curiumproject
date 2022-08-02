@@ -19,15 +19,24 @@ namespace TargetDataBase.Pages.TR30Tests
             _context = context;
         }
 
-        public IList<TR30Test> TR30Test { get;set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
 
-        public async Task OnGetAsync()
+        public IList<TR30Test> TR30Tests { get;set; } = default!;
+
+        public async Task OnGetAsync(string searchString)
         {
-            if (_context.TR30Tests != null)
+            searchString = SearchString;
+
+            // Use LINQ to get list of materials.
+            IQueryable<TR30Test> TR30TestIQ = from s in _context.TR30Tests
+                                              select s;
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                TR30Test = await _context.TR30Tests
-                .Include(t => t.TR30).ToListAsync();
+                TR30TestIQ = TR30TestIQ.Where(s => s.HNum.Contains(searchString));
             }
+
+            TR30Tests = await TR30TestIQ.Include(c => c.TR30).AsNoTracking().ToListAsync();
         }
     }
 }
